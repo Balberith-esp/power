@@ -24,7 +24,6 @@
             <nav id="nav">
                     <ul>
                         <li><a href="{{route('home')}}">Inicio</a></li>
-                        <li><a href="#noticias">Noticias</a></li>
                         <li><a href="{{route('Entrenamientos.index')}}">Entrenamientos</a></li>
                         <li><a href="#">Nutricion</a></li>
                         <li><a href="{{route('Perfil.index')}}">Perfil</a></li>

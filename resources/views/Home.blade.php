@@ -49,14 +49,15 @@
                         <h4>Login</h4>
                       </div>
                       <div class="d-flex flex-column text-center">
-                        <form>
+                        <form action="user" method="post">
+                            @csrf
                           <div class="form-group">
-                            <input type="email" class="form-control" id="email1"placeholder="Your email address...">
+                            <input type="email" class="form-control" id="email1" name="email" placeholder="Your email address...">
                           </div>
                           <div class="form-group">
-                            <input type="password" class="form-control" id="password1" placeholder="Your password...">
+                            <input type="password" class="form-control" id="password1" name="pass" placeholder="Your password...">
                           </div>
-                          <button type="button" class="btn btn-info btn-block btn-round">Login</button>
+                          <button type="submit" class="btn btn-info btn-block btn-round">Login</button>
                         </form>
                     </div>
                   </div>
@@ -73,7 +74,11 @@
                 <header>
                     <h2>Bienvenido al Proyecto <strong>Power</strong>.</h2>
                     <p>
-                        Este proyecto nacio con la idea de ayudar a todo el mundo a alcanzar sus objetivos, pensando en las necesidades, capacidades de cada persona.
+                        Este proyecto nacio con la idea de ayudar a todo el mundo a alcanzar sus objetivos.
+                    </p><br>
+                    <p>
+                        <em>"Hoy haré los que otros no harán, para mañana conseguir los que otros no pueden". </em><br>
+                        <strong>Jerry Rice</strong>
                     </p>
                 </header>
             </section>
@@ -83,49 +88,49 @@
                 <div class="reel">
 
                     <article>
-                        <a href="#" class="image featured"><img src="../resources/assets/img/pic01.jpg" alt="" /></a>
+                        <a href="#" class="image featured"><img src="../resources/assets/img/entrenamientoFuerza.jpg" alt="" /></a>
                         <header>
-                            <h3><a href="#">Pulvinar sagittis congue</a></h3>
+                            <h3><a href="#">Fuerza</a></h3>
                         </header>
                         <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
                     </article>
 
                     <article>
-                        <a href="#" class="image featured"><img src="../resources/assets/img/pic02.jpg" alt="" /></a>
+                        <a href="#" class="image featured"><img src="../resources/assets/img/entrenamientoResistencia.jpg" alt="" /></a>
                         <header>
-                            <h3><a href="#">Fermentum sagittis proin</a></h3>
+                            <h3><a href="#">Resistencia</a></h3>
                         </header>
                         <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
                     </article>
 
                     <article>
-                        <a href="#" class="image featured"><img src="../resources/assets/img/pic03.jpg" alt="" /></a>
+                        <a href="#" class="image featured"><img src="../resources/assets/img/entrenamientoVolumen.jpg" alt="" /></a>
                         <header>
-                            <h3><a href="#">Sed quis rhoncus placerat</a></h3>
+                            <h3><a href="#">Volumen</a></h3>
                         </header>
                         <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
                     </article>
 
                     <article>
-                        <a href="#" class="image featured"><img src="../resources/assets/img/pic04.jpg" alt="" /></a>
+                        <a href="#" class="image featured"><img src="../resources/assets/img/entrenamientoDefinicion.jpg" alt="" /></a>
                         <header>
-                            <h3><a href="#">Ultrices urna sit lobortis</a></h3>
+                            <h3><a href="#">Definicion</a></h3>
                         </header>
                         <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
                     </article>
 
                     <article>
-                        <a href="#" class="image featured"><img src="../resources/assets/img/pic05.jpg" alt="" /></a>
+                        <a href="#" class="image featured"><img src="../resources/assets/img/entrenamientoMantenimiento.jpg" alt="" /></a>
                         <header>
-                            <h3><a href="#">Varius magnis sollicitudin</a></h3>
+                            <h3><a href="#">Mantenimiento</a></h3>
                         </header>
                         <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
                     </article>
 
                     <article>
-                        <a href="#" class="image featured"><img src="../resources/assets/img/pic01.jpg" alt="" /></a>
+                        <a href="#" class="image featured"><img src="../resources/assets/img/entrenamientoAltoRendimiento.jpg" alt="" /></a>
                         <header>
-                            <h3><a href="#">Pulvinar sagittis congue</a></h3>
+                            <h3><a href="#">Alto Rendimiento</a></h3>
                         </header>
                         <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
                     </article>

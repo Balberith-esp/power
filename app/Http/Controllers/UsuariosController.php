@@ -17,6 +17,9 @@ class UsuariosController extends Controller
         return view('Perfil.add');
     }
 
+
+
+
     /**
      * Show the form for creating a new resource.
      *

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\UserAuth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,48 +27,15 @@ Route::get('/Perfil', function () {
 // Inicio de sesion
 
 // Registro
-// ->Acceso
+// ->Vista de registro
 Route::get('/Registro', [UsuariosController::class,'index'])->name('Registro.index');
-// ->Save
+// ->Control de login
+Route::post("user",[UserAuth::class,'userLogin']);
 
-
-
-// Rutas para Crear
-// Route::get('/Entrenamientos', function () {
-//     return view('Entrenamientos.index');
-// })->name('Entrenamientos.index');
-
-// Route::get('/Nutricion', function () {
-//     return view('Nutricion.index');
-// })->name('Nutricion.index');
-
-// Route::get('/Perfil', function () {
-//     return view('Perfil.index');
-// })->name('Perfil.index');
-
-
-// Rutas para editar
-// Route::get('/Entrenamientos', function () {
-//     return view('Entrenamientos.index');
-// })->name('Entrenamientos.index');
-
-// Route::get('/Nutricion', function () {
-//     return view('Nutricion.index');
-// })->name('Nutricion.index');
-
-// Route::get('/Perfil', function () {
-//     return view('Perfil.index');
-// })->name('Perfil.index');
-
-// Rutas para mostrar
-// Route::get('/Entrenamientos', function () {
-//     return view('Entrenamientos.index');
-// })->name('Entrenamientos.index');
-
-// Route::get('/Nutricion', function () {
-//     return view('Nutricion.index');
-// })->name('Nutricion.index');
-
-// Route::get('/Perfil', function () {
-//     return view('Perfil.index');
-// })->name('Perfil.index');
+// LogOut
+Route::get('/LogOut', function () {
+    if(session()->has('user')){
+        session()->pull('user');
+    }
+    return view('Home');
+});

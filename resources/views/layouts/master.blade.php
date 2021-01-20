@@ -12,6 +12,11 @@
         <link rel="stylesheet" href="{{ url('../resources/assets/css/home.css') }}">
         <link rel="stylesheet" href="{{ url('../resources/assets/css/noscript.css') }}">
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        {{-- <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"> --}}
+
 
         {{-- Scripts --}}
         <script src="{{ url('../resources/assets/js/jquery.js') }}"></script>
@@ -24,11 +29,6 @@
         <script src="{{ url('../resources/assets/js/fonts.js') }}"></script>
         <script src="{{ url('../resources/assets/js/util.js') }}"></script>
         <script src="{{ url('../resources/assets/js/main.js') }}"></script>
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
 
 
@@ -48,13 +48,13 @@
                         <!-- Tweets -->
                             <section class="col-4 col-12-mobile">
                                 <header>
-                                    <h2 class="icon brands fa-twitter circled"><span class="label">Tweets</span></h2>
+                                    <h2 class="icon brands fa-twitter circled"><i class="fab fa-twitter"></i><span class="label">Tweets</span></h2>
                                 </header>
                                 <ul class="divided">
                                     <li>
                                         <article class="tweet">
                                             Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
-                                            <span class="timestamp">5 minutes ago</span>
+                                            <span class="timestamp">Hace 5 min</span>
                                         </article>
                                     </li>
                                     <li>
@@ -81,7 +81,7 @@
                         <!-- Posts -->
                             <section class="col-4 col-12-mobile">
                                 <header>
-                                    <h2 class="icon solid fa-file circled"><span class="label">Posts</span></h2>
+                                    <h2 class="icon solid fa-file circled"><i class="fas fa-newspaper"></i><span class="label">Posts</span></h2>
                                 </header>
                                 <ul class="divided">
                                     <li>
@@ -122,26 +122,21 @@
                         <!-- Photos -->
                             <section class="col-4 col-12-mobile">
                                 <header>
-                                    <h2 class="icon solid fa-camera circled"><span class="label">Photos</span></h2>
+                                    <h2 class="icon solid fa-camera circled"><i class="fab fa-instagram"></i><span class="label">Photos</span></h2>
                                 </header>
                                 <div class="row gtr-25">
                                     <div class="col-6">
-                                        <a href="#" class="image fit"><img src="../resources/assets/img/pic10.jpg" alt="" /></a>
+                                        <a href="#" class="image fit"><img src="../resources/assets/img/instagram1.jpg" alt="" /></a>
                                     </div>
                                     <div class="col-6">
-                                        <a href="#" class="image fit"><img src="../resources/assets/img/pic11.jpg" alt="" /></a>
+                                        <a href="#" class="image fit"><img src="../resources/assets/img/instagram2.jpg" alt="" /></a>
                                     </div>
                                     <div class="col-6">
-                                        <a href="#" class="image fit"><img src="../resources/assets/img/pic12.jpg" alt="" /></a>
+                                        <a href="#" class="image fit"><img src="../resources/assets/img/instagram3.jpg" alt="" /></a>
                                     </div>
                                     <div class="col-6">
-                                        <a href="#" class="image fit"><img src="../resources/assets/img/pic13.jpg" alt="" /></a>
-                                    </div>
-                                    <div class="col-6">
-                                        <a href="#" class="image fit"><img src="../resources/assets/img/pic14.jpg" alt="" /></a>
-                                    </div>
-                                    <div class="col-6">
-                                        <a href="#" class="image fit"><img src="../resources/assets/img/pic15.jpg" alt="" /></a>
+                                        <a href="#" class="image fit"><img src="../resources/assets/img/instagram4.jpg" alt="" /></a>
+
                                     </div>
                                 </div>
                             </section>
@@ -150,27 +145,20 @@
                     <hr />
                     <div class="row">
                         <div class="col-12">
-
-                            <!-- Contact -->
-                                <section class="contact">
-                                    <header>
-                                        <h3>Nisl turpis nascetur interdum?</h3>
-                                    </header>
-                                    <p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+                                <section class="contact"><br><br>
+                                        <h3>Contacta con nosotros</h3>
                                     <ul class="icons">
-                                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                                        <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-                                        <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-                                        <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+                                        <li><a><i class="fab fa-twitter"></i></a></li>
+                                        <li><a><i class="fab fa-facebook"></i></a></li>
+                                        <li><a><i class="fab fa-instagram"></i></a></li>
+                                        <li><a><i class="fab fa-linkedin"></i></a></li>
+                                        <li><a><i class="fab fa-pinterest"></i></a></li>
+                                        <li><a><i class="fab fa-reddit"></i></a></li>
                                     </ul>
                                 </section>
-
-                            <!-- Copyright -->
                                 <div class="copyright">
                                     <ul class="menu">
-                                        <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                                        <li>&copy; Todos los derechos reservados.</li>
                                     </ul>
                                 </div>
 
