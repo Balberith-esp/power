@@ -26,6 +26,7 @@ class CreateEjerciciosTable extends Migration
         });
     }
 
+
     /**
      * Reverse the migrations.
      *
