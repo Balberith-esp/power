@@ -26,7 +26,7 @@
                         <li><a href="{{route('home')}}">Inicio</a></li>
                         <li><a href="#">Entrenamientos</a></li>
                         <li><a href="{{route('Nutricion.index')}}">Nutricion</a></li>
-                        <li><a href="{{route('Perfil.index')}}">Perfil</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user"></i></a></li>
                     </ul>
                 </nav>
 

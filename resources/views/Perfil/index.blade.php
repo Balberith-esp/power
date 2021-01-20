@@ -24,10 +24,9 @@
             <nav id="nav">
                     <ul>
                         <li><a href="{{route('home')}}">Inicio</a></li>
-                        <li><a href="#noticias">Noticias</a></li>
                         <li><a href="{{route('Entrenamientos.index')}}">Entrenamientos</a></li>
                         <li><a href="{{route('Nutricion.index')}}">Nutricion</a></li>
-                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user"></i></a></li>
                     </ul>
                 </nav>
 
