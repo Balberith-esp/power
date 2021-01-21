@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsuariosController extends Controller
@@ -15,6 +16,20 @@ class UsuariosController extends Controller
     {
         //Devuelve la vista con el formulario para la creacion del usuario
         return view('Perfil.add');
+    }
+
+    // Devuelve todos los usuarios
+    public function todos()
+    {
+        $data =User::all();
+        return $data->toJson();
+    }
+
+    // Devuelve un usuario buscando por el id
+    public function fof($id)
+    {
+        $data =User::findOrFail($id);
+        return $data->toJson();
     }
 
 

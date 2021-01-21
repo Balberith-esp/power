@@ -24,6 +24,14 @@ Route::get('/Perfil', function () {
 })->name('Perfil.index');
 
 
+
+Route::get('/muestraUsuarios', [UsuariosController::class,'todos']);
+
+Route::get('/buscaUsuario/{id}', [UsuariosController::class,'fof']);
+
+
+
+
 // Inicio de sesion
 
 // Registro
