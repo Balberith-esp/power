@@ -24,21 +24,19 @@ Route::get('/Perfil', function () {
 })->name('Perfil.index');
 
 
+// // // // // // // // // // // // // // // //
 
 Route::get('/muestraUsuarios', [UsuariosController::class,'todos']);
 
 Route::get('/buscaUsuario/{id}', [UsuariosController::class,'fof']);
 
 
+// // // // // // // // // // // // //
 
+// Sesion de usuarios
 
-// Inicio de sesion
-
-// Registro
-// ->Vista de registro
-Route::get('/Registro', [UsuariosController::class,'index'])->name('Registro.index');
 // ->Control de login
-Route::post("user",[UserAuth::class,'userLogin']);
+Route::post("user",[UserAuth::class,'userLogin'])->name('Login.compruebaUsuario');
 
 // LogOut
 Route::get('/LogOut', function () {
@@ -47,3 +45,21 @@ Route::get('/LogOut', function () {
     }
     return view('Home');
 });
+
+// // // // // // // // // // // // ////
+
+
+// Registro
+
+// ->Vista de registro
+Route::get('/Registro', [UsuariosController::class,'index'])->name('Registro.index');
+
+// ->Crea registro
+Route::post('/Registro', [UsuariosController::class,'store'])->name('Registro.creaUsuario');
+
+
+// // // // // // // // // // // // // //
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

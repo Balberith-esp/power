@@ -52,13 +52,13 @@
                         <h4>Login</h4>
                       </div>
                       <div class="d-flex flex-column text-center">
-                        <form action="user" method="post">
+                        <form action="{{route('login')}}" method="post">
                             @csrf
                           <div class="form-group">
-                            <input type="email" class="form-control" id="email1" name="email" placeholder="Your email address...">
+                            <input type="email" class="form-control" name="email" placeholder="Your email address...">
                           </div>
                           <div class="form-group">
-                            <input type="password" class="form-control" id="password1" name="pass" placeholder="Your password...">
+                            <input type="password" class="form-control"  name="password" placeholder="Your password...">
                           </div>
                           <button type="submit" class="btn btn-info btn-block btn-round">Login</button>
                         </form>

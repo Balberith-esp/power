@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Usuario;
 
 class UsuariosController extends Controller
 {
@@ -29,7 +30,7 @@ class UsuariosController extends Controller
     public function fof($id)
     {
         $data =User::findOrFail($id);
-        return $data->toJson();
+        return view('Perfil.show',compact($data));
     }
 
 
@@ -43,6 +44,7 @@ class UsuariosController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -54,6 +56,24 @@ class UsuariosController extends Controller
     public function store(Request $request)
     {
         //
+
+        $nuevoUsuario = new User();
+        $nuevoUsuario->nombre = $request->nombre;
+        $nuevoUsuario->apellidos = $request->primerApellido." ".$request->segundoApellido;
+        $nuevoUsuario->password = $request->contraseña;
+        $nuevoUsuario->pais = $request->pais;
+        $nuevoUsuario->email = $request->email;
+        $nuevoUsuario->provincia= $request->provincia;
+        $nuevoUsuario->ciudad = $request->ciudad;
+        $nuevoUsuario->activo = 1;
+        $nuevoUsuario->save();
+        return redirect('/');
+
+        // return back()->withInput();
+
+
+
+
     }
 
     /**
