@@ -30,7 +30,12 @@
                             <li><a href="#noticias">Noticias</a></li>
                             <li><a href="{{route('Entrenamientos.index')}}">Entrenamientos</a></li>
                             <li><a href="{{route('Nutricion.index')}}">Nutricion</a></li>
-                            <li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user"></i></a></li>
+                            @if (session()->has('user'))
+                                <li><a href="#">{{session()->get('user')}}</a></li>
+                                <li><a href="{{route('logOut')}}"><i class="fas fa-sign-out-alt"></i></a></li>
+                            @else
+                                <li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user"></i></a></li>
+                            @endif
                         </ul>
                     </nav>
             </div>

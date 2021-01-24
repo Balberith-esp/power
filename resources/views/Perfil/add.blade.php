@@ -12,7 +12,27 @@
 
     <!-- Header -->
         <div id="header">
+            <script>
+                /* When the user clicks on the button,
+                toggle between hiding and showing the dropdown content */
+                function myFunction() {
+                  document.getElementById("myDropdown").classList.toggle("show");
+                }
 
+                // Close the dropdown if the user clicks outside of it
+                window.onclick = function(event) {
+                  if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                      var openDropdown = dropdowns[i];
+                      if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                      }
+                    }
+                  }
+                }
+                </script>
             <!-- Inner -->
                 <div class="inner">
                     <header>
@@ -26,7 +46,13 @@
                         <li><a href="{{route('home')}}">Inicio</a></li>
                         <li><a href="{{route('Entrenamientos.index')}}">Entrenamientos</a></li>
                         <li><a href="{{route('Nutricion.index')}}">Nutricion</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user"></i></a></li>
+                        @if (session()->has('user'))
+                            <li><a href="#">{{session()->get('user')}}</a></li>
+                            <li><a href="{{route('logOut')}}"><i class="fas fa-sign-out-alt"></i></a></li>
+                            @else
+                            <li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user"></i></a></li>
+                        @endif
+
                     </ul>
                 </nav>
         </div>
@@ -37,7 +63,7 @@
                 <h2 class="title">Nuevo usuario</h2>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{route('Registro.creaUsuario')}}" class="fondoForm">
+                <form method="POST" action="{{route('Registro.creaUsuario')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-row m-b-55">
                         <div class="name">Nombre</div>
@@ -113,6 +139,14 @@
                                         <label class="label--desc">Ciudad</label>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Foto Usuario</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="file" name="fotoPerfil">
                             </div>
                         </div>
                     </div>

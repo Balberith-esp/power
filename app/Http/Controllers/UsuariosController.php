@@ -56,6 +56,13 @@ class UsuariosController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'fotoPerfil' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip',
+        ]);
+
+        $fileName = time().'.'.$request->fotoPerfil->getClientOriginalExtension();
+
+        $request->fotoPerfil->move(public_path('../resources/assets/img/fotosPerfil'), $fileName);
 
         $nuevoUsuario = new User();
         $nuevoUsuario->nombre = $request->nombre;
@@ -65,7 +72,7 @@ class UsuariosController extends Controller
         $nuevoUsuario->email = $request->email;
         $nuevoUsuario->provincia= $request->provincia;
         $nuevoUsuario->ciudad = $request->ciudad;
-        // $nuevoUsuario->fotoPerfil = $request->fotoPerfil;
+        $nuevoUsuario->fotoPerfil = $fileName;
         $nuevoUsuario->activo = 1;
         $nuevoUsuario->save();
         $request->session()->put('user',$request->input('nombre'));

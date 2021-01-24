@@ -44,7 +44,7 @@ Route::get('/LogOut', function () {
         session()->pull('user');
     }
     return view('Home');
-});
+})->name('logOut');
 
 // // // // // // // // // // // // ////
 
@@ -60,6 +60,3 @@ Route::post('/Registro', [UsuariosController::class,'store'])->name('Registro.cr
 
 // // // // // // // // // // // // // //
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
