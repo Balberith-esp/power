@@ -21,7 +21,7 @@ Route::get('/Nutricion', function () {
 
 Route::get('/Perfil', function () {
     return view('Perfil.index');
-})->name('Perfil.index');
+})->name('Perfil.show');
 
 
 // // // // // // // // // // // // // // // //
@@ -29,6 +29,8 @@ Route::get('/Perfil', function () {
 Route::get('/muestraUsuarios', [UsuariosController::class,'todos']);
 
 Route::get('/buscaUsuario/{id}', [UsuariosController::class,'fof']);
+
+
 
 
 // // // // // // // // // // // // //

@@ -75,7 +75,7 @@ class UsuariosController extends Controller
         $nuevoUsuario->fotoPerfil = $fileName;
         $nuevoUsuario->activo = 1;
         $nuevoUsuario->save();
-        $request->session()->put('user',$request->input('nombre'));
+        $request->session()->put('user',$nuevoUsuario);
         return redirect('/');
 
         // return back()->withInput();

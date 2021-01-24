@@ -49,7 +49,7 @@
                     </div>
                     <div class="modal-body">
                       <div class="form-title text-center">
-                        <h4>Login</h4>
+                        <h4>Inicio de sesión</h4>
                       </div>
                       <div class="d-flex flex-column text-center">
                         <form action="{{route('Login.compruebaUsuario')}}" method="post">
@@ -60,7 +60,7 @@
                           <div class="form-group">
                             <input type="password" class="form-control"  name="password" placeholder="Your password...">
                           </div>
-                          <button type="submit" class="btn btn-info btn-block btn-round">Login</button>
+                          <button type="submit" class="btn btn-info btn-block btn-round">Inicio</button>
                         </form>
                     </div>
                   </div>

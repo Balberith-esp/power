@@ -17,7 +17,7 @@ class UserAuth extends Controller
         $decrypted = Crypt::decrypt($user[0]->password);
 
         if($req->input('password')==$decrypted){
-            $req->session()->put('user',$user[0]->nombre);
+            $req->session()->put('user',$user[0]);
             return redirect('/');
         }else{
             return redirect('/');

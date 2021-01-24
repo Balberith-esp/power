@@ -27,8 +27,8 @@
                         <li><a href="{{route('Entrenamientos.index')}}">Entrenamientos</a></li>
                         <li><a href="{{route('Nutricion.index')}}">Nutricion</a></li>
                         @if (session()->has('user'))
-                            <li><a href="#">{{session()->get('user')}}</a></li>
-                            <li><a href="{{logOut}}"><i class="fas fa-sign-out-alt"></i></a></li>
+                        <li><a href="{{route('Perfil.show')}}">Hola {{session()->get('user')->nombre}}</a></li>
+                        <li><a href="{{route('logOut')}}"><i class="fas fa-sign-out-alt"></i></a></li>
                         @else
                             <li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user"></i></a></li>
                         @endif
@@ -84,33 +84,7 @@
                                         Amet nullam fringilla nibh nulla convallis tique ante proin.
                                     </p>
                                 </div>
-                                <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/pic12.jpg" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Lorem feugiat magna</h4>
-                                    <p>
-                                        Amet nullam fringilla nibh nulla convallis tique ante proin.
-                                    </p>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/pic13.jpg" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Sed tempus fringilla</h4>
-                                    <p>
-                                        Amet nullam fringilla nibh nulla convallis tique ante proin.
-                                    </p>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/pic14.jpg" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Malesuada fermentum</h4>
-                                    <p>
-                                        Amet nullam fringilla nibh nulla convallis tique ante proin.
-                                    </p>
-                                </div>
+
                             </div>
                             <footer>
                                 <a href="#" class="button">Magna Adipiscing</a>
@@ -120,84 +94,49 @@
                     <div class="col-8 col-12-mobile imp-mobile" id="content">
                         <article id="main">
                             <header>
-                                <h2><a href="#">Left Sidebar</a></h2>
+                                <h2><a href="#">{{ session()->get('user')->nombre }}</a></h2>
                                 <p>
-                                    Morbi convallis lectus malesuada sed fermentum dolore amet
+                                    {{ session()->get('user')->email}}
                                 </p>
                             </header>
-                            <a href="#" class="image featured"><img src="../resources/assets/img/pic06.jpg" alt="" /></a>
-                            <p>
-                                Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
-                                posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
-                                lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
-                                consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
-                                interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
-                                natoque aenean scelerisque vel lacinia mollis quam sodales congue.
-                            </p>
-                            <section>
-                                <header>
-                                    <h3>Ultrices tempor sagittis nisl</h3>
-                                </header>
-                                <p>
-                                    Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
-                                    at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-                                    feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-                                    fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
-                                    egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
-                                </p>
-                                <p>
-                                    Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
-                                    orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
-                                    ut penatibus fermentum nibh erat malesuada varius.
-                                </p>
-                            </section>
-                            <section>
-                                <header>
-                                    <h3>Augue euismod feugiat tempus</h3>
-                                </header>
-                                <p>
-                                    Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-                                    feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-                                    ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada ante
-                                    egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
-                                </p>
-                            </section>
+
+                            <img src= {{asset('../resources/assets/img/fotosPerfil')}}{{'/'.session()->get('user')->fotoPerfil }} alt="Foto Usuario" class="float-left rounded-circle mr-2" />
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12 my-3 pt-3 shadow">
+
+                                                <p>
+                                                    {{-- <strong>Instagram</strong>: {{ session()->get('user')->profile->instagram }} <br>
+                                                    <strong>GitHub</strong>: {{ session()->get('user')->profile->github }} <br>
+                                                    <strong>Web</strong>: {{ session()->get('user')->profile->web }} --}}
+                                                </p>
+                                                <p>
+                                                    <strong>País</strong>: {{ session()->get('user')->pais }} <br>
+                                                    <strong>Provincia</strong>: {{ session()->get('user')->provincia }} <br>
+                                                    <strong>Ciudad</strong>: {{ session()->get('user')->ciudad}} <br>
+                                                </p>
+                                                <hr>
+                                                <p>
+                                                    {{-- <strong>Grupos</strong>:
+                                                    @forelse(session()->get('user')->groups as $group)
+                                                        <span class="badge badge-primary">{{ $group->name }}</span>
+                                                    @empty
+                                                        <em>No pertenece a algún grupo</em>
+                                                    @endforelse --}}
+                                                </p>
+
+                                                <hr>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
                         </article>
                     </div>
                 </div>
                 <hr />
-                <div class="row">
-                    <article class="col-4 col-12-mobile special">
-                        <a href="#" class="image featured"><img src="../resources/assets/img/pic07.jpg" alt="" /></a>
-                        <header>
-                            <h3><a href="#">Gravida aliquam penatibus</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                            porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                    <article class="col-4 col-12-mobile special">
-                        <a href="#" class="image featured"><img src="../resources/assets/img/pic08.jpg" alt="" /></a>
-                        <header>
-                            <h3><a href="#">Sed quis rhoncus placerat</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                            porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                    <article class="col-4 col-12-mobile special">
-                        <a href="#" class="image featured"><img src="../resources/assets/img/pic09.jpg" alt="" /></a>
-                        <header>
-                            <h3><a href="#">Magna laoreet et aliquam</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                            porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                </div>
+
             </div>
 
         </div>
