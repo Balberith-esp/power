@@ -7,16 +7,6 @@
 
 		@yield('titulo')
 
-        {{-- Estilos --}}
-        <link rel="stylesheet" href="{{ url('../resources/assets/css/main.css') }}">
-        <link rel="stylesheet" href="{{ url('../resources/assets/css/home.css') }}">
-        <link rel="stylesheet" href="{{ url('../resources/assets/css/noscript.css') }}">
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        {{-- <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"> --}}
-
 
         {{-- Scripts --}}
         <script src="{{ url('../resources/assets/js/jquery.js') }}"></script>
@@ -29,6 +19,16 @@
         <script src="{{ url('../resources/assets/js/fonts.js') }}"></script>
         <script src="{{ url('../resources/assets/js/util.js') }}"></script>
         <script src="{{ url('../resources/assets/js/main.js') }}"></script>
+
+        {{-- Estilos --}}
+        <link rel="stylesheet" href="{{ url('../resources/assets/css/main.css') }}">
+        <link rel="stylesheet" href="{{ url('../resources/assets/css/home.css') }}">
+        <link rel="stylesheet" href="{{ url('../resources/assets/css/noscript.css') }}">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        {{-- <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"> --}}
 
 
 
@@ -52,7 +52,7 @@
                         <h4>Login</h4>
                       </div>
                       <div class="d-flex flex-column text-center">
-                        <form action="{{route('login')}}" method="post">
+                        <form action="{{route('Login.compruebaUsuario')}}" method="post">
                             @csrf
                           <div class="form-group">
                             <input type="email" class="form-control" name="email" placeholder="Your email address...">

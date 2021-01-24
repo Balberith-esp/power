@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Usuario;
+use Illuminate\Support\Facades\Crypt;
 
 class UsuariosController extends Controller
 {
@@ -60,13 +60,15 @@ class UsuariosController extends Controller
         $nuevoUsuario = new User();
         $nuevoUsuario->nombre = $request->nombre;
         $nuevoUsuario->apellidos = $request->primerApellido." ".$request->segundoApellido;
-        $nuevoUsuario->password = $request->contraseña;
+        $nuevoUsuario->password = Crypt::encrypt($request->contraseña);
         $nuevoUsuario->pais = $request->pais;
         $nuevoUsuario->email = $request->email;
         $nuevoUsuario->provincia= $request->provincia;
         $nuevoUsuario->ciudad = $request->ciudad;
+        // $nuevoUsuario->fotoPerfil = $request->fotoPerfil;
         $nuevoUsuario->activo = 1;
         $nuevoUsuario->save();
+        $request->session()->put('user',$request->input('nombre'));
         return redirect('/');
 
         // return back()->withInput();
