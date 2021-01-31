@@ -13,4 +13,9 @@ class Ejercicio extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+        // Relacion uno a muchos polimorfica
+        public function comments(){
+            return $this->morphToMany(Recurso::class,'commentable');
+        }
 }

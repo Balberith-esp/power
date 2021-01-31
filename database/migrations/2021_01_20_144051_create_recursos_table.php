@@ -16,6 +16,13 @@ class CreateRecursosTable extends Migration
         Schema::create('recursos', function (Blueprint $table) {
             $table->id();
             $table->string('path');
+
+            $table->unsignedBigInteger('commentable_id');
+            $table->string('commentable_type');
+
+            $table->unsignedBigInteger('usuario_id')->unsigned();
+            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
