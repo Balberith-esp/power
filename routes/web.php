@@ -3,7 +3,8 @@
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\UserAuth;
 use Illuminate\Support\Facades\Route;
-
+use App\Mail\ContactoMailable;
+use Illuminate\Support\Facades\Mail;
 
 // Raiz
 Route::get('/', function () {
@@ -62,3 +63,10 @@ Route::post('/Registro', [UsuariosController::class,'store'])->name('Registro.cr
 
 // // // // // // // // // // // // // //
 
+// Emails
+
+Route::get('contactanos', function () {
+    $correo = new  ContactoMailable;
+    Mail::to('jesuscarandia@gmail.com')->send($correo);
+    return "Mensaje enviado";
+});
