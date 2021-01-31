@@ -13,12 +13,12 @@ class CreateUserRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_roles', function (Blueprint $table) {
+        Schema::create('role_user', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('rol_id')->unsigned();
-            $table->foreign('rol_id')->references('id')->on('roles')->onDelete('cascade');
-            $table->unsignedBigInteger('usuario_id')->unsigned();
-            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('role_id')->unsigned();
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateUserRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_roles');
+        Schema::dropIfExists('role_user');
     }
 }

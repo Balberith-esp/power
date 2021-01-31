@@ -14,12 +14,12 @@ class RolUserSeeder extends Seeder
 
     private $usuarioRoles = array(
 		array(
-            'usuario_id' => 1,
-            'rol_id' => 1,
+            'user_id' => 1,
+            'role_id' => 1,
         ),
 		array(
-            'usuario_id' => 2,
-            'rol_id' => 2,
+            'user_id' => 2,
+            'role_id' => 2,
         ),
     );
     public function run()
@@ -27,8 +27,8 @@ class RolUserSeeder extends Seeder
         //
         foreach($this->usuarioRoles as $usuarioRol){
             $nuevoUsuarioRol = new UsuariosRol();
-            $nuevoUsuarioRol->usuario_id = $usuarioRol['usuario_id'];
-            $nuevoUsuarioRol->rol_id = $usuarioRol['rol_id'];
+            $nuevoUsuarioRol->user_id = $usuarioRol['user_id'];
+            $nuevoUsuarioRol->role_id = $usuarioRol['role_id'];
             $nuevoUsuarioRol->save();
         }
     }

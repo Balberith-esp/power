@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Rol;
+use App\Models\Role;
 
 use Illuminate\Database\Seeder;
 
@@ -27,8 +27,8 @@ class RolSeeder extends Seeder
         //
 
         foreach($this->roles as $rol){
-            $nuevoRol = new Rol();
-            $nuevoRol->rol = $rol['nombre'];
+            $nuevoRol = new Role();
+            $nuevoRol->nombre = $rol['nombre'];
             $nuevoRol->save();
         }
 
