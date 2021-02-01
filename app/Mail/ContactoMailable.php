@@ -19,9 +19,21 @@ class ContactoMailable extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($tipo)
     {
         //
+
+        switch ($tipo) {
+            case 'registro':
+               return $this->view('emails.bienvenida');
+                break;
+            case 'informacion':
+                return $this->view('emails.informacion');
+                break;
+            default:
+                # code...
+                break;
+        }
     }
 
     /**
@@ -31,6 +43,7 @@ class ContactoMailable extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.contactanos');
+
+
     }
 }
