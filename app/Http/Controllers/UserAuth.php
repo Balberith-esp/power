@@ -16,8 +16,8 @@ class UserAuth extends Controller
 
         if($req->input('password')==Crypt::decrypt($user[0]->password)){
             $req->session()->put('user',$user[0]);
-            return $user[0]->roles;
-            // return redirect('/');
+            // return $user[0]->roles;
+            return redirect('/');
         }else{
             return redirect('/');
         }

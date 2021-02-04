@@ -77,13 +77,7 @@ class UsuariosController extends Controller
         $nuevoUsuario->save();
         $request->session()->put('user',$nuevoUsuario);
 
-        // Mail::to($nuevoUsuario->email())->send(new OrderShipped($order));
-        return redirect('/');
-
-        // return back()->withInput();
-
-
-
+        return redirect('/enviaEmail/registro');
 
     }
 

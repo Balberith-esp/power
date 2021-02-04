@@ -15,7 +15,7 @@ class Controller extends BaseController
 
     public function enviaEmail(String $tipo){
         $correo = new  ContactoMailable($tipo);
-        Mail::to('jesuscarandia@gmail.com')->send($correo);
+        Mail::to(session()->get('user')->email)->send($correo);
         return redirect('/');
     }
 }

@@ -3,8 +3,10 @@
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\EjercicioController;
 use Illuminate\Support\Facades\Route;
 use App\Mail\ContactoMailable;
+use App\Models\Ejercicio;
 use Illuminate\Support\Facades\Mail;
 
 // Raiz
@@ -15,7 +17,7 @@ Route::get('/', function () {
 // Rutas para los index
 Route::get('/Entrenamientos', function () {
     return view('Entrenamientos.index');
-})->name('Entrenamientos.index');
+})->name('Entrenamientos.index')->middleware('compruebaPermisos');
 
 Route::get('/Nutricion', function () {
     return view('Nutricion.index');
@@ -67,4 +69,8 @@ Route::post('/Registro', [UsuariosController::class,'store'])->name('Registro.cr
 // Emails
 
 Route::get('/enviaEmail/{tipo}', [Controller::class,'enviaEmail'])->name('Email.enviar');
+
+// Ejercicios
+
+Route::post('/Rutina',[EjercicioContoller::class,'store'])->name('Rutina.creaRutina');
 

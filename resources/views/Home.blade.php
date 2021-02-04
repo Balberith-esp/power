@@ -59,51 +59,51 @@
                 <div class="reel">
 
                     <article>
-                        <a href="#" class="image featured"><img src="../resources/assets/img/entrenamientoFuerza.jpg" alt="" /></a>
+                        <a href="{{route('Entrenamientos.index')}}" class="image featured"><img src="../resources/assets/img/entrenamientoFuerza.jpg" alt="" /></a>
                         <header>
-                            <h3><a href="#">Fuerza</a></h3>
+                            <h3><a href="{{route('Entrenamientos.index')}}">Fuerza</a></h3>
                         </header>
-                        <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                        <p>Entrenamiento enfocada conseguir la mayor fuerza.</p>
                     </article>
 
                     <article>
-                        <a href="#" class="image featured"><img src="../resources/assets/img/entrenamientoResistencia.jpg" alt="" /></a>
+                        <a href="{{route('Entrenamientos.index')}}" class="image featured"><img src="../resources/assets/img/entrenamientoResistencia.jpg" alt="" /></a>
                         <header>
-                            <h3><a href="#">Resistencia</a></h3>
+                            <h3><a href="{{route('Entrenamientos.index')}}">Resistencia</a></h3>
                         </header>
-                        <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                        <p>Entrenamiento enfocada conseguir la mayor fuerza.</p>
                     </article>
 
                     <article>
-                        <a href="#" class="image featured"><img src="../resources/assets/img/entrenamientoVolumen.jpg" alt="" /></a>
+                        <a href="{{route('Entrenamientos.index')}}" class="image featured"><img src="../resources/assets/img/entrenamientoVolumen.jpg" alt="" /></a>
                         <header>
-                            <h3><a href="#">Volumen</a></h3>
+                            <h3><a href="{{route('Entrenamientos.index')}}">Volumen</a></h3>
                         </header>
-                        <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                        <p>Entrenamiento enfocado a ganar masa muscular.</p>
                     </article>
 
                     <article>
-                        <a href="#" class="image featured"><img src="../resources/assets/img/entrenamientoDefinicion.jpg" alt="" /></a>
+                        <a href="{{route('Entrenamientos.index')}}" class="image featured"><img src="../resources/assets/img/entrenamientoDefinicion.jpg" alt="" /></a>
                         <header>
-                            <h3><a href="#">Definicion</a></h3>
+                            <h3><a href="{{route('Entrenamientos.index')}}">Definicion</a></h3>
                         </header>
-                        <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                        <p>Entrenamiento para bajar el peso sobrante y definir la musculatura.</p>
                     </article>
 
                     <article>
-                        <a href="#" class="image featured"><img src="../resources/assets/img/entrenamientoMantenimiento.jpg" alt="" /></a>
+                        <a href="{{route('Entrenamientos.index')}}" class="image featured"><img src="../resources/assets/img/entrenamientoMantenimiento.jpg" alt="" /></a>
                         <header>
-                            <h3><a href="#">Mantenimiento</a></h3>
+                            <h3><a href="{{route('Entrenamientos.index')}}">Mantenimiento</a></h3>
                         </header>
-                        <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                        <p>Entrenamiento para mantener una actividad fisica constante.</p>
                     </article>
 
                     <article>
-                        <a href="#" class="image featured"><img src="../resources/assets/img/entrenamientoAltoRendimiento.jpg" alt="" /></a>
+                        <a href="{{route('Entrenamientos.index')}}" class="image featured"><img src="../resources/assets/img/entrenamientoAltoRendimiento.jpg" alt="" /></a>
                         <header>
-                            <h3><a href="#">Alto Rendimiento</a></h3>
+                            <h3><a href="{{route('Entrenamientos.index')}}">Alto Rendimiento</a></h3>
                         </header>
-                        <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                        <p>Entrenamientos para deportistas profesionales.</p>
                     </article>
 
 

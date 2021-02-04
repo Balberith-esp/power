@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('otros_imports')
+<link rel="stylesheet" href="{{ url('../resources/assets/css/formRegStyle.css') }}">
 
 @endsection
 @section('titulo')
@@ -37,170 +38,206 @@
 
         </div>
 
-    <!-- Main -->
-        <div class="wrapper style1">
+      <!-- Main -->
+      <div class="wrapper style1">
 
-            <div class="container">
-                <div class="row gtr-200">
-                    <div class="col-4 col-12-mobile" id="sidebar">
-                        <hr class="first" />
-                        <section>
-                            <header>
-                                <h3><a href="#">Accumsan sed penatibus</a></h3>
-                            </header>
+        <div class="container">
+            <div class="row gtr-200">
+                <div class="col-4 col-12-mobile" id="sidebar">
+                    <hr class="first" />
+                    <section>
+                        <header>
+                            <h3>Nutrición Deportiva</h3>
+                        </header>
+                        <p>
+                            La nutrición deportiva es la rama de la nutrición humana especializada en las personas que practican deporte.
+                            La nutrición deportiva no olvida los criterios básicos de alimentación equilibrada durante el día a día,
+                            para afrontar las cargas de entreno y favorecer la recuperación.
+                        </p>
+                    </section>
+                    <hr/>
+                    <section>
+                        <header>
+                            <h3>Algunos tipos de dieta...</h3><br>
+                        </header>
+
+                        <div class="row gtr-50">
+                            <div class="col-4">
+                                <a href="#" class="image fit"><img src="../resources/assets/img/proteina.png" alt="" /></a>
+                            </div>
+                            <div class="col-8">
+                                <h4>Hiperproteica</h4>
+                                <p><br>
+                                    Una dieta proteica es un método que consiste en reducir al máximo el consumo de los carbohidratos reemplazándolos
+                                    por proteínas, esto hace que el cuerpo se vea obligado a comenzar a utilizar la grasa consumida y almacenada
+                                    para obtener energía.
+                                    <a>leer mas......</a>
+                                </p>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="image fit"><img src="../resources/assets/img/keto.jpg" alt="" /></a>
+                            </div>
+                            <div class="col-8">
+                                <h4>KETO</h4>
+                                <p><br>
+                                    La dieta keto o cetogénica se centra en la ingesta de más alimentos ricos en grasas buenas y proteínas
+                                    (pescado azul, aguacate, aceite de coco y de oliva) con una restricción de la ingesta de hidratos de carbono
+                                    <a>leer mas......</a>
+                                </p>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="image fit"><img src="../resources/assets/img/detox.jpg" alt="" /></a>
+                            </div>
+                            <div class="col-8">
+                                <h4>Detox</h4>
+                                <p><br>
+                                    Un detox sirve para mejorar, optimizar y apoyar el proceso natural de desintoxicación del cuerpo al disminuir
+                                    la cantidad de toxinas que ingerimos, además de que provee el cuerpo de los nutrientes que necesita para
+                                    trabajar adecuadamente.
+                                    <a>leer mas......</a>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-8 col-12-mobile imp-mobile" id="content">
+                    <article id="main">
+                        <header>
+                            <h2>Inicia tu nueva rutina alimenticia</h2>
                             <p>
-                                Dolor sed fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                                porttitor phasellus tempus cubilia ultrices tempor sagittis  tellus ante diam nec penatibus dolor cras
-                                magna tempus feugiat veroeros.
+                                Crea tu dieta
                             </p>
-                            <footer>
-                                <a href="#" class="button">Learn More</a>
-                            </footer>
-                        </section>
-                        <hr />
-                        <section>
-                            <header>
-                                <h3><a href="#">Sed lorem etiam consequat</a></h3>
-                            </header>
+                        </header>
+                        <a href="#" class="image featured"><img src="../resources/assets/img/comida.jpg" alt="" /></a>
+                        <br>
+                        <p>
+                            A continuación se muestra un formulario en el que podra introducir sus datos y preferencias alimentacias,  en funcion de ellos se le generara
+                            un rutina de alimentacion adaptada para para usted
+                        </p>
+                        <br>
+                        <div>
                             <p>
-                                Tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                            </p>
-                            <div class="row gtr-50">
-                                <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/pic10.jpg" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Nibh sed cubilia</h4>
-                                    <p>
-                                        Amet nullam fringilla nibh nulla convallis tique ante proin.
-                                    </p>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/pic11.jpg" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Proin sed adipiscing</h4>
-                                    <p>
-                                        Amet nullam fringilla nibh nulla convallis tique ante proin.
-                                    </p>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/pic12.jpg" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Lorem feugiat magna</h4>
-                                    <p>
-                                        Amet nullam fringilla nibh nulla convallis tique ante proin.
-                                    </p>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/pic13.jpg" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Sed tempus fringilla</h4>
-                                    <p>
-                                        Amet nullam fringilla nibh nulla convallis tique ante proin.
-                                    </p>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/pic14.jpg" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Malesuada fermentum</h4>
-                                    <p>
-                                        Amet nullam fringilla nibh nulla convallis tique ante proin.
-                                    </p>
+                                <h5>Introduce tus datos</h5>
+                            </p><br><br>
+                        </div>
+                        <form method="POST" action="{{route('Rutina.creaRutina')}}" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-row m-b-55">
+                                <div class="name">Nombre dieta</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+                                        <div class="col-9">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" name="nombreIndicado">
+                                                <label class="label--desc">Nombre</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <footer>
-                                <a href="#" class="button">Magna Adipiscing</a>
-                            </footer>
-                        </section>
-                    </div>
-                    <div class="col-8 col-12-mobile imp-mobile" id="content">
-                        <article id="main">
-                            <header>
-                                <h2><a href="#">Left Sidebar</a></h2>
-                                <p>
-                                    Morbi convallis lectus malesuada sed fermentum dolore amet
-                                </p>
-                            </header>
-                            <a href="#" class="image featured"><img src="../resources/assets/img/pic06.jpg" alt="" /></a>
-                            <p>
-                                Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
-                                posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
-                                lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
-                                consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
-                                interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
-                                natoque aenean scelerisque vel lacinia mollis quam sodales congue.
-                            </p>
-                            <section>
-                                <header>
-                                    <h3>Ultrices tempor sagittis nisl</h3>
-                                </header>
-                                <p>
-                                    Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
-                                    at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-                                    feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-                                    fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
-                                    egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
-                                </p>
-                                <p>
-                                    Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
-                                    orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
-                                    ut penatibus fermentum nibh erat malesuada varius.
-                                </p>
-                            </section>
-                            <section>
-                                <header>
-                                    <h3>Augue euismod feugiat tempus</h3>
-                                </header>
-                                <p>
-                                    Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-                                    feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-                                    ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada ante
-                                    egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
-                                </p>
-                            </section>
-                        </article>
-                    </div>
-                </div>
-                <hr />
-                <div class="row">
-                    <article class="col-4 col-12-mobile special">
-                        <a href="#" class="image featured"><img src="../resources/assets/img/pic07.jpg" alt="" /></a>
-                        <header>
-                            <h3><a href="#">Gravida aliquam penatibus</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                            porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                    <article class="col-4 col-12-mobile special">
-                        <a href="#" class="image featured"><img src="../resources/assets/img/pic08.jpg" alt="" /></a>
-                        <header>
-                            <h3><a href="#">Sed quis rhoncus placerat</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                            porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                    <article class="col-4 col-12-mobile special">
-                        <a href="#" class="image featured"><img src="../resources/assets/img/pic09.jpg" alt="" /></a>
-                        <header>
-                            <h3><a href="#">Magna laoreet et aliquam</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                            porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
+                            <div class="form-row m-b-55">
+                                <div class="name">Sexo</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+                                        <div class="col-9">
+                                            <select class="form-select" aria-label="Default select example" name="sexoIndicado">
+                                                <option selected>Sexo....</option>
+                                                <option value="1">Hombre</option>
+                                                <option value="2">Mujer</option>
+                                              </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55">
+                                <div class="name">Altura</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+                                        <div class="col-9">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="number" name="alturaIndicada">
+                                                <label class="label--desc">Altura</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55">
+                                <div class="name">Peso</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+                                        <div class="col-9">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="number" name="pesoIndicado">
+                                                <label class="label--desc">Peso</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55">
+                                <div class="name">Objetivo</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+                                        <div class="col-9">
+                                            <select class="form-select" aria-label="Default select example" name="objetivoIndicado">
+                                                <option selected>Objetivo....</option>
+                                                <option value="1">Mantenimiento</option>
+                                                <option value="2">Definicion</option>
+                                                <option value="3">Perdida de peso</option>
+                                                <option value="4">Ganar masa muscular</option>
+                                              </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55">
+                                <div class="name">Actividad fisica</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+                                        <div class="col-9">
+                                            <select class="form-select" aria-label="Default select example" name="actividadIndicado">
+                                                <option selected>Indice de actividad....</option>
+                                                <option value="1">Trabajo sedentario (ej. oficina)</option>
+                                                <option value="2">Me muevo de forma de forma ocasional</option>
+                                                <option value="3">Me muevo habitualmente aunque sin una gran carga de trabajo</option>
+                                                <option value="4">Trabajo exigente fisicamente</option>
+                                              </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55">
+                                <div class="name">Dias de entreno</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+                                        <div class="col-9">
+                                            <select class="form-select" aria-label="Default select example" name="diasdIndicado">
+                                                <option selected>Nº dias...</option>
+                                                <option value="1">0</option>
+                                                <option value="2">1</option>
+                                                <option value="3">2</option>
+                                                <option value="4">3</option>
+                                                <option value="5">4</option>
+                                                <option value="6">5</option>
+                                                <option value="7">6</option>
+                                                <option value="8">7</option>
+                                              </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn--radius-2 btn--red" type="submit">Solicitar rutina de ejercicios</button>
+                            </div>
+                        </form>
                     </article>
                 </div>
             </div>
-
+            <br/>
         </div>
+
+    </div>
 </div>
 </body>
 @endsection

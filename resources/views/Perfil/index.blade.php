@@ -46,96 +46,55 @@
                         <hr class="first" />
                         <section>
                             <header>
-                                <h3><a href="#">Accumsan sed penatibus</a></h3>
+                                <img src= {{asset('../resources/assets/img/fotosPerfil')}}{{'/'.session()->get('user')->fotoPerfil }}
+                                        style="border-radius: 50%; width:150px">
                             </header>
-                            <p>
-                                Dolor sed fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                                porttitor phasellus tempus cubilia ultrices tempor sagittis  tellus ante diam nec penatibus dolor cras
-                                magna tempus feugiat veroeros.
-                            </p>
-                            <footer>
-                                <a href="#" class="button">Learn More</a>
-                            </footer>
-                        </section>
-                        <hr />
-                        <section>
-                            <header>
-                                <h3><a href="#">Sed lorem etiam consequat</a></h3>
-                            </header>
-                            <p>
-                                Tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                            </p>
-                            <div class="row gtr-50">
-                                <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/pic10.jpg" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Nibh sed cubilia</h4>
-                                    <p>
-                                        Amet nullam fringilla nibh nulla convallis tique ante proin.
-                                    </p>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/pic11.jpg" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Proin sed adipiscing</h4>
-                                    <p>
-                                        Amet nullam fringilla nibh nulla convallis tique ante proin.
-                                    </p>
-                                </div>
+                            <article id="main">
 
-                            </div>
-                            <footer>
-                                <a href="#" class="button">Magna Adipiscing</a>
-                            </footer>
+                                <h2>{{ session()->get('user')->nombre }}</h2>
+                                <p>
+                                    <h4>{{ session()->get('user')->email}}</h4>
+                                </p>
+                                <p>
+                                    <strong>País</strong>: {{ session()->get('user')->pais }} <br>
+                                    <strong>Provincia</strong>: {{ session()->get('user')->provincia }} <br>
+                                    <strong>Ciudad</strong>: {{ session()->get('user')->ciudad}} <br>
+                                </p>
+
+
+                            </article>
                         </section>
+
+
                     </div>
                     <div class="col-8 col-12-mobile imp-mobile" id="content">
                         <article id="main">
-                            <header>
-                                <h2><a href="#">{{ session()->get('user')->nombre }}</a></h2>
-                                <p>
-                                    {{ session()->get('user')->email}}
-                                </p>
-                            </header>
 
-                            <img src= {{asset('../resources/assets/img/fotosPerfil')}}{{'/'.session()->get('user')->fotoPerfil }} alt="Foto Usuario" class="float-left rounded-circle mr-2" />
+                            <div>
+                                <h3>Rutinas</h3><br>
+                                {{session()->get('user')->ejercicios}}
+                                {{session()->get('user')->id}}
 
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12 my-3 pt-3 shadow">
+                            </div>
+                            <br>
 
-                                                <p>
-                                                    {{-- <strong>Instagram</strong>: {{ session()->get('user')->profile->instagram }} <br>
-                                                    <strong>GitHub</strong>: {{ session()->get('user')->profile->github }} <br>
-                                                    <strong>Web</strong>: {{ session()->get('user')->profile->web }} --}}
-                                                </p>
-                                                <p>
-                                                    <strong>País</strong>: {{ session()->get('user')->pais }} <br>
-                                                    <strong>Provincia</strong>: {{ session()->get('user')->provincia }} <br>
-                                                    <strong>Ciudad</strong>: {{ session()->get('user')->ciudad}} <br>
-                                                </p>
-                                                <hr>
-                                                <p>
-                                                    {{-- <strong>Grupos</strong>:
-                                                    @forelse(session()->get('user')->groups as $group)
-                                                        <span class="badge badge-primary">{{ $group->name }}</span>
-                                                    @empty
-                                                        <em>No pertenece a algún grupo</em>
-                                                    @endforelse --}}
-                                                </p>
+                            <div>
+                                <h3>Dietas</h3><br>
+                                {{session()->get('user')->nutriciones}}
+                                {{session()->get('user')->id}}
+                            </div>
+                            <br>
 
-                                                <hr>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div>
+                                <h3>Historial</h3><br>
+                                {{session()->get('user')->historiales}}
+                                {{session()->get('user')->id}}
+                            </div>
 
                         </article>
                     </div>
                 </div>
-                <hr />
+
 
             </div>
 

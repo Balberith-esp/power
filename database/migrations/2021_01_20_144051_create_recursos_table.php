@@ -20,8 +20,8 @@ class CreateRecursosTable extends Migration
             $table->unsignedBigInteger('commentable_id');
             $table->string('commentable_type');
 
-            $table->unsignedBigInteger('usuario_id')->unsigned();
-            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
         });
