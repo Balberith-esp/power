@@ -16,12 +16,23 @@ class CompruebaPermisos
      */
     public function handle(Request $request, Closure $next)
     {
-        // if (session()->has('user')) {
-            return $next($request);
-        // }
-        // else{
-        //     return route('home');
-        // }
-        // abort(403);
+        $isAdmin = false;
+        if (session()->has('user')) {
+            foreach(session()->get('user')->roles as $rol){
+                if($rol->nombre === 'admin'){
+                    $isAdmin = true;
+                }
+            }
+            if($isAdmin){
+                return $next($request);
+            }else{
+                return redirect()->route('home');
+            }
+
+        }
+        else{
+            return redirect()->route('home');
+        }
+
     }
 }

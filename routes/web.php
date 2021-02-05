@@ -4,6 +4,7 @@ use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\EjercicioController;
+use App\Http\Controllers\AdministracionController;
 use Illuminate\Support\Facades\Route;
 use App\Mail\ContactoMailable;
 use App\Models\Ejercicio;
@@ -17,7 +18,7 @@ Route::get('/', function () {
 // Rutas para los index
 Route::get('/Entrenamientos', function () {
     return view('Entrenamientos.index');
-})->name('Entrenamientos.index')->middleware('compruebaPermisos');
+})->name('Entrenamientos.index');
 
 Route::get('/Nutricion', function () {
     return view('Nutricion.index');
@@ -74,3 +75,19 @@ Route::get('/enviaEmail/{tipo}', [Controller::class,'enviaEmail'])->name('Email.
 
 Route::post('/Rutina',[EjercicioContoller::class,'store'])->name('Rutina.creaRutina');
 
+// Administracion
+
+// Index
+Route::get('/Administracion', [AdministracionController::class,'index'])
+        ->name('Administracion.index')
+        ->middleware('compruebaPermisos');
+
+// Insercion datos
+Route::get('/Data', [AdministracionController::class,'insercionDatos'])
+        ->name('insercionDatos')
+        ->middleware('compruebaPermisos');
+
+// Control usuarios
+Route::get('/UserControl', [AdministracionController::class,'controlUsuarios'])
+        ->name('controlUsuarios')
+        ->middleware('compruebaPermisos');
