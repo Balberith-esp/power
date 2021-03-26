@@ -140,6 +140,19 @@
                                     </div>
                                 </div>
                                 <div class="form-row m-b-55">
+                                    <div class="name">Zona entrenamiento</div>
+                                    <div class="value">
+                                        <div class="row row-refine">
+                                            <div class="col-9">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="zonaIndicado">
+                                                    <label class="label--desc">Zona</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row m-b-55">
                                     <div class="name">Objetivo</div>
                                     <div class="value">
                                         <div class="row row-refine">

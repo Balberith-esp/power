@@ -120,7 +120,7 @@
                                 <h5>Introduce tus datos</h5>
                             </p><br><br>
                         </div>
-                        <form method="POST" action="{{route('Rutina.creaRutina')}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{route('Dieta.creaDieta')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-row m-b-55">
                                 <div class="name">Nombre dieta</div>

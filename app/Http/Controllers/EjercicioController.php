@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ejercicio;
 use Illuminate\Http\Request;
 
 class EjercicioController extends Controller
@@ -35,6 +36,18 @@ class EjercicioController extends Controller
     public function store(Request $request)
     {
         //
+
+            $entrenamiendo = new Ejercicio();
+            $entrenamiendo->nombre = $request->nombreIndicado;
+            $entrenamiendo->zona = $request->zonaIndicado;
+            $entrenamiendo->descripcion = "-";
+            $entrenamiendo->user_id =session()->get('user')->id;
+            $entrenamiendo->save();
+
+            return redirect()->route('Perfil.show');
+
+
+
     }
 
     /**

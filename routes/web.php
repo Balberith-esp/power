@@ -5,9 +5,12 @@ use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\EjercicioController;
 use App\Http\Controllers\AdministracionController;
+use App\Http\Controllers\HistorialController;
+use App\Http\Controllers\NutricionController;
 use Illuminate\Support\Facades\Route;
 use App\Mail\ContactoMailable;
 use App\Models\Ejercicio;
+use App\Models\Role;
 use Illuminate\Support\Facades\Mail;
 
 // Raiz
@@ -73,7 +76,11 @@ Route::get('/enviaEmail/{tipo}', [Controller::class,'enviaEmail'])->name('Email.
 
 // Ejercicios
 
-Route::post('/Rutina',[EjercicioContoller::class,'store'])->name('Rutina.creaRutina');
+Route::post('/Rutina',[EjercicioController::class,'store'])->name('Rutina.creaRutina');
+
+// Dietas
+
+Route::post('/Dieta',[NutricionController::class,'store'])->name('Dieta.creaDieta');
 
 // Administracion
 
@@ -91,3 +98,9 @@ Route::get('/Data', [AdministracionController::class,'insercionDatos'])
 Route::get('/UserControl', [AdministracionController::class,'controlUsuarios'])
         ->name('controlUsuarios')
         ->middleware('compruebaPermisos');
+
+
+// Historial
+
+//Registro de historiales
+Route::post('/nuevoHistorial', [HistorialController::class,'store'])->name('historial.nuevo');

@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 @section('otros_imports')
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
 @endsection
 @section('titulo')
     <title>Perfil</title>
@@ -72,23 +73,89 @@
 
                             <div>
                                 <h3>Rutinas</h3><br>
-                                {{session()->get('user')->ejercicios}}
-                                {{session()->get('user')->id}}
+                                @foreach ( session()->get('user')->ejercicios as $item)
+                                    <li>{{$item->nombre}} <button type="button" class="btn btn-info">Ver online</button>&nbsp;&nbsp;
+                                        <button type="button" class="btn btn-success">Descargar</button></li><br>
+                                @endforeach
+
+
 
                             </div>
                             <br>
 
                             <div>
                                 <h3>Dietas</h3><br>
-                                {{session()->get('user')->nutriciones}}
-                                {{session()->get('user')->id}}
+                                @foreach ( session()->get('user')->nutriciones as $item)
+                                    <li>{{$item->tipo}} <button type="button" class="btn btn-info">Ver online</button>&nbsp;&nbsp;
+                                        <button type="button" class="btn btn-success">Descargar</button></li><br>
+                                @endforeach
                             </div>
                             <br>
 
                             <div>
                                 <h3>Historial</h3><br>
-                                {{session()->get('user')->historiales}}
-                                {{session()->get('user')->id}}
+                                <script>
+                                    $(document).ready( function () {
+                                        $('#historial').DataTable();
+                                    } );
+                                </script>
+                                <table id="historial" class="display">
+                                    <thead>
+                                        <tr>
+                                            <th>Peso</th>
+                                            <th>Fecha</th>
+                                            <th>Sensacion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                         {{-- {{session()->get('user') }} --}}
+                                        @foreach ( session()->get('user')->historiales as $item)
+                                        <tr>
+                                            <td>{{$item->peso}}</td>
+                                            <td>{{$item->created_at}}</td>
+                                            <td>{{$item->sensacionMejora}}</td>
+
+                                        </tr>
+                                        @endforeach
+
+                                    </tbody>
+                                </table>
+
+                                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#agregarEntrada">
+                                    Agregar entrada
+                                </button>
+                                <div class="modal fade" id="agregarEntrada" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <form action="{{ route('historial.nuevo') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLongTitle">Agregar historico</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                  <div class="col"><label>Peso actual</label></div>
+                                                  <div class="col"><input type="number" name="pesoActual" id="pesoActual" placeholder="peso"></div>
+                                                  <div class="col"><label>Sensacion (Opcional)</label></div>
+                                                  <div class="col"><textarea name="sensaciones" id="sensaciones" placeholder="sensaciones"
+                                                        style="width: 180%; height: 150%; resize:none"></textarea></div>
+                                                </div>
+                                              </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                          <button type="submit" class="btn btn-primary">Guardar</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </form>
+                                  </div>
                             </div>
 
                         </article>

@@ -15,6 +15,7 @@ class CreateNutricionTable extends Migration
     {
         Schema::create('nutricion', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
             $table->string('tipo');
             $table->string('clasificacion');
             // $table->unsignedBigInteger('recurso_id')->unsigned();

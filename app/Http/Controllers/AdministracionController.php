@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Ejercicio;
+use App\Models\Nutricion;
 use App\Models\user;
 use Illuminate\Http\Request;
 
@@ -20,7 +23,9 @@ class AdministracionController extends Controller
     public function insercionDatos()
     {
         //
-        return view('Administracion.insercionDatos');
+        $dataEjercicios = Ejercicio::all();
+        $dataNutricion = Nutricion::all();
+        return view('Administracion.insercionDatos',['ejercicios'=>$dataEjercicios,'nutriciones'=>$dataNutricion]);
 
     }
     public function controlUsuarios()
