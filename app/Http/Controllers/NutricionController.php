@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ejercicio;
-use App\Models\Recurso;
+use App\Models\Nutricion;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
-class EjercicioController extends Controller
+class NutricionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,41 +36,14 @@ class EjercicioController extends Controller
     public function store(Request $request)
     {
         //
+        $dieta = new Nutricion();
+        $dieta->nombre = $request->nombreIndicado;
+        $dieta->tipo = '-';
+        $dieta->clasificacion = "-";
+        $dieta->user_id =session()->get('user')->id;
+        $dieta->save();
 
-            // Creacion del entrenamiento
-            $entrenamiendo = new Ejercicio();
-            $entrenamiendo->nombre = $request->nombreIndicado;
-            $entrenamiendo->zona = $request->zonaIndicado;
-            $entrenamiendo->descripcion = "-";
-            $entrenamiendo->user_id =session()->get('user')->id;
-            $entrenamiendo->save();
-
-            $vals = $request->all();
-            // Creacion del documento asociado
-            $request->session()->put('entreamiento',$vals);
-
-            $pdf = App::make('dompdf.wrapper');
-            $pdf->loadView('pdf.ejercicio');
-            $filename = time().'.'.session()->get('user')->id.'.pdf';
-
-            // Guardamos el recurso
-
-            $recurso = new Recurso();
-            $recurso->path = '../resources/assets/pdf/'.$filename;
-            $recurso->user_id = session()->get('user')->id;
-            $recurso->commentable_type = 'ejercicio';
-            $recurso->commentable_id = 1;
-            $recurso->save();
-
-
-            //Retornamos a la vista
-            return $pdf->loadView('pdf.ejercicio')->save(public_path('../resources/assets/pdf/'.$filename))->stream($filename);
-
-
-            // return redirect()->route('Perfil.show');
-
-
-
+        return redirect()->route('Perfil.show');
     }
 
     /**

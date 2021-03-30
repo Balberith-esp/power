@@ -36,6 +36,9 @@ class AdministracionController extends Controller
 
     }
 
+    public function actualizaUsuarios(){
+
+    }
     /**
      * Show the form for creating a new resource.
      *

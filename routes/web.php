@@ -7,10 +7,13 @@ use App\Http\Controllers\EjercicioController;
 use App\Http\Controllers\AdministracionController;
 use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\NutricionController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
+// use PDF;
 use App\Mail\ContactoMailable;
 use App\Models\Ejercicio;
 use App\Models\Role;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 
 // Raiz
@@ -99,8 +102,16 @@ Route::get('/UserControl', [AdministracionController::class,'controlUsuarios'])
         ->name('controlUsuarios')
         ->middleware('compruebaPermisos');
 
+Route::get('/UserControl/update',[AdministracionController::class, 'actualizaUsuarios'])->name('usuarios.aplicaCambios');
+
 
 // Historial
 
 //Registro de historiales
 Route::post('/nuevoHistorial', [HistorialController::class,'store'])->name('historial.nuevo');
+
+// PDF
+Route::get('/pdf/ver/{$item}', [PDFController::class,'muestraPDF'])->name('ejercicio.ver');
+Route::get('/pdf/descarga/', [PDFController::class,'generaPDF'])->name('ejercicio.descargar');
+
+

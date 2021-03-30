@@ -5,11 +5,21 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
 
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.7/js/responsive.bootstrap.min.js"></script>
+
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"></script>
+
 @endsection
 @section('titulo')
     <title>Control Users</title>
 @endsection
 @section('contenido')
+
+
+
 <body class="right-sidebar is-preload">
 <div id="page-wrapper">
 
@@ -49,7 +59,14 @@
                 <div class="col-8 col-12-mobile imp-mobile" id="content">
                     <script>
                         $(document).ready( function () {
-                            $('#users_table').DataTable();
+                            $('#users_table').DataTable({
+                                url:'dataTables.spanish.json'
+                            });
+
+
+                            $('#users_table').on('DOMSubtreeModified', function() {
+                                $('#btnCambios').removeAttr("disabled"); // Element(s) are now enabled.
+                        })
                         } );
                     </script>
                     <article id="main">
@@ -59,6 +76,7 @@
                             <table id="users_table" class="display">
                                 <thead>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Nombre</th>
                                         <th>Apellidos</th>
                                         <th>Email</th>
@@ -73,21 +91,22 @@
                                 <tbody>
                                     @foreach ($usuarios as $usuario)
                                     <tr>
-                                        <td>{{$usuario->nombre}}</td>
-                                        <td>{{$usuario->apellidos}}</td>
-                                        <td>{{$usuario->email}}</td>
-                                        <td>{{$usuario->pais}}</td>
-                                        <td>{{$usuario->provincia}}</td>
-                                        <td>{{$usuario->ciudad}}</td>
+                                        <td >{{$usuario->id}}</td>
+                                        <td contenteditable='true'>{{$usuario->nombre}}</td>
+                                        <td contenteditable='true'>{{$usuario->apellidos}}</td>
+                                        <td contenteditable='true'>{{$usuario->email}}</td>
+                                        <td contenteditable='true'>{{$usuario->pais}}</td>
+                                        <td contenteditable='true'>{{$usuario->provincia}}</td>
+                                        <td contenteditable='true'>{{$usuario->ciudad}}</td>
 
                                         @if($usuario->activo == 1)
-                                            <td> Activo</td>
+                                            <td contenteditable='true'> Activo</td>
                                         @else
-                                            <td>Deshabilitado</td>
+                                            <td contenteditable='true'>Deshabilitado</td>
                                         @endif
 
                                         <td>{{$usuario->fotoPerfil}}</td>
-                                        <td>
+                                        <td contenteditable='true'>
                                             @foreach ($usuario->roles as $item)
                                                 {{$item->nombre}}
                                             @endforeach
@@ -98,17 +117,19 @@
 
                                 </tbody>
                             </table>
-
-
                         </header>
 
                     </article>
+                    <a href="{{route('usuarios.aplicaCambios')}}" type="button" class="btn btn-success" disabled id="btnCambios" >Aplicar cambios</a>
+                    <a href="" type="button" class="btn btn-warning">Revertir cambios</a>
                 </div>
+
             </div>
             <br/>
         </div>
 
     </div>
 </div>
+
 </body>
 @endsection

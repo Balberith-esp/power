@@ -85,26 +85,32 @@
                                 <ul class="divided">
                                     <li>
                                         <article class="tweet">
-                                            Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
+                                            No te pierdas ninguno de nuestros post.
                                             <span class="timestamp">Hace 5 min</span>
                                         </article>
                                     </li>
                                     <li>
                                         <article class="tweet">
-                                            Hendrerit rutrum quisque.
-                                            <span class="timestamp">30 minutes ago</span>
+                                            Recuerda que puedes ser colaborador compartiendo tus post en nuestra web
+                                            <span class="timestamp">Hace 2 horas</span>
                                         </article>
                                     </li>
                                     <li>
                                         <article class="tweet">
-                                            Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
-                                            <span class="timestamp">3 hours ago</span>
+                                            Nuevo post en la web, no te lo pierdas¡
+                                            <span class="timestamp">Hace 4 horas</span>
                                         </article>
                                     </li>
                                     <li>
                                         <article class="tweet">
-                                            Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
-                                            <span class="timestamp">5 hours ago</span>
+                                            Aun no has creado tu rutina??? rellena el formulario son 2 minutos'
+                                            <span class="timestamp">Ayer</span>
+                                        </article>
+                                    </li>
+                                    <li>
+                                        <article class="tweet">
+                                            Que tal va tu entreno hoy ?
+                                            <span class="timestamp">Ayer</span>
                                         </article>
                                     </li>
                                 </ul>
@@ -119,33 +125,33 @@
                                     <li>
                                         <article class="post stub">
                                             <header>
-                                                <h3><a href="#">Nisl fermentum integer</a></h3>
+                                                <h4><a href="#">Entrenamiento espalda completo</a></h4>
                                             </header>
-                                            <span class="timestamp">3 hours ago</span>
+                                            <span class="timestamp">Hace 3 horas</span>
                                         </article>
                                     </li>
                                     <li>
                                         <article class="post stub">
                                             <header>
-                                                <h3><a href="#">Phasellus portitor lorem</a></h3>
+                                                <h4><a href="#">Lista de convocados campeonato power de europa</a></h4>
                                             </header>
-                                            <span class="timestamp">6 hours ago</span>
+                                            <span class="timestamp">Hace 6 horas</span>
                                         </article>
                                     </li>
                                     <li>
                                         <article class="post stub">
                                             <header>
-                                                <h3><a href="#">Magna tempus consequat</a></h3>
+                                                <h4><a href="#">Asi se prepara Macgregor</a></h4>
                                             </header>
-                                            <span class="timestamp">Yesterday</span>
+                                            <span class="timestamp">Ayer</span>
                                         </article>
                                     </li>
                                     <li>
                                         <article class="post stub">
                                             <header>
-                                                <h3><a href="#">Feugiat lorem ipsum</a></h3>
+                                                <h4><a href="#">Cual es el mejor metodo de volumen</a></h4>
                                             </header>
-                                            <span class="timestamp">2 days ago</span>
+                                            <span class="timestamp">Hace dos dias</span>
                                         </article>
                                     </li>
                                 </ul>
@@ -177,8 +183,8 @@
                     <hr />
                     <div class="row">
                         <div class="col-12">
-                                <section class="contact"><br><br>
-                                        <h3>Contacta con nosotros</h3>
+                                <section class="contact"><br><br><br><br>
+
                                     <ul class="icons">
                                         <li><a><i class="fab fa-twitter"></i></a></li>
                                         <li><a><i class="fab fa-facebook"></i></a></li>

@@ -115,74 +115,112 @@
             <div class="wrapper style2" id="noticias">
 
                 <article id="main" class="container special">
-                    <a href="#" class="image featured"><img src="../resources/assets/img/pic06.jpg" alt="" /></a>
                     <header>
-                        <h2><a href="#">Sed massa imperdiet magnis</a></h2>
+                        <h2>Primer analisis</h2>
                         <p>
-                            Sociis aenean eu aenean mollis mollis facilisis primis ornare penatibus aenean. Cursus ac enim
-                            pulvinar curabitur morbi convallis. Lectus malesuada sed fermentum dolore amet.
+                            Mediante el siguiente formulario te invitamos a que te conozcas un poco mejor y resuelvas las dudas que pudieras tener a la hora
+                            de plantear tus proximos objetivos.
                         </p>
                     </header>
-                    <p>
-                        Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
-                        posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
-                        sit arcu sociis. Nunc fermentum adipiscing tempor cursus nascetur adipiscing adipiscing. Primis aliquam
-                        mus lacinia lobortis phasellus suscipit. Fermentum lobortis non tristique ante proin sociis accumsan
-                        lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
-                        consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
-                        interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
-                        natoque aenean scelerisque.
-                    </p>
-                    <footer>
-                        <a href="#" class="button">Continue Reading</a>
-                    </footer>
+                    <form method="POST" action="{{route('Dieta.creaDieta')}}" enctype="multipart/form-data">
+                        @csrf
+                        <legend>Datos</legend>
+                        <div class="form-row m-b-55">
+
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="number" name="pesoIndicado">
+                                            <label class="label--desc">Peso</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="number" name="alturaIndicado">
+                                            <label class="label--desc">Altura</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="number" name="edadIndicado">
+                                            <label class="label--desc">Edad</label>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                        <div class="form-row m-b-55">
+
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="number" name="cinturaIndicado">
+                                            <label class="label--desc">Cintura</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="number" name="cuelloIndicado">
+                                            <label class="label--desc">Cuello</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="number" name="caderaIndicado">
+                                            <label class="label--desc">Cadera</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="form-row m-b-55">
+                            <div class="name">Genero</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="radio" name="rd">
+                                            <label class="label--desc">Masculino</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="radio" name="rd">
+                                            <label class="label--desc">Femenino</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <legend>Opciones</legend>
+                        <div class="form-row m-b-55">
+                            <div class="name">Petición sobre</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-9">
+                                        <select class="form-select" aria-label="Default select example" name="actividadIndicado">
+                                            <option selected>Indique busqueda....</option>
+                                            <option value="1">Calcular BMI</option>
+                                            <option value="2">Calcular peso Ideal</option>
+                                            <option value="3">Calcular macros</option>
+                                            <option value="4">Calcular porcentaje de grasa corporal</option>
+                                            <option value="5">Calcular calorias diarias </option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                            <button type="submit" class="btn btn-success" type="submit">Solicitar informacion</button>
+                        </div>
+                    </form>
                 </article>
 
             </div>
 
-        <!-- Features -->
-            {{-- <div class="wrapper style1">
-
-                <section id="features" class="container special">
-                    <header>
-                        <h2>Morbi ullamcorper et varius leo lacus</h2>
-                        <p>Ipsum volutpat consectetur orci metus consequat imperdiet duis integer semper magna.</p>
-                    </header>
-                    <div class="row">
-                        <article class="col-4 col-12-mobile special">
-                            <a href="#" class="image featured"><img src="../resources/assets/img/pic07.jpg" alt="" /></a>
-                            <header>
-                                <h3><a href="#">Gravida aliquam penatibus</a></h3>
-                            </header>
-                            <p>
-                                Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                                porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                            </p>
-                        </article>
-                        <article class="col-4 col-12-mobile special">
-                            <a href="#" class="image featured"><img src="../resources/assets/img/pic08.jpg" alt="" /></a>
-                            <header>
-                                <h3><a href="#">Sed quis rhoncus placerat</a></h3>
-                            </header>
-                            <p>
-                                Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                                porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                            </p>
-                        </article>
-                        <article class="col-4 col-12-mobile special">
-                            <a href="#" class="image featured"><img src="../resources/assets/img/pic09.jpg" alt="" /></a>
-                            <header>
-                                <h3><a href="#">Magna laoreet et aliquam</a></h3>
-                            </header>
-                            <p>
-                                Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                                porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                            </p>
-                        </article>
-                    </div>
-                </section>
-
-            </div>
-		</div> --}}
     </body>
 @endsection

@@ -74,8 +74,8 @@
                             <div>
                                 <h3>Rutinas</h3><br>
                                 @foreach ( session()->get('user')->ejercicios as $item)
-                                    <li>{{$item->nombre}} <button type="button" class="btn btn-info">Ver online</button>&nbsp;&nbsp;
-                                        <button type="button" class="btn btn-success">Descargar</button></li><br>
+                                    <li>{{$item->nombre}} <a href="{{route('ejercicio.ver',$item)}}" type="button" class="btn btn-info">Ver online</a>&nbsp;&nbsp;
+                                        <a href="{{route('ejercicio.descargar', ['data'=>$item->id, 'tipo'=>'ejercicio'])}}" type="button" class="btn btn-success">Descargar</a></li><br>
                                 @endforeach
 
 
@@ -86,8 +86,8 @@
                             <div>
                                 <h3>Dietas</h3><br>
                                 @foreach ( session()->get('user')->nutriciones as $item)
-                                    <li>{{$item->tipo}} <button type="button" class="btn btn-info">Ver online</button>&nbsp;&nbsp;
-                                        <button type="button" class="btn btn-success">Descargar</button></li><br>
+                                    <li>{{$item->tipo}} <a type="button" class="btn btn-info">Ver online</a>&nbsp;&nbsp;
+                                        <a type="button" class="btn btn-success">Descargar</a></li><br>
                                 @endforeach
                             </div>
                             <br>
@@ -143,7 +143,7 @@
                                                   <div class="col"><input type="number" name="pesoActual" id="pesoActual" placeholder="peso"></div>
                                                   <div class="col"><label>Sensacion (Opcional)</label></div>
                                                   <div class="col"><textarea name="sensaciones" id="sensaciones" placeholder="sensaciones"
-                                                        style="width: 180%; height: 150%; resize:none"></textarea></div>
+                                                        style="width: 90%; height: 75%; resize:none"></textarea></div>
                                                 </div>
                                               </div>
 
