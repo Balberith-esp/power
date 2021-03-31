@@ -111,7 +111,8 @@ Route::get('/UserControl/update',[AdministracionController::class, 'actualizaUsu
 Route::post('/nuevoHistorial', [HistorialController::class,'store'])->name('historial.nuevo');
 
 // PDF
-Route::get('/pdf/ver/{$item}', [PDFController::class,'muestraPDF'])->name('ejercicio.ver');
-Route::get('/pdf/descarga/', [PDFController::class,'generaPDF'])->name('ejercicio.descargar');
+Route::get('/pdf/descarga/dieta/{item}', [PDFController::class,'generaDietaPDF'])->name('dieta.descargar');
+
+Route::get('/pdf/descarga/ejercicio/{item}', [PDFController::class,'generaEjercicioPDF'])->name('ejercicio.descargar');
 
 

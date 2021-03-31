@@ -6,6 +6,7 @@ use App\Models\Ejercicio;
 use App\Models\Recurso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\DB;
 
 class EjercicioController extends Controller
 {
@@ -61,7 +62,7 @@ class EjercicioController extends Controller
             $recurso->path = '../resources/assets/pdf/'.$filename;
             $recurso->user_id = session()->get('user')->id;
             $recurso->commentable_type = 'ejercicio';
-            $recurso->commentable_id = 1;
+            $recurso->commentable_id = DB::table('ejercicios')->latest('created_at')->first()->id;
             $recurso->save();
 
 

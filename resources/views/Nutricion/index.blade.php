@@ -54,7 +54,48 @@
                             La nutrición deportiva no olvida los criterios básicos de alimentación equilibrada durante el día a día,
                             para afrontar las cargas de entreno y favorecer la recuperación.
                         </p>
+                        <br>
+                            <h4>Consultar valores nutricionales</h4><br><form>
+                            <input type="text" name="ingrediente" id="ingrediente" placeholder="ingrediente..."></form><br>
+                            <button  class="btn btn-success" name="buscaIngrediente" id="buscaIngrediente" onclick="busca()">Consultar</button>
+                            <div id="response"></div>
                     </section>
+                    <script>
+                        function busca(){
+                            const settings = {
+                                "async": true,
+                                "crossDomain": true,
+                                "url": "https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr="+$('#ingrediente').val(),
+                                "method": "GET",
+                                "headers": {
+                                    "x-rapidapi-key": "528bf6fa7emsh7953635f57aad0fp16a428jsncb73670b47b1",
+                                    "x-rapidapi-host": "edamam-food-and-grocery-database.p.rapidapi.com"
+                                }
+                            };
+
+                            $.ajax(settings).done(function (response) {
+
+                                if(response.parsed.length!=0){
+                                    $('#response').html(    (
+
+                                        "<br>Calorias: "+response.hints[0].food.nutrients['ENERC_KCAL'].toString()+"<br>"+
+                                        "Proteina: "+response.hints[0].food.nutrients['PROCNT'].toString()+"<br>"+
+                                        "Grases: "+response.hints[0].food.nutrients['FAT'].toString()+"<br>"+
+                                        "Carbohidratos: "+response.hints[0].food.nutrients['CHOCDF'].toString()+"<br>"+
+                                        "Grasas: "+response.hints[0].food.nutrients['FIBTG'].toString()+"<br><br>"+
+                                        "<img style='width:200px' src='"+response.hints[0].food['image'].toString()+"'/><br>"
+                                        )
+                                    );
+                                }else{
+                                    $('#response').html(    (
+                                        "No se han encontrado datos para el alimento buscado..."
+                                    )
+                                    );
+                                }
+                            });
+
+                        }
+                    </script>
                     <hr/>
                     <section>
                         <header>
@@ -65,6 +106,7 @@
                             <div class="col-4">
                                 <a href="#" class="image fit"><img src="../resources/assets/img/proteina.png" alt="" /></a>
                             </div>
+
                             <div class="col-8">
                                 <h4>Hiperproteica</h4>
                                 <p><br>

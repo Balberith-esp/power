@@ -72,8 +72,11 @@
             </div>
             {{-- Fin modal login --}}
 	<footer>
+
 			<!-- Footer -->
             <div id="footer">
+
+
                 <div class="container">
                     <div class="row">
 
@@ -180,7 +183,7 @@
                             </section>
 
                     </div>
-                    <hr />
+
                     <div class="row">
                         <div class="col-12">
                                 <section class="contact"><br><br><br><br>
@@ -203,7 +206,6 @@
                         </div>
 
                     </div>
-                </div>
             </div>
 	</footer>
 </html>

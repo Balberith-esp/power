@@ -74,8 +74,15 @@
                             <div>
                                 <h3>Rutinas</h3><br>
                                 @foreach ( session()->get('user')->ejercicios as $item)
-                                    <li>{{$item->nombre}} <a href="{{route('ejercicio.ver',$item)}}" type="button" class="btn btn-info">Ver online</a>&nbsp;&nbsp;
-                                        <a href="{{route('ejercicio.descargar', ['data'=>$item->id, 'tipo'=>'ejercicio'])}}" type="button" class="btn btn-success">Descargar</a></li><br>
+
+                                        <div class="row">
+                                            <div class="col-6"><li>{{$item->nombre}}</div>
+                                            <div class="col-3">
+                                                <a href="{{route('ejercicio.descargar', $item)}}" type="button" class="btn btn-info">Descargar</a>
+                                            </div>
+
+                                        </div><br>
+
                                 @endforeach
 
 
@@ -86,8 +93,14 @@
                             <div>
                                 <h3>Dietas</h3><br>
                                 @foreach ( session()->get('user')->nutriciones as $item)
-                                    <li>{{$item->tipo}} <a type="button" class="btn btn-info">Ver online</a>&nbsp;&nbsp;
-                                        <a type="button" class="btn btn-success">Descargar</a></li><br>
+
+                                        <div class="row">
+                                            <div class="col-6"><li>{{$item->tipo}}</div>
+                                            <div class="col-3">
+                                                <a href="{{route('dieta.descargar', $item)}}" type="button" class="btn btn-info">Descargar</a>
+                                            </div>
+                                        </div>
+                                    <br>
                                 @endforeach
                             </div>
                             <br>

@@ -110,9 +110,20 @@
 
                 </div>
             </section>
+            <div class="wrapper style2" id="noticias">
+
+                <article id="main" class="container special">
+                    <header>
+                        <h2>NEWS</h2>
+                        <p>
+                            ----------------------------------------------------------------------------------------------------------------------
+                        </p>
+                    </header>
+
+                </article>
 
         <!-- Main -->
-            <div class="wrapper style2" id="noticias">
+            <div class="wrapper style2" >
 
                 <article id="main" class="container special">
                     <header>
@@ -122,8 +133,8 @@
                             de plantear tus proximos objetivos.
                         </p>
                     </header>
-                    <form method="POST" action="{{route('Dieta.creaDieta')}}" enctype="multipart/form-data">
-                        @csrf
+                    <form>
+
                         <legend>Datos</legend>
                         <div class="form-row m-b-55">
 
@@ -131,19 +142,19 @@
                                 <div class="row row-refine">
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="pesoIndicado">
+                                            <input class="input--style-5" type="number" id="pesoIndicado">
                                             <label class="label--desc">Peso</label>
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="alturaIndicado">
+                                            <input class="input--style-5" type="number" id="alturaIndicado">
                                             <label class="label--desc">Altura</label>
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="edadIndicado">
+                                            <input class="input--style-5" type="number" id="edadIndicado">
                                             <label class="label--desc">Edad</label>
                                         </div>
                                     </div>
@@ -156,44 +167,39 @@
                                 <div class="row row-refine">
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="cinturaIndicado">
+                                            <input class="input--style-5" type="number" id="cinturaIndicado">
                                             <label class="label--desc">Cintura</label>
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="cuelloIndicado">
+                                            <input class="input--style-5" type="number" id="cuelloIndicado">
                                             <label class="label--desc">Cuello</label>
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="caderaIndicado">
+                                            <input class="input--style-5" type="number" id="caderaIndicado">
                                             <label class="label--desc">Cadera</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                        <div class="form-row m-b-55">
-                            <div class="name">Genero</div>
-                            <div class="value">
-                                <div class="row row-refine">
-                                    <div class="col-3">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="radio" name="rd">
-                                            <label class="label--desc">Masculino</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="radio" name="rd">
-                                            <label class="label--desc">Femenino</label>
+                            <div class="form-row m-b-55">
+                                <div class="name">Genero</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+                                        <div class="col-9">
+                                            <select class="form-select" aria-label="Default select example" id="generoIndicado">
+                                                <option selected>Indique busqueda....</option>
+                                                <option value="male">Masculino</option>
+                                                <option value="female">Femenino</option>
+                                              </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
                         <legend>Opciones</legend>
                         <div class="form-row m-b-55">
@@ -201,11 +207,11 @@
                             <div class="value">
                                 <div class="row row-refine">
                                     <div class="col-9">
-                                        <select class="form-select" aria-label="Default select example" name="actividadIndicado">
+                                        <select class="form-select" aria-label="Default select example" name="busquedaIndicada" id="busquedaIndicada">
                                             <option selected>Indique busqueda....</option>
                                             <option value="1">Calcular BMI</option>
                                             <option value="2">Calcular peso Ideal</option>
-                                            <option value="3">Calcular macros</option>
+                                            <option value="3" disabled>Ver macros</option>
                                             <option value="4">Calcular porcentaje de grasa corporal</option>
                                             <option value="5">Calcular calorias diarias </option>
                                           </select>
@@ -215,12 +221,186 @@
                         </div>
                         <div>
                             <br>
-                            <button type="submit" class="btn btn-success" type="submit">Solicitar informacion</button>
+                            <a type="button" class="btn btn-success" onclick="busca()">Solicitar informacion</a>
                         </div>
                     </form>
+                    <div id="response"></div>
+                    <br>
                 </article>
 
             </div>
+            <script>
+                function busca(){
 
+                    var edad = $("#edadIndicado").val();
+                    var peso = $("#pesoIndicado").val();
+                    var altura = $("#alturaIndicado").val();
+                    var cuello = $("#cuellodIndicado").val();
+                    var cintura = $("#cinturaIndicado").val();
+                    var cadera = $("#caderaIndicado").val();
+
+                    var genero = $("#generoIndicado").val();
+                    var busquedaIndicada = $("#busquedaIndicada").val();
+
+                    var settings;
+
+
+                    switch ($("#busquedaIndicada").val()){
+                        case '1':
+                            settings = {
+                                "async": true,
+                                "crossDomain": true,
+                                "url": "https://fitness-calculator.p.rapidapi.com/bmi?age="+edad+"&weight="+peso+"&height="+altura,
+                                "method": "GET",
+                                "headers": {
+                                    "x-rapidapi-key": "528bf6fa7emsh7953635f57aad0fp16a428jsncb73670b47b1",
+                                    "x-rapidapi-host": "fitness-calculator.p.rapidapi.com"
+                                }
+                            };
+                            $.ajax(settings).done(function (response) {
+
+                                if(response.length!=0){
+                                    $('#response').html(
+                                        (
+                                            "<br>BMI: "+response['bmi'].toFixed(2)+"<br>"+
+                                            "Estado: "+response['health'].toString()+"<br>"+
+                                            "Rango BMI : "+response['healthy_bmi_range'].toString()+"<br>"
+
+                                        )
+                                    );
+                                }else{
+                                    $('#response').html(    (
+                                        "Algun dato introducido no es correcto o el servicio se encuentra temporalmente inactivo"
+                                    )
+                                    );
+                                }
+
+                            });
+                            break;
+                        case '2':
+                            settings = {
+                                "async": true,
+                                "crossDomain": true,
+                                "url": "https://fitness-calculator.p.rapidapi.com/idealweight?gender="+genero+"&weight="+peso+"&height="+altura,
+                                "method": "GET",
+                                "headers": {
+                                    "x-rapidapi-key": "528bf6fa7emsh7953635f57aad0fp16a428jsncb73670b47b1",
+                                    "x-rapidapi-host": "fitness-calculator.p.rapidapi.com"
+                                }
+                            };
+                            $.ajax(settings).done(function (response) {
+
+                                if(response.length!=0){
+                                    $('#response').html(
+                                        (
+                                            "Su peso ideal aproximado es: "+response['Hamwi'].toFixed(2)+" kg.<br>"
+
+                                        )
+                                    );
+                                }else{
+                                    $('#response').html(    (
+                                        "Algun dato introducido no es correcto o el servicio se encuentra temporalmente inactivo"
+                                    )
+                                    );
+                                }
+
+                             });
+
+                            break;
+                        case '3':
+                            settings = {
+                                "async": true,
+                                "crossDomain": true,
+                                "url": "https://fitness-calculator.p.rapidapi.com/macros",
+                                "method": "GET",
+                                "headers": {
+                                    "x-rapidapi-key": "528bf6fa7emsh7953635f57aad0fp16a428jsncb73670b47b1",
+                                    "x-rapidapi-host": "fitness-calculator.p.rapidapi.com"
+                                }
+                            };
+                            $.ajax(settings).done(function (response) {
+
+
+                                if(response.length!=0){
+
+                                    $('#response').html(
+                                        (
+                                            "<br>BMI: "+JSON.stringify(response.Proteins, null, 4)+"<br>"
+                                        )
+                                    );
+                                }else{
+                                    $('#response').html(    (
+                                        "Algun dato introducido no es correcto o el servicio se encuentra temporalmente inactivo"
+                                    )
+                                    );
+                                }
+
+                                });
+                            break;
+                        case '4':
+                            settings = {
+                                "async": true,
+                                "crossDomain": true,
+                                "url": "https://fitness-calculator.p.rapidapi.com/bodyfat?age="+edad+"&gender="+genero+"&weigth="+peso+"&heigth="+altura+"&neck="+cuello+"&waist="+cadera+"&hip="+cintura,
+                                "method": "GET",
+                                "headers": {
+                                    "x-rapidapi-key": "528bf6fa7emsh7953635f57aad0fp16a428jsncb73670b47b1",
+                                    "x-rapidapi-host": "fitness-calculator.p.rapidapi.com"
+                                }
+                            };
+                            $.ajax(settings).done(function (response) {
+
+                                console.log(response)
+                                if(response.length!=0){
+
+                                    $('#response').html(
+                                        (
+                                            "Su peso porcentaje de grasa corporal aproximado es: "+response['val'].toFixed(2)+".<br>"
+                                        )
+                                    );
+                                }else{
+                                    $('#response').html(    (
+                                        "Algun dato introducido no es correcto o el servicio se encuentra temporalmente inactivo"
+                                    )
+                                    );
+                                }
+
+                                });
+                            break;
+                        case '5':
+                            settings = {
+                                "async": true,
+                                "crossDomain": true,
+                                "url": "https://fitness-calculator.p.rapidapi.com/dailycalory?age="+edad+"&gender="+genero+"&heigth="+altura+"&weigth="+peso,
+                                "method": "GET",
+                                "headers": {
+                                    "x-rapidapi-key": "528bf6fa7emsh7953635f57aad0fp16a428jsncb73670b47b1",
+                                    "x-rapidapi-host": "fitness-calculator.p.rapidapi.com"
+                                }
+                            };
+                            $.ajax(settings).done(function (response) {
+
+                                console.log(response)
+                                if(response != null){
+
+                                    $('#response').html(
+                                        // (
+                                            //
+                                        // )
+                                    );
+                                }else{
+                                    $('#response').html(    (
+                                        "Algun dato introducido no es correcto o el servicio se encuentra temporalmente inactivo"
+                                    )
+                                    );
+                                }
+
+                                });
+                            break;
+
+                    }
+
+                }
+            </script>
     </body>
 @endsection

@@ -65,7 +65,7 @@
 
 
                             $('#users_table').on('DOMSubtreeModified', function() {
-                                $('#btnCambios').removeAttr("disabled"); // Element(s) are now enabled.
+                                $('#btnCambios').removeAttr("disabled");
                         })
                         } );
                     </script>
@@ -120,7 +120,7 @@
                         </header>
 
                     </article>
-                    <a href="{{route('usuarios.aplicaCambios')}}" type="button" class="btn btn-success" disabled id="btnCambios" >Aplicar cambios</a>
+                    <a type="button" class="btn btn-success" disabled id="btnCambios" >Aplicar cambios</a>
                     <a href="" type="button" class="btn btn-warning">Revertir cambios</a>
                 </div>
 

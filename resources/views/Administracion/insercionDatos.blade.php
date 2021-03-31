@@ -54,7 +54,7 @@
                         } );
                     </script>
                     <article id="main">
-                        <header>
+
                             <h2>Insercion de datos</h2>
                             <br>
                             <table id="entrenamientos_table" class="display">
@@ -104,7 +104,7 @@
                             </table>
 
 
-                        </header>
+
 
                     </article>
                 </div>
