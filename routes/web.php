@@ -30,9 +30,11 @@ Route::get('/Nutricion', function () {
     return view('Nutricion.index');
 })->name('Nutricion.index');
 
-Route::get('/Perfil', function () {
-    return view('Perfil.index');
-})->name('Perfil.show');
+
+
+
+Route::get('/Perfil', [UsuariosController::class,'show'])->name('Perfil.show');
+
 
 
 // // // // // // // // // // // // // // // //
@@ -69,6 +71,8 @@ Route::get('/Registro', [UsuariosController::class,'index'])->name('Registro.ind
 
 // ->Crea registro
 Route::post('/Registro', [UsuariosController::class,'store'])->name('Registro.creaUsuario');
+
+Route::post('/modfica/usuario', [UsuariosController::class,'update'])->name('modificar.usuario');
 
 
 // // // // // // // // // // // // // //

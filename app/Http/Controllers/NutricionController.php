@@ -41,12 +41,14 @@ class NutricionController extends Controller
         //
         $dieta = new Nutricion();
         $dieta->nombre = $request->nombreIndicado;
-        $dieta->tipo = '-';
+        $dieta->tipo = $request->nombreIndicado;
         $dieta->clasificacion = "-";
         $dieta->user_id =session()->get('user')->id;
         $dieta->save();
 
+
         $vals = $request->all();
+
         // Creacion del documento asociado
         $request->session()->put('nutricion',$vals);
 
@@ -64,8 +66,8 @@ class NutricionController extends Controller
         $recurso->save();
 
 
-            //Retornamos a la vista
-            return $pdf->loadView('pdf.ejercicio')->save(public_path('../resources/assets/pdf/'.$filename))->stream($filename);
+        //Retornamos a la vista
+        return $pdf->loadView('pdf.nutricion')->save(public_path('../resources/assets/pdf/'.$filename))->stream($filename);
     }
 
     /**

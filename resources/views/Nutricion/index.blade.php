@@ -192,6 +192,19 @@
                                 </div>
                             </div>
                             <div class="form-row m-b-55">
+                                <div class="name">Edad</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+                                        <div class="col-9">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="number" name="edadIndicado">
+                                                <label class="label--desc">Edad</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55">
                                 <div class="name">Altura</div>
                                 <div class="value">
                                     <div class="row row-refine">

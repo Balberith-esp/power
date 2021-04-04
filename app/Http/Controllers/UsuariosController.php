@@ -75,9 +75,13 @@ class UsuariosController extends Controller
         $nuevoUsuario->fotoPerfil = $fileName;
         $nuevoUsuario->activo = 1;
         $nuevoUsuario->save();
-        $request->session()->put('user',$nuevoUsuario);
+        if(session()->get('user')->id != null){
+            return redirect('/UserControl');
+        }else{
 
-        return redirect('/enviaEmail/registro');
+            $request->session()->put('user',$nuevoUsuario);
+            return redirect('/enviaEmail/registro');
+        }
 
     }
 
@@ -87,9 +91,16 @@ class UsuariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
+        $users = User::all();
+
+        $user = $users->find(session()->get('user')->id);
+
+        session()->put('user',$user);
+
+        return view('Perfil.index');
     }
 
     /**
@@ -110,9 +121,43 @@ class UsuariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
+        $request->validate([
+            'fotoPerfil' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip',
+        ]);
+
+        $fileName = time().'.'.$request->fotoPerfil->getClientOriginalExtension();
+
+        $request->fotoPerfil->move(public_path('../resources/assets/img/fotosPerfil'), $fileName);
+
+        $usuarioEditado = User::where('email', "=", $request->email);
+        if($usuarioEditado != null){
+            if($request->active== "on"){
+                $activado = 1;
+            }else{
+                $activado = 0;
+            }
+            $usuarioEditado->update([
+                "nombre" => $request->nombre,
+                "apellidos" => $request->primerApellido." ".$request->segundoApellido,
+                "password" => Crypt::encrypt($request->contraseña),
+                "pais" => $request->pais,
+                "email" => $request->email,
+                "provincia" => $request->provincia,
+                "ciudad" => $request->ciudad,
+                "fotoPerfil" => $fileName,
+                "activo" => $activado
+            ]);
+
+            return redirect('/UserControl');
+        }else{
+            return redirect('/UserControl');
+        }
+
+
+
     }
 
     /**
