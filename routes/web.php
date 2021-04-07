@@ -101,6 +101,10 @@ Route::get('/Data', [AdministracionController::class,'insercionDatos'])
         ->name('insercionDatos')
         ->middleware('compruebaPermisos');
 
+Route::post('/guardaEjercicio',[EjercicioController::class,'guardarRegistro'])->name('Guardar.ejercicio');
+
+Route::post('/guardaNutricion',[NutricionController::class,'guardarnutricion'])->name('Guardar.nutricion');
+
 // Control usuarios
 Route::get('/UserControl', [AdministracionController::class,'controlUsuarios'])
         ->name('controlUsuarios')

@@ -102,14 +102,138 @@
 
                                 </tbody>
                             </table>
-
-
-
-
                     </article>
                 </div>
             </div>
             <br/>
+            <a type="button" class="btn btn-warning"  data-toggle="modal" data-target="#agregarRegistro">Agregar Registro</a>
+        </div>
+
+        <script>
+            $(function() {
+                $('#ejercicio').css("display", "none");
+                $('#nutricion').css("display", "none");
+                $('#selectEntrada').change(function(){
+                    if($('#selectEntrada').val() == '1') {
+                        $('#ejercicio').css("display", "block");
+                        $('#nutricion').css("display", "none");
+                    } else {
+                        $('#ejercicio').css("display", "none");
+                        $('#nutricion').css("display", "block");
+                    }
+                });
+            });
+        </script>
+        <div class="modal fade" id="agregarRegistro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="card card-5" style="margin: 5% 10%;">
+                <div class="card-heading">
+                    <h2 class="title">Nuevo Entrada</h2>
+                </div>
+                <div class="card-body">
+                    <form><div class="form-row m-b-55">
+                        <div class="name">Opción</div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-9">
+                                    <select class="form-select" aria-label="Default select example" id="selectEntrada" name="opcionEscogida">
+                                        <option selected>Escoge opción a crear...</option>
+                                        <option value="0">Nutrición</option>
+                                        <option value="1">Ejercicio</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div></form>
+                    <div id="ejercicio" style="display:none">
+                        <h3>Ejercicio</h3><br>
+                        <form method="POST" action="{{route('Guardar.ejercicio')}}" enctype="multipart/form-data">
+                            @csrf
+                                <div class="form-row m-b-55">
+                                    <div class="name">Info</div>
+                                    <div class="value">
+                                        <div class="row row-refine">
+                                            <div class="col-3">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="nombre">
+                                                    <label class="label--desc">Nombre</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="zona">
+                                                    <label class="label--desc">Zona</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="descripcion">
+                                                    <label class="label--desc">descripcion</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Archivo</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="file" name="archivo">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn--radius-2 btn--red" type="submit">Guardar</button>
+                                </div>
+
+                        </form>
+                    </div>
+                    <div id="nutricion" style="display:none">
+                        <h3>Nutrición</h3><br>
+                        <form method="POST" action="{{route('Guardar.nutricion')}}" enctype="multipart/form-data">
+                            @csrf
+                                <div class="form-row m-b-55">
+                                    <div class="name">Info</div>
+                                    <div class="value">
+                                        <div class="row row-refine">
+                                            <div class="col-3">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="nombre">
+                                                    <label class="label--desc">Nombre</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="tipo">
+                                                    <label class="label--desc">Tipo</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="clasificacion">
+                                                    <label class="label--desc">Clasificación</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Archivo</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="file" name="archivo">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn--radius-2 btn--red" type="submit">Guardar</button>
+                                </div>
+                            </form>
+                    </div>
+            </div>
+            </div>
+            </div>
         </div>
 
     </div>

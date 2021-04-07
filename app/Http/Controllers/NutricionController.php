@@ -10,25 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class NutricionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -69,49 +50,26 @@ class NutricionController extends Controller
         //Retornamos a la vista
         return $pdf->loadView('pdf.nutricion')->save(public_path('../resources/assets/pdf/'.$filename))->stream($filename);
     }
+    function guardarNutricion (Request $request){
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+            $dieta = new Nutricion();
+            $dieta->nombre = $request->nombre;
+            $dieta->tipo = $request->nombre;
+            $dieta->clasificacion = "-";
+            $dieta->user_id =1;
+            $dieta->save();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+            $fileName = time().'.'.$request->archivo->getClientOriginalExtension();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+            $request->archivo->move(public_path('../resources/assets/pdf'), $fileName);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+            $recurso = new Recurso();
+            $recurso->path = '../resources/assets/pdf/'.$fileName;
+            $recurso->user_id = 1;
+            $recurso->commentable_type = 'nutricion';
+            $recurso->commentable_id = DB::table('nutricion')->latest('created_at')->first()->id;
+            $recurso->save();
+
+            return redirect()->route('insercionDatos');
     }
 }

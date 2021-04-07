@@ -51,7 +51,12 @@ class User extends Authenticatable
     public function comments(){
         return $this->hasMany(Recurso::class);
     }
-
+    public function assignRole($role)
+    {
+        return $this->roles()->save(
+            Role::whereNombre($role)->firstOrFail()
+        );
+    }
     /**
      * The attributes that should be hidden for arrays.
      *

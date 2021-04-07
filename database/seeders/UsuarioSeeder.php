@@ -28,8 +28,8 @@ class UsuarioSeeder extends Seeder
         ),
         array(
 			'nombre' => 'Pedro',
-			'apellidos' => 'Picapiedra',
-			'email' => 'pedropicapiedra@gmail.com',
+			'apellidos' => 'Usuario',
+			'email' => 'pedro@power.com',
 			'password' => '1234',
 			'pais' => 'España',
 			'provincia' => 'Cantabria',

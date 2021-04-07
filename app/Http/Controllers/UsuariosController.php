@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -75,6 +76,7 @@ class UsuariosController extends Controller
         $nuevoUsuario->fotoPerfil = $fileName;
         $nuevoUsuario->activo = 1;
         $nuevoUsuario->save();
+        $nuevoUsuario->assignRole('user');
         if(session()->get('user')->id != null){
             return redirect('/UserControl');
         }else{
