@@ -6,6 +6,7 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Redirect;
 
 class UsuariosController extends Controller
 {
@@ -60,29 +61,35 @@ class UsuariosController extends Controller
         $request->validate([
             'fotoPerfil' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip',
         ]);
+        // return $request;
 
-        $fileName = time().'.'.$request->fotoPerfil->getClientOriginalExtension();
+        if($request->contraseña == $request->repContraseña and $request->exist == "on"){
 
-        $request->fotoPerfil->move(public_path('../resources/assets/img/fotosPerfil'), $fileName);
+            $fileName = time().'.'.$request->fotoPerfil->getClientOriginalExtension();
 
-        $nuevoUsuario = new User();
-        $nuevoUsuario->nombre = $request->nombre;
-        $nuevoUsuario->apellidos = $request->primerApellido." ".$request->segundoApellido;
-        $nuevoUsuario->password = Crypt::encrypt($request->contraseña);
-        $nuevoUsuario->pais = $request->pais;
-        $nuevoUsuario->email = $request->email;
-        $nuevoUsuario->provincia= $request->provincia;
-        $nuevoUsuario->ciudad = $request->ciudad;
-        $nuevoUsuario->fotoPerfil = $fileName;
-        $nuevoUsuario->activo = 1;
-        $nuevoUsuario->save();
-        $nuevoUsuario->assignRole('user');
-        if(session()->get('user')->id != null){
-            return redirect('/UserControl');
+            $request->fotoPerfil->move(public_path('../resources/assets/img/fotosPerfil'), $fileName);
+
+            $nuevoUsuario = new User();
+            $nuevoUsuario->nombre = $request->nombre;
+            $nuevoUsuario->apellidos = $request->primerApellido." ".$request->segundoApellido;
+            $nuevoUsuario->password = Crypt::encrypt($request->contraseña);
+            $nuevoUsuario->pais = $request->pais;
+            $nuevoUsuario->email = $request->email;
+            $nuevoUsuario->provincia= $request->provincia;
+            $nuevoUsuario->ciudad = $request->ciudad;
+            $nuevoUsuario->fotoPerfil = $fileName;
+            $nuevoUsuario->activo = 1;
+            $nuevoUsuario->save();
+            $nuevoUsuario->assignRole('user');
+            if(session()->get('user') != null){
+                return redirect('/UserControl');
+            }else{
+
+                $request->session()->put('user',$nuevoUsuario);
+                return redirect('/enviaEmail/registro');
+            }
         }else{
-
-            $request->session()->put('user',$nuevoUsuario);
-            return redirect('/enviaEmail/registro');
+            return Redirect::back()->withErrors(['Algún dato introducido no es correcto, intentelo de nuevo', 'The Message']);
         }
 
     }

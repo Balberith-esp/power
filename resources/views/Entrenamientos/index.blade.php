@@ -132,7 +132,7 @@
                                         <div class="row row-refine">
                                             <div class="col-9">
                                                 <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="nombreIndicado">
+                                                    <input class="input--style-5" type="text" name="nombreIndicado" required>
                                                     <label class="label--desc">Nombre</label>
                                                 </div>
                                             </div>
@@ -145,7 +145,7 @@
                                         <div class="row row-refine">
                                             <div class="col-9">
                                                 <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="zonaIndicado">
+                                                    <input class="input--style-5" type="text" name="zonaIndicado" required>
                                                     <label class="label--desc">Zona</label>
                                                 </div>
                                             </div>
@@ -157,8 +157,8 @@
                                     <div class="value">
                                         <div class="row row-refine">
                                             <div class="col-9">
-                                                <select class="form-select" aria-label="Default select example" name="objetivoIndicado">
-                                                    <option selected>Objetivo buscado....</option>
+                                                <select class="form-select" aria-label="Default select example" name="objetivoIndicado" required>
+                                                    <option selected value="1">Objetivo buscado....</option>
                                                     <option value="1">Fuerza</option>
                                                     <option value="2">Resistencia</option>
                                                     <option value="3">Volumen</option>
@@ -175,8 +175,8 @@
                                     <div class="value">
                                         <div class="row row-refine">
                                             <div class="col-9">
-                                                <select class="form-select" aria-label="Default select example" name="nivelIndicado">
-                                                    <option selected>Nivel....</option>
+                                                <select class="form-select" aria-label="Default select example" name="nivelIndicado" required>
+                                                    <option selected value="1">Nivel....</option>
                                                     <option value="1">Novato</option>
                                                     <option value="2">Principiante</option>
                                                     <option value="3">Intermedio</option>
@@ -192,8 +192,8 @@
                                     <div class="value">
                                         <div class="row row-refine">
                                             <div class="col-9">
-                                                <select class="form-select" aria-label="Default select example" name="tiempoIndicado">
-                                                    <option selected>Duración....</option>
+                                                <select class="form-select" aria-label="Default select example" name="tiempoIndicado" required>
+                                                    <option selected value="1">Duración....</option>
                                                     <option value="1">0-30 min</option>
                                                     <option value="2">30-60 min</option>
                                                     <option value="3">60-90 min</option>
@@ -204,7 +204,12 @@
                                     </div>
                                 </div>
                                 <div>
+                                    @if (session()->has('user'))
                                     <button class="btn btn--radius-2 btn--red" type="submit">Solicitar rutina de ejercicios</button>
+                                    @else
+                                        <button class="btn btn--radius-2 btn--red" type="submit" disabled>Solicitar rutina de ejercicios</button>
+                                        <p>Debe estar registrado para realizar rutinas, a que esperas es totalmente gratis, <a href="{{route('Registro.index')}}" class="text-info"> Registrate</a>.</p>
+                                    @endif
                                 </div>
                             </form>
                         </article>

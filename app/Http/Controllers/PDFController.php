@@ -14,11 +14,14 @@ class PDFController extends Controller
 
     public function generaEjercicioPDF ($item){
 
+        // return $item;
         $filename = Recurso::select('path')
                             ->where('commentable_id', '=', $item)
                             ->where('commentable_type', '=', 'ejercicio' )->get();
 
+
         $filename = (string)$filename[0]->path;
+
         $fileinfo = pathinfo($filename);
         $sendname = $fileinfo['filename'] . '.' . strtoupper($fileinfo['extension']);
 

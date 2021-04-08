@@ -60,20 +60,20 @@ class RecursoSeeder extends Seeder
         ),
         array(
             'path' => '../resources/assets/pdf/1617818120.1.pdf',
-            'commentable_id' => 1,
+            'commentable_id' => 3,
             'commentable_type' => 'ejercicio',
             'user_id' => 1,
         ),
         // Ejercicios segundo usuario
 		array(
             'path' => '../resources/assets/pdf/1617818330.2.pdf',
-            'commentable_id' => 2,
+            'commentable_id' => 4,
             'commentable_type' => 'ejercicio',
             'user_id' => 2,
         ),
         array(
             'path' => '../resources/assets/pdf/1617818374.2.pdf',
-            'commentable_id' => 1,
+            'commentable_id' => 5,
             'commentable_type' => 'ejercicio',
             'user_id' => 2,
         ),

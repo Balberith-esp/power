@@ -27,19 +27,19 @@ class NutricionSeeder extends Seeder
         ),
         array(
             'nombre' => 'Dieta semanal',
-			'tipo' => 'estandar',
+			'tipo' => 'Estandar',
 			'clasificacion' => '8',
 			'user_id' => '2',
         ),
         array(
             'nombre' => 'Dieta verano',
-			'tipo' => 'temporada',
+			'tipo' => 'Temporada',
 			'clasificacion' => '4',
 			'user_id' => '2',
         ),
         array(
             'nombre' => 'Dieta alto rendimiento',
-			'tipo' => 'deportiva',
+			'tipo' => 'Deportiva',
 			'clasificacion' => '8',
 			'user_id' => '2',
         ),

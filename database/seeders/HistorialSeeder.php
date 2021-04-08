@@ -21,9 +21,45 @@ class HistorialSeeder extends Seeder
         ),
         array(
 			'peso' => 79.30,
-			'created_at' => '2021-02-26 16:17:05',
+			'created_at' => '2021-04-26 16:05:25',
 			'sensacionMejora' => 'Sensacion muy buena',
 			'user_id' => '1',
+        ),
+        array(
+			'peso' => 80.20,
+			'created_at' => '2021-05-26 16:20:42',
+			'sensacionMejora' => 'Cambios notables',
+			'user_id' => '1',
+        ),
+        array(
+			'peso' => 81.30,
+			'created_at' => '2021-02-26 16:22:00',
+			'sensacionMejora' => 'Buen estado',
+			'user_id' => '1',
+        ),
+		array(
+			'peso' => 78.20,
+			'created_at' => '2021-03-26 16:17:05',
+			'sensacionMejora' => 'Sensacion positiva',
+			'user_id' => '2',
+        ),
+        array(
+			'peso' => 79.30,
+			'created_at' => '2021-04-26 16:05:25',
+			'sensacionMejora' => 'Sensacion muy buena',
+			'user_id' => '2',
+        ),
+        array(
+			'peso' => 80.20,
+			'created_at' => '2021-05-26 16:20:42',
+			'sensacionMejora' => 'Cambios notables',
+			'user_id' => '2',
+        ),
+        array(
+			'peso' => 81.30,
+			'created_at' => '2021-02-26 16:22:00',
+			'sensacionMejora' => 'Buen estado',
+			'user_id' => '2',
         ),
     );
     public function run()

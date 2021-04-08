@@ -170,7 +170,7 @@
                                     <div class="row row-refine">
                                         <div class="col-9">
                                             <div class="input-group-desc">
-                                                <input class="input--style-5" type="text" name="nombreIndicado">
+                                                <input class="input--style-5" type="text" required name="nombreIndicado">
                                                 <label class="label--desc">Nombre</label>
                                             </div>
                                         </div>
@@ -182,8 +182,8 @@
                                 <div class="value">
                                     <div class="row row-refine">
                                         <div class="col-9">
-                                            <select class="form-select" aria-label="Default select example" name="sexoIndicado">
-                                                <option selected>Sexo....</option>
+                                            <select class="form-select" aria-label="Default select example" name="sexoIndicado" required>
+                                                <option selected value="1">Sexo....</option>
                                                 <option value="1">Hombre</option>
                                                 <option value="2">Mujer</option>
                                               </select>
@@ -197,7 +197,7 @@
                                     <div class="row row-refine">
                                         <div class="col-9">
                                             <div class="input-group-desc">
-                                                <input class="input--style-5" type="number" name="edadIndicado">
+                                                <input class="input--style-5" type="number" name="edadIndicado" required min="10">
                                                 <label class="label--desc">Edad</label>
                                             </div>
                                         </div>
@@ -210,7 +210,7 @@
                                     <div class="row row-refine">
                                         <div class="col-9">
                                             <div class="input-group-desc">
-                                                <input class="input--style-5" type="number" name="alturaIndicada">
+                                                <input class="input--style-5" type="number" name="alturaIndicada" required min="120">
                                                 <label class="label--desc">Altura</label>
                                             </div>
                                         </div>
@@ -223,7 +223,7 @@
                                     <div class="row row-refine">
                                         <div class="col-9">
                                             <div class="input-group-desc">
-                                                <input class="input--style-5" type="number" name="pesoIndicado">
+                                                <input class="input--style-5" type="number" name="pesoIndicado" required min="40">
                                                 <label class="label--desc">Peso</label>
                                             </div>
                                         </div>
@@ -235,8 +235,8 @@
                                 <div class="value">
                                     <div class="row row-refine">
                                         <div class="col-9">
-                                            <select class="form-select" aria-label="Default select example" name="objetivoIndicado">
-                                                <option selected>Objetivo....</option>
+                                            <select class="form-select" aria-label="Default select example" name="objetivoIndicado" required>
+                                                <option selected value="1">Objetivo....</option>
                                                 <option value="1">Mantenimiento</option>
                                                 <option value="2">Definicion</option>
                                                 <option value="3">Perdida de peso</option>
@@ -251,8 +251,8 @@
                                 <div class="value">
                                     <div class="row row-refine">
                                         <div class="col-9">
-                                            <select class="form-select" aria-label="Default select example" name="actividadIndicado">
-                                                <option selected>Indice de actividad....</option>
+                                            <select class="form-select" aria-label="Default select example" name="actividadIndicado" required>
+                                                <option selected value="1">Indice de actividad....</option>
                                                 <option value="1">Trabajo sedentario (ej. oficina)</option>
                                                 <option value="2">Me muevo de forma de forma ocasional</option>
                                                 <option value="3">Me muevo habitualmente aunque sin una gran carga de trabajo</option>
@@ -267,8 +267,8 @@
                                 <div class="value">
                                     <div class="row row-refine">
                                         <div class="col-9">
-                                            <select class="form-select" aria-label="Default select example" name="diasdIndicado">
-                                                <option selected>Nº dias...</option>
+                                            <select class="form-select" aria-label="Default select example" name="diasdIndicado" required>
+                                                <option selected value="1">Nº dias...</option>
                                                 <option value="1">0</option>
                                                 <option value="2">1</option>
                                                 <option value="3">2</option>
@@ -283,7 +283,13 @@
                                 </div>
                             </div>
                             <div>
-                                <button class="btn btn--radius-2 btn--red" type="submit">Solicitar rutina de ejercicios</button>
+                                @if (session()->has('user'))
+                                    <button class="btn btn--radius-2 btn--red" type="submit">Solicitar rutina de ejercicios</button>
+                                @else
+                                    <button class="btn btn--radius-2 btn--red" type="submit" disabled>Solicitar rutina de ejercicios</button>
+                                    <p>Debe estar registrado para realizar rutinas, a que esperas es totalmente gratis, <a href="{{route('Registro.index')}}" class="text-info"> Registrate</a>.</p>
+                                @endif
+
                             </div>
                         </form>
                     </article>

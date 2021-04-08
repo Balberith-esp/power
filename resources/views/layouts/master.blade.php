@@ -55,10 +55,10 @@
                         <form action="{{route('Login.compruebaUsuario')}}" method="post">
                             @csrf
                           <div class="form-group">
-                            <input type="email" class="form-control" name="email" placeholder="Dirección de Email...">
+                            <input type="email" class="form-control" name="email" placeholder="Dirección de Email..." required>
                           </div>
                           <div class="form-group">
-                            <input type="password" class="form-control"  name="password" placeholder="Contraseña...">
+                            <input type="password" class="form-control"  name="password" placeholder="Contraseña..." required>
                           </div>
                           <button type="submit" class="btn btn-info btn-block btn-round">Inicio</button>
                         </form>

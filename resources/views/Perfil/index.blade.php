@@ -95,7 +95,7 @@
                                 @foreach ( session()->get('user')->nutriciones as $item)
 
                                         <div class="row">
-                                            <div class="col-6"><li>{{$item->tipo}}</div>
+                                            <div class="col-6"><li>{{$item->nombre}}</div>
                                             <div class="col-3">
                                                 <a href="{{route('dieta.descargar', $item)}}" type="button" class="btn btn-info">Descargar</a>
                                             </div>
@@ -153,9 +153,9 @@
                                             <div class="container">
                                                 <div class="row">
                                                   <div class="col"><label>Peso actual</label></div>
-                                                  <div class="col"><input type="number" name="pesoActual" id="pesoActual" placeholder="peso"></div>
-                                                  <div class="col"><label>Sensacion (Opcional)</label></div>
-                                                  <div class="col"><textarea name="sensaciones" id="sensaciones" placeholder="sensaciones"
+                                                  <div class="col"><input type="number" name="pesoActual" id="pesoActual" placeholder="peso" required min="40"></div>
+                                                  <div class="col"><label>Sensacion</label></div>
+                                                  <div class="col"><textarea name="sensaciones" id="sensaciones" placeholder="sensaciones" required
                                                         style="width: 90%; height: 75%; resize:none"></textarea></div>
                                                 </div>
                                               </div>

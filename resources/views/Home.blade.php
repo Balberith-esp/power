@@ -110,18 +110,6 @@
 
                 </div>
             </section>
-            <div class="wrapper style2" id="noticias">
-
-                <article id="main" class="container special">
-                    <header>
-                        <h2>NEWS</h2>
-                        <p>
-                            ----------------------------------------------------------------------------------------------------------------------
-                        </p>
-                    </header>
-
-                </article>
-
         <!-- Main -->
             <div class="wrapper style2" >
 
@@ -142,19 +130,19 @@
                                 <div class="row row-refine">
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" id="pesoIndicado">
+                                            <input class="input--style-5" type="number" id="pesoIndicado" required min="40" max="200">
                                             <label class="label--desc">Peso</label>
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" id="alturaIndicado">
+                                            <input class="input--style-5" type="number" id="alturaIndicado" required min="40" max="200">
                                             <label class="label--desc">Altura</label>
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" id="edadIndicado">
+                                            <input class="input--style-5" type="number" id="edadIndicado" required min="40" max="200">
                                             <label class="label--desc">Edad</label>
                                         </div>
                                     </div>
@@ -167,19 +155,19 @@
                                 <div class="row row-refine">
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" id="cinturaIndicado">
+                                            <input class="input--style-5" type="number" id="cinturaIndicado" required min="40" max="200">
                                             <label class="label--desc">Cintura</label>
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" id="cuelloIndicado">
+                                            <input class="input--style-5" type="number" id="cuelloIndicado" required min="40" max="200">
                                             <label class="label--desc">Cuello</label>
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" id="caderaIndicado">
+                                            <input class="input--style-5" type="number" id="caderaIndicado" required min="40" max="200">
                                             <label class="label--desc">Cadera</label>
                                         </div>
                                     </div>
@@ -191,8 +179,8 @@
                                 <div class="value">
                                     <div class="row row-refine">
                                         <div class="col-9">
-                                            <select class="form-select" aria-label="Default select example" id="generoIndicado">
-                                                <option selected>Indique busqueda....</option>
+                                            <select class="form-select" aria-label="Default select example" id="generoIndicado" >
+                                                <option selected value="male">Indique busqueda....</option>
                                                 <option value="male">Masculino</option>
                                                 <option value="female">Femenino</option>
                                               </select>
@@ -208,7 +196,7 @@
                                 <div class="row row-refine">
                                     <div class="col-9">
                                         <select class="form-select" aria-label="Default select example" name="busquedaIndicada" id="busquedaIndicada">
-                                            <option selected>Indique busqueda....</option>
+                                            <option selected value="1">Indique busqueda....</option>
                                             <option value="1">Calcular BMI</option>
                                             <option value="2">Calcular peso Ideal</option>
                                             <option value="3" disabled>Ver macros</option>
@@ -402,5 +390,33 @@
 
                 }
             </script>
+                        <div class="wrapper style2" id="noticias">
+
+                            <article id="main" class="container special">
+                                <header>
+                                    <h1><em>Noticias</em><h1>
+                                    <h2>Gana músculo y pierde peso sin salir de casa: 8 ejercicios básicos para transformar el cuerpo</h2>
+                                    <p>
+                                        Nuestro hogar se ha convertido en un improvisado campo de entrenamiento como consecuencia del momento de excepción que vivimos por la irrupción del SARS-CoV-2 y cada vez son más quienes completan sus rutinas físicas en casa, un escenario ideal si además tenemos en cuenta que nuestro ajetreado estilo de vida puede limitar el tiempo que podemos dedicar al ejercicio físico.
+                                        Por ello, conviene remarcar que hay muchas forma de sacar el máximo rendimiento a nuestra rutina si utilizamo el material adecuado. Es el caso de las bandas elásticas o de resistencia, una alternativa al entrenamiento tradicional con mancuernas muy eficaz con importantes beneficios asociados.
+                                    </p>
+                                </header>
+                                <header>
+                                    <h2>Cómo activar el core con 5 ejercicios básicos (y una rutina completa)</h2>
+                                    <p>
+                                        Volver a realizar ejercicio tras una lesión, una convalecencia, recuperar el tiempo perdido, o simplemente intentar volver a tu mejor versión, es algo que todos debemos tener en mente. Ahora mismo, con todo lo que nos rodea, más que nunca el deporte es salud.
+                                        Y ya realizando ejercicio en casa, entrenando en la calle, o acudiendo a tu gimnasio, que el eje del cuerpo esté fuerte es más que deseable. Preguntamos para el Diario AS a Alberto Sancho Díaz, Fisioterapeuta y miembro de Doctoralia.
+                                    </p>
+                                </header>
+                                <header>
+                                    <h2>Rutina completa para activarte tras un periodo sin hacer nada</h2>
+                                    <p>
+                                        No sólo el coronavirus está pasando factura a nuestra mente, nuestras rutinas, ir al trabajo. Durante una semana la nieve en gran parte de España no nos ha dejado hacer vida normal, y el hielo posterior menos, y es posible también que muchos de vosotros estéis en una cuarentena, o confinados de manera preventiva.
+                                        Y dado que la actividad física es salud, hoy os vamos a enseñar una rutina para activar la musculatura sentados, ejercicios sencillos en vídeo que podéis hacer cada día para que el cuerpo no se resienta más de la cuenta, y otra rutina completa de ejercicios para estar más en forma.
+                                    </p>
+                                </header>
+
+                            </article>
+                        </div>
     </body>
 @endsection

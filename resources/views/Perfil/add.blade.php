@@ -38,6 +38,9 @@
         </div>
         {{-- <div class="page-wrapper bg-gra-03 p-t-45 p-b-50"> --}}
             <div class="wrapper wrapper--w790">
+                @if($errors->any())
+                    <h4>{{$errors->first()}}</h4>
+                @endif
         <div class="card card-5">
             <div class="card-heading">
                 <h2 class="title">Nuevo usuario</h2>
