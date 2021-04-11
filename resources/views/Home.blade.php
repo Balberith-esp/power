@@ -200,8 +200,8 @@
                                             <option value="1">Calcular BMI</option>
                                             <option value="2">Calcular peso Ideal</option>
                                             <option value="3" disabled>Ver macros</option>
-                                            <option value="4">Calcular porcentaje de grasa corporal</option>
-                                            <option value="5">Calcular calorias diarias </option>
+                                            <option value="4" disabled style="background-color:#ef5350">Calcular porcentaje de grasa corporal</option>
+                                            <option value="5" disabled style="background-color:#ef5350">Calcular calorias diarias </option>
                                           </select>
                                     </div>
                                 </div>

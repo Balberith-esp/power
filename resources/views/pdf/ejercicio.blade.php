@@ -145,25 +145,71 @@
             <li><?php echo $recomendacionEstado ?></li>
             <li><?php echo $recomendacionTiempo ?></li>
         </ul><br><br>
-        <img src="https://ae01.alicdn.com/kf/HTB1DCWtX42rK1RkSnhJq6ykdpXaa/Eat-Sleep-Gym-Repeat-Stickers-vinilo-dise-o-de-arte-pegatinas-para-carrocer-a-de-coche.jpg"
-                style="margin:20px 150px; width: 350px; height: 250px;">
-  </body>
-  <footer>
-    <table>
-      <tr>
-        <td>
-            <p class="izq">
-              Power.com
+
+        <h4>Ejercicios recomendados para las zonas indicadas</h4>
+    <body>
+    </body>
+    <footer>
+      <table>
+        <tr>
+          <td>
+              <p class="izq">
+                Power.com
+              </p>
+          </td>
+          <td>
+            <p class="page">
+              P
             </p>
-        </td>
-        <td>
-          <p class="page">
-            P
-          </p>
-        </td>
-      </tr>
-    </table>
-  </footer>
+          </td>
+        </tr>
+      </table>
+    </footer>
+
+    <?php
+    // {{-- Entrenamiento brazo --}}
+        if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'brazo')) {
+            echo '<img src="https://i.pinimg.com/originals/d1/41/cd/d141cd12dc024d15aef469d762ebe6f6.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Brazo</h3><br>';
+        }
+    // {{-- Entrenamiento pierna --}}
+    if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'pierna')) {
+            echo '<img src="https://i.pinimg.com/originals/1d/9b/aa/1d9baac826099dfda5cfd91256e15387.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pierna</h3><br>';
+        }
+    // {{-- Entrenamiento espalda --}}
+    if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'espalda')) {
+            echo '<img src="https://i.pinimg.com/originals/be/bc/89/bebc89e859bac084a046c8d54d6a00ba.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Espalda</h3><br>';
+        }
+    // {{-- Entrenamiento hombro --}}
+    if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'hombro')) {
+            echo '<img src="https://i.pinimg.com/originals/fe/45/c0/fe45c0765fcd577ad51ca843f0526cd6.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Hombro</h3><br>';
+        }
+    // {{-- Entrenamiento pecho --}}
+    if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'pecho')) {
+            echo '<img src="https://i.pinimg.com/originals/47/96/86/4796864e3baaf4a575a8c6059c1a414d.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pecho</h3><br>';
+        }
+    // {{-- Entrenamiento abdo --}}
+    if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'abdo')) {
+            echo '<img src="https://cdn.statically.io/img/interlife.es/wp-content/uploads/2020/08/rutina-abdominales-herbalife.png?quality=100&f=auto<h3>Entrenamiento Abdomen</h3><br="" style=" height:650px; width:500px"><br>';
+        }
+
+    // {{-- Entrenamiento All --}}
+    if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'full')) {
+            echo '<img src="https://i.pinimg.com/originals/d1/41/cd/d141cd12dc024d15aef469d762ebe6f6.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Brazo</h3><br>';
+            echo '<img src="https://i.pinimg.com/originals/1d/9b/aa/1d9baac826099dfda5cfd91256e15387.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pierna</h3><br>';
+            echo '<img src="https://i.pinimg.com/originals/fe/45/c0/fe45c0765fcd577ad51ca843f0526cd6.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Hombro</h3><br>';
+            echo '<img src="https://i.pinimg.com/originals/47/96/86/4796864e3baaf4a575a8c6059c1a414d.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pecho</h3><br>';
+            echo '<img src="https://buscadordeportivo.files.wordpress.com/2015/11/abs.jpg?w=640" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Abdomen</h3><br<>';
+            echo '<img src="https://i.pinimg.com/originals/be/bc/89/bebc89e859bac084a046c8d54d6a00ba.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Espalda</h3><br>';
+
+
+
+
+
+        }
+
+    ?>
+
+
 
 </body>
 </html>

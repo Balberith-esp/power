@@ -190,11 +190,13 @@
         ?>
         </p>
     <hr><hr>
+    <img src="https://i.pinimg.com/originals/50/7b/38/507b38d97eae87e090a07699d1487130.jpg" style="width: 650px; height:500px; margin-top:55px">
     <H4>Recomendaciones:<h4>
         <ul>
             <li><?php echo $recomendacionObjetivo ?></li>
             <li><?php echo $recomendacionActividad ?></li>
-        </ul>
+        </ul><br><br>
+
     </body>
     <footer>
       <table>
