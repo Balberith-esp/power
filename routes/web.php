@@ -8,6 +8,7 @@ use App\Http\Controllers\AdministracionController;
 use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\NutricionController;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\NoticiasController;
 use Illuminate\Support\Facades\Route;
 // use PDF;
 use App\Mail\ContactoMailable;
@@ -30,7 +31,17 @@ Route::get('/Nutricion', function () {
     return view('Nutricion.index');
 })->name('Nutricion.index');
 
+// Route::get('/Noticias', function () {
+//     return view('Noticias.index');
+// })->name('Noticias.index');
 
+// Route::get('/Foro', function () {
+//     return view('Foro.index');
+// })->name('Foro.index');
+
+
+Route::get('/Noticias', [NoticiasController::class,'index'])->name('Noticias.index');
+Route::get('/Foro', [ForoController::class,'index'])->name('Foro.index');
 
 
 Route::get('/Perfil', [UsuariosController::class,'show'])->name('Perfil.show');
@@ -124,3 +135,4 @@ Route::get('/pdf/descarga/dieta/{item}', [PDFController::class,'generaDietaPDF']
 Route::get('/pdf/descarga/ejercicio/{item}', [PDFController::class,'generaEjercicioPDF'])->name('ejercicio.descargar');
 
 
+Route::post('/nuevaNoticia', [NoticiasController::class,'store'])->name('Noticia.nueva');

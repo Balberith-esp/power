@@ -75,137 +75,23 @@
 
 			<!-- Footer -->
             <div id="footer">
+            
+                <section class="contact"><br><br><br><br>
 
+                    <ul class="icons">
+                        <li><a><i class="fab fa-twitter"></i></a></li>
+                        <li><a><i class="fab fa-facebook"></i></a></li>
+                        <li><a><i class="fab fa-instagram"></i></a></li>
+                        <li><a><i class="fab fa-linkedin"></i></a></li>
+                        <li><a><i class="fab fa-pinterest"></i></a></li>
+                        <li><a><i class="fab fa-reddit"></i></a></li>
+                    </ul>
+                </section>
+                <div class="copyright">
+                    <ul class="menu">
+                        <li>&copy; Todos los derechos reservados.</li>
+                    </ul>
+                </div>
 
-                <div class="container">
-                    <div class="row">
-
-                        <!-- Tweets -->
-                            <section class="col-4 col-12-mobile">
-                                <header>
-                                    <h2 class="icon brands fa-twitter circled"><i class="fab fa-twitter"></i><span class="label">Tweets</span></h2>
-                                </header>
-                                <ul class="divided">
-                                    <li>
-                                        <article class="tweet">
-                                            No te pierdas ninguno de nuestros post.
-                                            <span class="timestamp">Hace 5 min</span>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="tweet">
-                                            Recuerda que puedes ser colaborador compartiendo tus post en nuestra web
-                                            <span class="timestamp">Hace 2 horas</span>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="tweet">
-                                            Nuevo post en la web, no te lo pierdas¡
-                                            <span class="timestamp">Hace 4 horas</span>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="tweet">
-                                            Aun no has creado tu rutina??? rellena el formulario son 2 minutos'
-                                            <span class="timestamp">Ayer</span>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="tweet">
-                                            Que tal va tu entreno hoy ?
-                                            <span class="timestamp">Ayer</span>
-                                        </article>
-                                    </li>
-                                </ul>
-                            </section>
-
-                        <!-- Posts -->
-                            <section class="col-4 col-12-mobile">
-                                <header>
-                                    <h2 class="icon solid fa-file circled"><i class="fas fa-newspaper"></i><span class="label">Posts</span></h2>
-                                </header>
-                                <ul class="divided">
-                                    <li>
-                                        <article class="post stub">
-                                            <header>
-                                                <h4><a href="#">Entrenamiento espalda completo</a></h4>
-                                            </header>
-                                            <span class="timestamp">Hace 3 horas</span>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="post stub">
-                                            <header>
-                                                <h4><a href="#">Lista de convocados campeonato power de europa</a></h4>
-                                            </header>
-                                            <span class="timestamp">Hace 6 horas</span>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="post stub">
-                                            <header>
-                                                <h4><a href="#">Asi se prepara Macgregor</a></h4>
-                                            </header>
-                                            <span class="timestamp">Ayer</span>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="post stub">
-                                            <header>
-                                                <h4><a href="#">Cual es el mejor metodo de volumen</a></h4>
-                                            </header>
-                                            <span class="timestamp">Hace dos dias</span>
-                                        </article>
-                                    </li>
-                                </ul>
-                            </section>
-
-                        <!-- Photos -->
-                            <section class="col-4 col-12-mobile">
-                                <header>
-                                    <h2 class="icon solid fa-camera circled"><i class="fab fa-instagram"></i><span class="label">Photos</span></h2>
-                                </header>
-                                <div class="row gtr-25">
-                                    <div class="col-6">
-                                        <a href="#" class="image fit"><img src="../resources/assets/img/instagram1.jpg" alt="" /></a>
-                                    </div>
-                                    <div class="col-6">
-                                        <a href="#" class="image fit"><img src="../resources/assets/img/instagram2.jpg" alt="" /></a>
-                                    </div>
-                                    <div class="col-6">
-                                        <a href="#" class="image fit"><img src="../resources/assets/img/instagram3.jpg" alt="" /></a>
-                                    </div>
-                                    <div class="col-6">
-                                        <a href="#" class="image fit"><img src="../resources/assets/img/instagram4.jpg" alt="" /></a>
-
-                                    </div>
-                                </div>
-                            </section>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                                <section class="contact"><br><br><br><br>
-
-                                    <ul class="icons">
-                                        <li><a><i class="fab fa-twitter"></i></a></li>
-                                        <li><a><i class="fab fa-facebook"></i></a></li>
-                                        <li><a><i class="fab fa-instagram"></i></a></li>
-                                        <li><a><i class="fab fa-linkedin"></i></a></li>
-                                        <li><a><i class="fab fa-pinterest"></i></a></li>
-                                        <li><a><i class="fab fa-reddit"></i></a></li>
-                                    </ul>
-                                </section>
-                                <div class="copyright">
-                                    <ul class="menu">
-                                        <li>&copy; Todos los derechos reservados.</li>
-                                    </ul>
-                                </div>
-
-                        </div>
-
-                    </div>
-            </div>
 	</footer>
 </html>

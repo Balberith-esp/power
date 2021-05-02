@@ -25,6 +25,8 @@
             <nav id="nav">
                     <ul>
                         <li><a href="{{route('home')}}">Inicio</a></li>
+                        <li><a href="{{route('Foro.index')}}">Foro</a></li>
+						<li><a href="Noticias.index">Noticias</a></li>
                         <li><a href="{{route('Entrenamientos.index')}}">Entrenamientos</a></li>
                         <li><a href="{{route('Nutricion.index')}}">Nutricion</a></li>
                         @if (session()->has('user'))
