@@ -9,6 +9,7 @@ use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\NutricionController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\NoticiasController;
+use App\Http\Controllers\ForoController;
 use Illuminate\Support\Facades\Route;
 // use PDF;
 use App\Mail\ContactoMailable;
@@ -136,3 +137,7 @@ Route::get('/pdf/descarga/ejercicio/{item}', [PDFController::class,'generaEjerci
 
 
 Route::post('/nuevaNoticia', [NoticiasController::class,'store'])->name('Noticia.nueva');
+
+Route::post('/nuevoPost', [ForoController::class,'store'])->name('Post.nuevo');
+
+Route::get('/pdf/descarga/post/{item}', [PDFController::class,'generaPostPDF'])->name('post.descargar');

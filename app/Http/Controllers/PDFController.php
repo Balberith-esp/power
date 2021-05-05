@@ -48,6 +48,25 @@ class PDFController extends Controller
         readfile($filename);
 
     }
+    
+    public function generaPostPDF ($item){
+
+        $filename = Recurso::select('path')
+                            ->where('commentable_id', '=', $item)
+                            ->where('commentable_type', '=', 'post' )->get();
+
+        $filename = (string)$filename[0]->path;
+        $fileinfo = pathinfo($filename);
+        $sendname = $fileinfo['filename'] . '.' . strtoupper($fileinfo['extension']);
+        
+        header('Content-Type: application/pdf');
+        header("Content-Disposition: attachment; filename=\"$sendname\"");
+        header('Content-Length: ' . filesize($filename));
+        readfile($filename);
+    }   
+
+    
+    
     // public function visualizaEjercicioPDF ($item){
 
     //     $filename = Recurso::select('path')

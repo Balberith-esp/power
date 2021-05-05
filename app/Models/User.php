@@ -38,6 +38,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Ejercicio::class);
     }
+    public function noticias()
+    {
+        return $this->hasMany(Noticia::class);
+    }
+    public function posts()
+    {
+        return $this->hasMany(Foro::class);
+    }
 
     public function nutriciones()
     {
