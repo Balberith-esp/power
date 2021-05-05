@@ -54,6 +54,12 @@ class NutricionController extends Controller
 
             $dieta = new Nutricion();
             $dieta->nombre = $request->nombre;
+
+//     QUITAR EL CAMPO TIPO Y CLASIFICACION DE LA TABLA
+
+// MODIFICAR EN EL PDF PARA QUE LOS RECURSOS DE EDAD, ALTURA Y SEXO LOS COJA DE LA USUARIO
+
+
             $dieta->tipo = $request->nombre;
             $dieta->clasificacion = "-";
             $dieta->user_id =1;

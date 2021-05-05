@@ -10,7 +10,6 @@
 @section('contenido')
 <body class="left-sidebar is-preload">
 <div id="page-wrapper">
-
     <!-- Header -->
         <div id="header">
 
@@ -42,7 +41,6 @@
 
     <!-- Main -->
         <div class="wrapper style1">
-
             <div class="container">
                 <div class="row gtr-200">
                     <div class="col-4 col-12-mobile" id="sidebar">
@@ -63,9 +61,71 @@
                                 <h3>Entrenamientos populares</h3>
                             </header>
 
+                            <div class="modal fade" id="modalBiceps" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>        
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Jfrjeg26Cwk"  allowscriptaccess="always" allow="autoplay"></iframe>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <div class="modal fade" id="modalBiceps" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>        
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Jfrjeg26Cwk"  allowscriptaccess="always" allow="autoplay"></iframe>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div> 
+
+
+                            <div class="modal fade" id="modalPecho" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>        
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Jfrjeg26Cwk"  allowscriptaccess="always" allow="autoplay"></iframe>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div> 
+
+
+                            <div class="modal fade" id="modalPierna" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>        
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Jfrjeg26Cwk"  allowscriptaccess="always" allow="autoplay"></iframe>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div> 
+  
                             <div class="row gtr-50">
                                 <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/biceps.png" alt="" /></a>
+                                    <a href="#" class="image fit video-btn"><img src="../resources/assets/img/biceps.png" alt="" /></a>
                                 </div>
                                 <div class="col-8">
                                     <h4>Biceps y triceps</h4>
@@ -74,7 +134,7 @@
                                         <li>Curl con banda de resistencia. </li>
                                         <li>Curl con mancuernas en banco inclinado.</li>
                                         <li>Curl de martillo de pie.</li>
-                                        <a>leer mas......</a>
+                                        <a data-toggle="modal" data-target="#modalBiceps">Ver Entrenamiento</a>
                                     </p>
                                 </div>
                                 <div class="col-4">
@@ -87,7 +147,7 @@
                                         <li>Sentadilla Isométrica (Wall Sit) </li>
                                         <li>Zancadas o Estocadas.</li>
                                         <li>Subidas al Banco (Step Up).</li>
-                                        <a>leer mas......</a>
+                                        <a data-toggle="modal" data-target="#modalPierna">Ver Entrenamiento</a>
                                     </p>
                                 </div>
                                 <div class="col-4">
@@ -100,7 +160,7 @@
                                         <li>Curl con banda de resistencia. </li>
                                         <li>Curl con mancuernas en banco inclinado.</li>
                                         <li>Curl de martillo de pie.</li>
-                                        <a>leer mas......</a>
+                                        <a data-toggle="modal" data-target="#modalPecho">Ver Entrenamiento</a>
                                     </p>
                                 </div>
                             </div>
@@ -141,17 +201,33 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-row m-b-55">
-                                    <div class="name">Zona entrenamiento</div>
-                                    <div class="value">
-                                        <div class="row row-refine">
-                                            <div class="col-9">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="zonaIndicado" required>
-                                                    <label class="label--desc">Zona</label>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="form-row p-t-20">
+                                    <label class="label ">Zona de entrenamiento</label>
+                                    <div class="p-t-15">
+                                        <label class="radio-container m-r-55">Pecho
+                                            <input  type="checkbox" checked="checked" name="pecho">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container m-r-55">Pierna
+                                            <input  type="checkbox" name="pierna">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container m-r-55">Espalda
+                                            <input  type="checkbox"  name="exist">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container m-r-55">Brazo
+                                            <input  type="checkbox" name="brazo">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container m-r-55">Abdomen
+                                            <input  type="checkbox"  name="abdome">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container m-r-55">Hombro
+                                            <input  type="checkbox" name="hombro">
+                                            <span class="checkmark"></span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="form-row m-b-55">
@@ -167,23 +243,6 @@
                                                     <option value="4">Definición</option>
                                                     <option value="5">Mantenimiento</option>
                                                     <option value="6">Alto rendimiento</option>
-                                                  </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row m-b-55">
-                                    <div class="name">Nivel actual</div>
-                                    <div class="value">
-                                        <div class="row row-refine">
-                                            <div class="col-9">
-                                                <select class="form-select" aria-label="Default select example" name="nivelIndicado" required>
-                                                    <option selected value="1">Nivel....</option>
-                                                    <option value="1">Novato</option>
-                                                    <option value="2">Principiante</option>
-                                                    <option value="3">Intermedio</option>
-                                                    <option value="4">Avanzado</option>
-                                                    <option value="5">Experto</option>
                                                   </select>
                                             </div>
                                         </div>

@@ -179,46 +179,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-row m-b-55">
-                                <div class="name">Sexo</div>
-                                <div class="value">
-                                    <div class="row row-refine">
-                                        <div class="col-9">
-                                            <select class="form-select" aria-label="Default select example" name="sexoIndicado" required>
-                                                <option selected value="1">Sexo....</option>
-                                                <option value="1">Hombre</option>
-                                                <option value="2">Mujer</option>
-                                              </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row m-b-55">
-                                <div class="name">Edad</div>
-                                <div class="value">
-                                    <div class="row row-refine">
-                                        <div class="col-9">
-                                            <div class="input-group-desc">
-                                                <input class="input--style-5" type="number" name="edadIndicado" required min="10">
-                                                <label class="label--desc">Edad</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row m-b-55">
-                                <div class="name">Altura</div>
-                                <div class="value">
-                                    <div class="row row-refine">
-                                        <div class="col-9">
-                                            <div class="input-group-desc">
-                                                <input class="input--style-5" type="number" name="alturaIndicada" required min="120">
-                                                <label class="label--desc">Altura</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="form-row m-b-55">
                                 <div class="name">Peso</div>
                                 <div class="value">

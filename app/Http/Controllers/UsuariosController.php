@@ -74,6 +74,15 @@ class UsuariosController extends Controller
             $nuevoUsuario->apellidos = $request->primerApellido." ".$request->segundoApellido;
             $nuevoUsuario->password = Crypt::encrypt($request->contraseña);
             $nuevoUsuario->pais = $request->pais;
+
+            
+            // Agregar estos campos en la vista para la creacion de usuarios
+            // $nuevoUsuario->edad = $request->edad;
+            // $nuevoUsuario->sexo = $request->sexo;
+            // $nuevoUsuario->altura = $request->altura;
+
+            // $nuevoUsuario->puntos = $request->puntos;
+            
             $nuevoUsuario->email = $request->email;
             $nuevoUsuario->provincia= $request->provincia;
             $nuevoUsuario->ciudad = $request->ciudad;

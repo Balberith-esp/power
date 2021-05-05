@@ -52,7 +52,9 @@
 								Realizar post
 							</a>
 							@else
+							<h5>
 								Registrese para realizar post y acumular puntos.
+							</h5>
 							@endif
 						</p>
 							<div class="collapse" id="collapseExample"><br>
@@ -71,7 +73,7 @@
 											<div class="name">Archivo</div>
 											<div class="value">
 												<div class="input-group">
-													<input class="input--style-5" type="file" name="archivo">
+													<input class="input--style-5" accept="application/pdf" type="file" name="archivo">
 												</div>
 											</div>
 										</div>

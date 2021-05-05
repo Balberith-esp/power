@@ -23,6 +23,14 @@ class EjercicioController extends Controller
             // Creacion del entrenamiento
             $entrenamiendo = new Ejercicio();
             $entrenamiendo->nombre = $request->nombreIndicado;
+            // 
+
+// MODIFICAR LA ZONA PARA QUE SE COJA EN FUNCION DE LOS CHECKS
+// QUITAR DESCRIPCION DE LA TABLA
+// MODIFICAR EN EL PDF PARA QUE LOS RECURSOS SE CARGUEN POR LOS NUEVOS VALORES 
+// GUARDAR LOS RESURSOS WEB EN LOCAL Y CARGAR LAS IMAGENES DESDE AHI
+
+            // 
             $entrenamiendo->zona = $request->zonaIndicado;
             $entrenamiendo->descripcion = "-";
             $entrenamiendo->user_id =session()->get('user')->id;
