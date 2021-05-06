@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Redirect;
+use DateTime;
 
 class UsuariosController extends Controller
 {
@@ -74,14 +75,12 @@ class UsuariosController extends Controller
             $nuevoUsuario->apellidos = $request->primerApellido." ".$request->segundoApellido;
             $nuevoUsuario->password = Crypt::encrypt($request->contraseña);
             $nuevoUsuario->pais = $request->pais;
-
             
-            // Agregar estos campos en la vista para la creacion de usuarios
-            // $nuevoUsuario->edad = $request->edad;
-            // $nuevoUsuario->sexo = $request->sexo;
-            // $nuevoUsuario->altura = $request->altura;
+            $nuevoUsuario->edad = $request->edad;
+            $nuevoUsuario->sexo = $request->sexo;
+            $nuevoUsuario->altura = $request->altura;
 
-            // $nuevoUsuario->puntos = $request->puntos;
+            $nuevoUsuario->puntos = 100;
             
             $nuevoUsuario->email = $request->email;
             $nuevoUsuario->provincia= $request->provincia;
@@ -102,6 +101,14 @@ class UsuariosController extends Controller
         }
 
     }
+
+    public function calculaEdad($fecha){
+        $fecha_nacimiento = new DateTime($fecha);
+        $hoy = new DateTime();
+        $edad = $hoy->diff($fecha_nacimiento);
+        return $edad;
+    }
+
 
     /**
      * Display the specified resource.

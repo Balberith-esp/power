@@ -76,6 +76,45 @@
                         </div>
                     </div>
                     <div class="form-row m-b-55">
+                        <div class="name">Datos</div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="integer" name="Altura">
+                                        <label class="label--desc">Altura</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="integer" name="peso">
+                                        <label class="label--desc">Peso</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="integer" name="edad">
+                                        <label class="label--desc">Edad</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="form-row p-t-20">
+                        <label class="label ">Sexo</label>
+                        <div class="p-t-15">
+                            <label class="radio-container m-r-55">Hombre
+                                <input type="radio" checked="checked" value="hombre" name="sexo">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio-container">Mujer
+                            <input type="radio" value="mujer" name="sexo">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row m-b-55">
                         <div class="name">Contraseña</div>
                         <div class="value">
                             <div class="row row-refine">

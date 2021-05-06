@@ -18,6 +18,11 @@ class UsuarioSeeder extends Seeder
 		array(
 			'nombre' => 'Jesus',
 			'apellidos' => 'Cuevas Gonzalez',
+            'edad' => 25,
+            'peso' => 80,
+            'altura' => 180,
+            'sexo' => 'hombre',
+            'puntos' => 100, 
 			'email' => 'jesuscarandia@gmail.com',
 			'password' => '1234',
 			'pais' => 'España',
@@ -29,6 +34,11 @@ class UsuarioSeeder extends Seeder
         array(
 			'nombre' => 'Pedro',
 			'apellidos' => 'Usuario',
+            'edad' => 45,
+            'peso' => 72,
+            'altura' => 171,
+            'sexo' => 'hombre',
+            'puntos' => 100,
 			'email' => 'pedro@power.com',
 			'password' => '1234',
 			'pais' => 'España',
@@ -45,6 +55,11 @@ class UsuarioSeeder extends Seeder
             $usuario = new User();
             $usuario->nombre = $user['nombre'];
             $usuario->apellidos = $user['apellidos'];
+            $usuario->edad = $user['edad'];
+            $usuario->sexo = $user['sexo'];
+            $usuario->altura = $user['altura'];
+            $usuario->peso = $user['peso'];
+            $usuario->puntos = $user['puntos'];
             $usuario->email = $user['email'];
             $usuario->password = Crypt::encrypt($user['password']);
             $usuario->pais = $user['pais'];

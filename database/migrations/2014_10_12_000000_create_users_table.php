@@ -17,10 +17,11 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('apellidos');
-            $table->integer('edad')->nullable();
-            $table->string('sexo')->nullable();
-            $table->integer('altura')->nullable();
-            $table->integer('puntos')->nullable();
+            $table->integer('edad');
+            $table->string('sexo');
+            $table->integer('altura');
+            $table->integer('peso');
+            $table->integer('puntos');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
