@@ -81,6 +81,7 @@ class UsuariosController extends Controller
             $nuevoUsuario->altura = $request->altura;
 
             $nuevoUsuario->puntos = 100;
+            $nuevoUsuario->nivel = 'Novato';
             
             $nuevoUsuario->email = $request->email;
             $nuevoUsuario->provincia= $request->provincia;

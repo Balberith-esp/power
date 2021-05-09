@@ -205,27 +205,27 @@
                                     <label class="label ">Zona de entrenamiento</label>
                                     <div class="p-t-15">
                                         <label class="radio-container m-r-55">Pecho
-                                            <input  type="checkbox" checked="checked" name="pecho">
+                                            <input  type="checkbox" checked="checked" value="pecho" name="zonaIndicado[]">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container m-r-55">Pierna
-                                            <input  type="checkbox" name="pierna">
+                                            <input  type="checkbox" value="pierna" name="zonaIndicado[]">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container m-r-55">Espalda
-                                            <input  type="checkbox"  name="exist">
+                                            <input  type="checkbox"  value="espalda" name="zonaIndicado[]">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container m-r-55">Brazo
-                                            <input  type="checkbox" name="brazo">
+                                            <input  type="checkbox" value="brazo" name="zonaIndicado[]">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container m-r-55">Abdomen
-                                            <input  type="checkbox"  name="abdome">
+                                            <input  type="checkbox"  value="abdome" name="zonaIndicado[]">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container m-r-55">Hombro
-                                            <input  type="checkbox" name="hombro">
+                                            <input  type="checkbox" value="hombro" name="zonaIndicado[]">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>

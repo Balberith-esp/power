@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('sexo');
             $table->integer('altura');
             $table->integer('peso');
+            $table->string('nivel');
             $table->integer('puntos');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

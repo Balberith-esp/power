@@ -54,8 +54,9 @@
     <h4>Rutina de ejercicios creada para {{session()->get('user')->nombre}}</h4>
 
 
-    <h5>Zona:
-        {{session()->get('entreamiento')["zonaIndicado"]}}
+    <h5>Zona: {{ implode(" ",session()->get('entreamiento')["zonaIndicado"]) }}
+
+        
     </h5>
     <h5>Objetivo buscado:
         <?php
@@ -90,24 +91,24 @@
     </h5>
     <h5>Estado actual:
         <?php
-            switch (session()->get('entreamiento')["nivelIndicado"]) {
-                case 1:
+            switch (session()->get('user')->nivel) {
+                case 'novato':
                     echo "Novato";
                     $recomendacionEstado = "Comience con entrenamientos cortos entre 3-4 dias por semana, progrese en funcion de su capacidad";
                     break;
-                case 2:
+                case 'principiante':
                     echo "Principiante";
                     $recomendacionEstado = "Entrenamiento regular, buscando superar metas pero guardando la seguridad";
                     break;
-                case 3:
+                case 'intermedio':
                     echo "Intermedio";
                     $recomendacionEstado = "Entrenamiento 5-6 dias por semana, busque nuevas marcas paulatinamente";
                     break;
-                case 4:
+                case 'avanzado':
                     echo "Avanzado";
                     $recomendacionEstado = "Entrenamiento de resistencia con fuerza alternando rutinas y pesos";
                     break;
-                case 5:
+                case 'experto':
                     echo "Experto";
                     $recomendacionEstado = "Evite estancamientos cambiando rutinas y alternando los pequeños grupos musculares en los entrenos focalizados";
                     break;
@@ -166,34 +167,35 @@
       </table>
     </footer>
 
+
     <?php
     // {{-- Entrenamiento brazo --}}
-        if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'brazo')) {
+        if (in_array('brazo',session()->get('entreamiento')["zonaIndicado"])) {
             echo '<img src="https://i.pinimg.com/originals/d1/41/cd/d141cd12dc024d15aef469d762ebe6f6.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Brazo</h3><br>';
         }
     // {{-- Entrenamiento pierna --}}
-    if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'pierna')) {
+    if (in_array('pierna', session()->get('entrenamiento')["zonaIndicado"])) {
             echo '<img src="https://i.pinimg.com/originals/1d/9b/aa/1d9baac826099dfda5cfd91256e15387.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pierna</h3><br>';
         }
     // {{-- Entrenamiento espalda --}}
-    if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'espalda')) {
+    if (in_array('espalda', session()->get('entrenamiento')["zonaIndicado"])) {
             echo '<img src="https://i.pinimg.com/originals/be/bc/89/bebc89e859bac084a046c8d54d6a00ba.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Espalda</h3><br>';
         }
     // {{-- Entrenamiento hombro --}}
-    if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'hombro')) {
+    if (in_array('hombro', session()->get('entrenamiento')["zonaIndicado"])) {
             echo '<img src="https://i.pinimg.com/originals/fe/45/c0/fe45c0765fcd577ad51ca843f0526cd6.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Hombro</h3><br>';
         }
     // {{-- Entrenamiento pecho --}}
-    if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'pecho')) {
+    if (in_array('pecho', session()->get('entrenamiento')["zonaIndicado"])) {
             echo '<img src="https://i.pinimg.com/originals/47/96/86/4796864e3baaf4a575a8c6059c1a414d.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pecho</h3><br>';
         }
     // {{-- Entrenamiento abdo --}}
-    if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'abdo')) {
+    if (in_array('abdomen', session()->get('entrenamiento')["zonaIndicado"])) {
             echo '<img src="https://cdn.statically.io/img/interlife.es/wp-content/uploads/2020/08/rutina-abdominales-herbalife.png?quality=100&f=auto<h3>Entrenamiento Abdomen</h3><br="" style=" height:650px; width:500px"><br>';
         }
 
     // {{-- Entrenamiento All --}}
-    if (str_contains(strtolower(session()->get('entreamiento')["zonaIndicado"]), 'full')) {
+    if (in_array('full', session()->get('entrenamiento')["zonaIndicado"])) {
             echo '<img src="https://i.pinimg.com/originals/d1/41/cd/d141cd12dc024d15aef469d762ebe6f6.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Brazo</h3><br>';
             echo '<img src="https://i.pinimg.com/originals/1d/9b/aa/1d9baac826099dfda5cfd91256e15387.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pierna</h3><br>';
             echo '<img src="https://i.pinimg.com/originals/fe/45/c0/fe45c0765fcd577ad51ca843f0526cd6.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Hombro</h3><br>';
@@ -208,7 +210,6 @@
         }
 
     ?>
-
 
 
 </body>

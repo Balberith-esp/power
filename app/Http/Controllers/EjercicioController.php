@@ -30,8 +30,7 @@ class EjercicioController extends Controller
 // MODIFICAR EN EL PDF PARA QUE LOS RECURSOS SE CARGUEN POR LOS NUEVOS VALORES 
 // GUARDAR LOS RESURSOS WEB EN LOCAL Y CARGAR LAS IMAGENES DESDE AHI
 
-            // 
-            $entrenamiendo->zona = $request->zonaIndicado;
+            $entrenamiendo->zona = implode(" ",$request->zonaIndicado);
             $entrenamiendo->descripcion = "-";
             $entrenamiendo->user_id =session()->get('user')->id;
             $entrenamiendo->save();

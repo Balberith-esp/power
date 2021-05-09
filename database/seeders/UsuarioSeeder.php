@@ -22,6 +22,7 @@ class UsuarioSeeder extends Seeder
             'peso' => 80,
             'altura' => 180,
             'sexo' => 'hombre',
+            'nivel' => 'novato',
             'puntos' => 100, 
 			'email' => 'jesuscarandia@gmail.com',
 			'password' => '1234',
@@ -38,6 +39,7 @@ class UsuarioSeeder extends Seeder
             'peso' => 72,
             'altura' => 171,
             'sexo' => 'hombre',
+            'nivel' => 'novato',
             'puntos' => 100,
 			'email' => 'pedro@power.com',
 			'password' => '1234',
@@ -57,6 +59,7 @@ class UsuarioSeeder extends Seeder
             $usuario->apellidos = $user['apellidos'];
             $usuario->edad = $user['edad'];
             $usuario->sexo = $user['sexo'];
+            $usuario->nivel = $user['nivel'];
             $usuario->altura = $user['altura'];
             $usuario->peso = $user['peso'];
             $usuario->puntos = $user['puntos'];

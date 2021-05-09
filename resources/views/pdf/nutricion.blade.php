@@ -57,10 +57,10 @@
     <h5>Datos actuales:</h5>
         <p>
             <ul>
-                <li>Edad: {{session()->get('nutricion')['edadIndicado']}}</li>
-                <li>Sexo: <?php if(session()->get('nutricion')['sexoIndicado'] == 1){echo "Hombre";}else{echo "Mujer";}?></li>
-                <li>Peso: {{session()->get('nutricion')['pesoIndicado']}}</li>
-                <li>Altura: {{session()->get('nutricion')['alturaIndicada']}}</li>
+                <li>Edad: {{session()->get('user')->edad}}</li>
+                <li>Sexo: {{session()->get('user')->sexo}}</li>
+                <li>Peso: {{session()->get('user')->peso}}</li>
+                <li>Altura: {{session()->get('user')->altura}}</li>
                 <li>Dias de entreno : <?php echo (session()->get('nutricion')['diasdIndicado']-1)?></li>
             </ul>
         </p>
@@ -118,12 +118,12 @@
     <H4>Resultados para sus datos:<h4>
         <p>
             <?php
-                $genero = session()->get('nutricion')['sexoIndicado'];
-                $peso = session()->get('nutricion')['pesoIndicado'];
-                $altura = session()->get('nutricion')['alturaIndicada'];
-                $edad = session()->get('nutricion')['edadIndicado'];
+                $genero = session()->get('user')->sexo;
+                $peso = session()->get('user')->peso;
+                $altura = session()->get('user')->altura;
+                $edad = session()->get('user')->edad;
 
-                if($genero == 1){
+                if($genero == 'hombre'){
                     $tmb =  (66 + (13.7 * $peso) + (5 * $altura) - (6.75 * $edad));
                     switch (session()->get('nutricion')["actividadIndicado"]) {
                         case 1:
