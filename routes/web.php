@@ -141,3 +141,7 @@ Route::post('/nuevaNoticia', [NoticiasController::class,'store'])->name('Noticia
 Route::post('/nuevoPost', [ForoController::class,'store'])->name('Post.nuevo');
 
 Route::get('/pdf/descarga/post/{item}', [PDFController::class,'generaPostPDF'])->name('post.descargar');
+
+Route::post('/editar/perfil', [UsuariosController::class,'edit'])->name('perfil.edit');
+
+Route::get('/ejercicio/actualizar/{item}', [EjercicioController::class,'update'])->name('ejercicio.actualizar');

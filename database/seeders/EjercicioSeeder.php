@@ -16,32 +16,32 @@ class EjercicioSeeder extends Seeder
 		array(
 			'nombre' => 'Entrenamiento full body',
 			'zona' => 'Espalda/Pecho/Pierna',
-			'descripcion' => 'Rutina cuerpo completo 5 dias/semana, intensidad media',
+			'vecesRealizada' => '0',
 			'user_id' => '1',
         ),
         array(
 			'nombre' => 'Entrenamiento Brazo/hombro',
 			'zona' => 'Brazo/hombro',
-			'descripcion' => 'Rutina brazo/hombro completo 2 dias/semana, intensidad alta',
+			'vecesRealizada' => '0',
 			'user_id' => '1',
         ),
         array(
 			'nombre' => 'Entrenamiento full ',
 			'zona' => 'Espalda/Pecho/Pierna',
-			'descripcion' => 'Rutina cuerpo completo 6 dias/semana, intensidad alta',
+			'vecesRealizada' => '0',
 			'user_id' => '1',
         ),
         array(
 			'nombre' => 'Entrenamiento Brazo/hombro',
 			'zona' => 'Brazo/hombro',
-			'descripcion' => 'Rutina brazo/hombro completo 2 dias/semana, intensidad baja',
+			'vecesRealizada' => '0',
 			'user_id' => '2',
         ),
 
         array(
 			'nombre' => 'Entrenamiento full body',
 			'zona' => 'Espalda/Pecho/Pierna',
-			'descripcion' => 'Rutina cuerpo completo 5 dias/semana, intensidad media',
+			'vecesRealizada' => '0',
 			'user_id' => '2',
         ),
     );
@@ -52,7 +52,7 @@ class EjercicioSeeder extends Seeder
             $ejercicio = new Ejercicio();
             $ejercicio->nombre = $ejer['nombre'];
             $ejercicio->zona = $ejer['zona'];
-            $ejercicio->descripcion = $ejer['descripcion'];
+            $ejercicio->vecesRealizada = $ejer['vecesRealizada'];
             $ejercicio->user_id =$ejer['user_id'];
 
             $ejercicio->save();

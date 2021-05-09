@@ -62,9 +62,57 @@
                                     <strong>País</strong>: {{ session()->get('user')->pais }} <br>
                                     <strong>Provincia</strong>: {{ session()->get('user')->provincia }} <br>
                                     <strong>Ciudad</strong>: {{ session()->get('user')->ciudad}} <br>
+                                    <strong>Edad</strong>: {{ session()->get('user')->edad }} años <br>
+                                    <strong>Peso</strong>: {{ session()->get('user')->peso }} kg.<br>
+                                    <strong>Altura</strong>: {{ session()->get('user')->altura}} cm<br>
                                 </p>
+                                <a href="" type="button" class="btn btn-success" data-toggle="modal" data-target="#editaPerfil">Editar Perfil</a><br><br>
+                                <div class="modal fade bd-example-modal-xl" id="editaPerfil" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <form action="{{ route('perfil.edit') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLongTitle">Editar Perfil</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                  <div class="col"><label>Peso</label></div>
+                                                  <div class="col"><input type="number" name="peso" id="peso" placeholder="Peso" required min="40"></div>
+                                                  <div class="col"><label>Altura</label></div>
+                                                  <div class="col"><input type="number" name="altura" id="altura" placeholder="Altura" required min="40"></div>
+                                                  <div class="col"><label>Foto perfil</label></div>
+                                                  <div class="col"><input type="file" name="archivo" id="archivo" placeholder="Foto perfil" required></div>
+                                                </div>
+                                              </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                          <button type="submit" class="btn btn-primary">Actualizar</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </form>
+                                  </div>
+                                <strong>Nivel</strong>: {{ session()->get('user')->nivel}}<br>
+                                <?php 
+                                    $porcentaje =  substr( session()->get('user')->puntos ,1, strlen (session()->get('user')->puntos));
+                                    $restantes = 100 - $porcentaje;
+                                ?>
+                         
+                                <strong>Puntos</strong>: {{ session()->get('user')->puntos}}, 
+                                        consigue <?php echo $restantes ?> para el siguiente nivel.<br>
 
-
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-success" 
+                                        role="progressbar" style="width:<?php echo $porcentaje.'%'; ?> " aria-valuenow="25" 
+                                                aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
                             </article>
                         </section>
 
@@ -81,6 +129,10 @@
                                             <div class="col-6"><li>{{$item->nombre}}</div>
                                             <div class="col-3">
                                                 <a href="{{route('ejercicio.descargar', $item)}}" type="button" class="btn btn-info">Descargar</a>
+                                                <a href="{{route('ejercicio.actualizar', $item)}}" type="button" class="btn btn-success">{{$item->vecesRealizada }} &nbsp;
+                                                    <i class="far fa-check-square"></i>
+                                                </a>
+                                                
                                             </div>
 
                                         </div><br>

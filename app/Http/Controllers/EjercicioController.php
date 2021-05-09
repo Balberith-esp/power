@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ejercicio;
 use App\Models\Recurso;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
@@ -16,6 +17,26 @@ class EjercicioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
+    public function update(Ejercicio $item){
+
+        
+        $item->vecesRealizada += 1;
+        $item->save();
+
+        $user = User::find(session()->get('user')->id);
+        $user->puntos += 10;
+        $user->save();
+
+        $user->compruebaEstado();
+        
+        return view('Perfil.index');
+    }
+
+
+
+
     public function store(Request $request)
     {
         //
@@ -24,16 +45,19 @@ class EjercicioController extends Controller
             $entrenamiendo = new Ejercicio();
             $entrenamiendo->nombre = $request->nombreIndicado;
             // 
-
-// MODIFICAR LA ZONA PARA QUE SE COJA EN FUNCION DE LOS CHECKS
-// QUITAR DESCRIPCION DE LA TABLA
-// MODIFICAR EN EL PDF PARA QUE LOS RECURSOS SE CARGUEN POR LOS NUEVOS VALORES 
+ 
 // GUARDAR LOS RESURSOS WEB EN LOCAL Y CARGAR LAS IMAGENES DESDE AHI
 
             $entrenamiendo->zona = implode(" ",$request->zonaIndicado);
-            $entrenamiendo->descripcion = "-";
+            $entrenamiendo->vecesRealizada = 0;
             $entrenamiendo->user_id =session()->get('user')->id;
             $entrenamiendo->save();
+
+            // session()->get('user')->puntos += 10;
+            $user = User::find(session()->get('user')->id);
+            $user->puntos += 10;
+            $user->save();
+            compruebaEstado();
 
             $vals = $request->all();
             // Creacion del documento asociado

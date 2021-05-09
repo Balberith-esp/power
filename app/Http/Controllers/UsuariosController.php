@@ -135,9 +135,26 @@ class UsuariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request )
     {
         //
+        $user = User::find(session()->get('user')->id);
+        $user->peso = $request->peso;
+        $user->altura = $request->altura;
+
+        if ($request->archivo){
+
+            $fileName = time().'.'.$request->archivo->getClientOriginalExtension();
+            $request->archivo->move(public_path('../resources/assets/img/fotosPerfil'), $fileName);
+            $user->fotoPerfil = $fileName;
+
+        }
+
+        $user->save();
+
+
+        return view('home');
+
     }
 
     /**

@@ -94,4 +94,38 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    public function compruebaEstado(){
+        $user = User::find(session()->get('user')->id);
+        switch ($user->puntos) {
+            case '200':
+                $user->nivel = 'Principiante'; 
+                $user->save();
+                # code...
+                break;
+            case '300':
+                # code...
+                $user->nivel = 'Intermedio'; 
+                $user->save();
+                break;
+            case '400':
+                $user->nivel = 'Avanzado'; 
+                $user->save();
+                # code...
+                break;
+            case '500':
+                $user->nivel = 'Experto'; 
+                $user->save();
+                # code...
+                break;
+            case '600':
+                $user->nivel = 'Maestro'; 
+                $user->save();
+                # code...
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+    }
 }

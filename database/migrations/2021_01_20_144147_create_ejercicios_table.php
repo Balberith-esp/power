@@ -17,8 +17,7 @@ class CreateEjerciciosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('zona');
-            $table->text('descripcion');
-            $table->string('vecesRealizada')->nullable();
+            $table->string('vecesRealizada');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
