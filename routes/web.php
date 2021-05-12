@@ -9,6 +9,7 @@ use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\NutricionController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\NoticiasController;
+use App\Http\Controllers\AlimentoController;
 use App\Http\Controllers\ForoController;
 use Illuminate\Support\Facades\Route;
 // use PDF;
@@ -145,3 +146,5 @@ Route::get('/pdf/descarga/post/{item}', [PDFController::class,'generaPostPDF'])-
 Route::post('/editar/perfil', [UsuariosController::class,'edit'])->name('perfil.edit');
 
 Route::get('/ejercicio/actualizar/{item}', [EjercicioController::class,'update'])->name('ejercicio.actualizar');
+
+Route::post('/alimento/nuevo', [AlimentoController::class,'store'])->name('alimento.nuevo');

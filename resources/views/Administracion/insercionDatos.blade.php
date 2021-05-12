@@ -53,6 +53,7 @@
                         $(document).ready( function () {
                             $('#entrenamientos_table').DataTable();
                             $('#nutricion_table').DataTable();
+                            $('#alimentos_table').DataTable();
                         } );
                     </script>
                     <article id="main">
@@ -64,8 +65,8 @@
                                     <tr>
                                         <th>Nombre</th>
                                         <th>Zona</th>
-                                        <th>Descripcion</th>
-                                        <th>user_id</th>
+                                        <th>Usuario</th>
+                                        <th>Recurso</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -74,8 +75,40 @@
 
                                         <td>{{$ejercicio->nombre}}</td>
                                         <td>{{$ejercicio->zona}}</td>
-                                        <td>{{$ejercicio->descipcion}}</td>
                                         <td>{{$ejercicio->user_id}}</td>
+                                        <td>
+                                            <a href="{{route('ejercicio.descargar', $ejercicio)}}" type="button"><i class="far fa-file-pdf fa-lg"></i></a>
+                                        </td>
+
+                                    </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+
+                            <table id="alimentos_table" class="display">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Tipo</th>
+                                        <th>Comida</th>
+                                        <th>Valor nutricional</th>
+                                        <th>Tipo Dieta</th>
+                                        <th><i class="fas fa-tools lg"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($alimentos as $alimento)
+                                    <tr>
+
+                                        <td>{{$alimento->nombre}}</td>
+                                        <td>{{$alimento->tipoAlimento}}</td>
+                                        <td>{{$alimento->comida}}</td>
+                                        <td>{{$alimento->valorNutricional}}</td>
+                                        <td>{{$alimento->tipoDieta}}</td>
+                                        <td>
+                                            <a href="{{route('ejercicio.descargar', $ejercicio)}}" type="button">Añadir <i class="fas fa-plus lg"></i></a>
+                                        </td>
 
                                     </tr>
                                     @endforeach
@@ -86,18 +119,18 @@
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
-                                        <th>Tipo</th>
-                                        <th>Clasificacion</th>
-                                        <th>User</th>
+                                        <th>Usuario</th>
+                                        <th>Recurso</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($nutriciones as $nutricion)
                                     <tr>
                                         <td>{{$nutricion->nombre}}</td>
-                                        <td>{{$nutricion->tipo}}</td>
-                                        <td>{{$nutricion->clasificacion}}</td>
                                         <td>{{$nutricion->user_id}}</td>
+                                        <td>
+                                            <a href="{{route('dieta.descargar', $nutricion)}}" type="button"><i class="far fa-file-pdf fa-lg"></i></a>
+                                        </td>
 
                                     </tr>
                                     @endforeach
@@ -160,18 +193,6 @@
                                                     <label class="label--desc">Nombre</label>
                                                 </div>
                                             </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="zona">
-                                                    <label class="label--desc">Zona</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="descripcion">
-                                                    <label class="label--desc">descripcion</label>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -202,18 +223,6 @@
                                                 <div class="input-group-desc">
                                                     <input class="input--style-5" type="text" name="nombre">
                                                     <label class="label--desc">Nombre</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="tipo">
-                                                    <label class="label--desc">Tipo</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="clasificacion">
-                                                    <label class="label--desc">Clasificación</label>
                                                 </div>
                                             </div>
                                         </div>
