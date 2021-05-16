@@ -51,15 +51,16 @@
                 <div class="col-8 col-12-mobile imp-mobile" id="content">
                     <script>
                         $(document).ready( function () {
-                            $('#entrenamientos_table').DataTable();
-                            $('#nutricion_table').DataTable();
-                            $('#alimentos_table').DataTable();
+                            $('#entrenamientos_table').DataTable({pageLength: 4});
+                            $('#nutricion_table').DataTable({pageLength: 4});
+                            $('#alimentos_table').DataTable({pageLength: 4});
                         } );
                     </script>
                     <article id="main">
 
                             <h2>Insercion de datos</h2>
                             <br>
+                            <h3>Ejercicios</h3>
                             <table id="entrenamientos_table" class="display">
                                 <thead>
                                     <tr>
@@ -85,7 +86,8 @@
 
                                 </tbody>
                             </table>
-
+                            <br>
+                            <h3>Alimentos</h3>
                             <table id="alimentos_table" class="display">
                                 <thead>
                                     <tr>
@@ -94,7 +96,6 @@
                                         <th>Comida</th>
                                         <th>Valor nutricional</th>
                                         <th>Tipo Dieta</th>
-                                        <th><i class="fas fa-tools lg"></i></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -106,15 +107,13 @@
                                         <td>{{$alimento->comida}}</td>
                                         <td>{{$alimento->valorNutricional}}</td>
                                         <td>{{$alimento->tipoDieta}}</td>
-                                        <td>
-                                            <a href="{{route('ejercicio.descargar', $ejercicio)}}" type="button">Añadir <i class="fas fa-plus lg"></i></a>
-                                        </td>
 
                                     </tr>
                                     @endforeach
 
                                 </tbody>
-                            </table>
+                            </table><br>
+                            <h3>Nutricion</h3>
                             <table id="nutricion_table" class="display">
                                 <thead>
                                     <tr>
@@ -148,13 +147,20 @@
             $(function() {
                 $('#ejercicio').css("display", "none");
                 $('#nutricion').css("display", "none");
+                $('#alimento').css("display", "none");
                 $('#selectEntrada').change(function(){
                     if($('#selectEntrada').val() == '1') {
                         $('#ejercicio').css("display", "block");
                         $('#nutricion').css("display", "none");
-                    } else {
+                        $('#alimento').css("display", "none");
+                    } else if($('#selectEntrada').val() == '0'){
                         $('#ejercicio').css("display", "none");
                         $('#nutricion').css("display", "block");
+                        $('#alimento').css("display", "none");
+                    }else{
+                        $('#ejercicio').css("display", "none");
+                        $('#alimento').css("display", "block");
+                        $('#nutricion').css("display", "none");
                     }
                 });
             });
@@ -174,6 +180,7 @@
                                         <option selected>Escoge opción a crear...</option>
                                         <option value="0">Nutrición</option>
                                         <option value="1">Ejercicio</option>
+                                        <option value="2">Alimentacion</option>
                                       </select>
                                 </div>
                             </div>
@@ -242,6 +249,89 @@
                                 </div>
                             </form>
                     </div>
+                                        <div id="alimento" style="display:none">
+                        <h3>Alimento</h3><br>
+                        <form method="POST" action="{{route('alimento.nuevo')}}" enctype="multipart/form-data">
+                            @csrf
+                                <div class="form-row m-b-55">
+                                    <div class="name">Info</div>
+                                    <div class="value">
+                                        <div class="row row-refine">
+                                            <div class="col-3">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="nombre">
+                                                    <label class="label--desc">Nombre</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="number" name="valorNutricional">
+                                                    <label class="label--desc">Valor nutricional</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Tipo alimento</div>
+                                    <div class="value">
+                                        
+                                            <div class="col-9">
+                                                <select class="form-select" aria-label="Default select example" id="selectEntrada" name="tipoAlimento">
+                                                    <option selected>...</option>
+                                                    <option value="Fruta">Fruta</option>
+                                                    <option value="Hortaliza o verduras">Hortaliza o verduras</option>
+                                                    <option value="Carnes">Carnes</option>
+                                                    <option value="Pescado">Pescado</option>
+                                                    <option value="Lacteos">Lacteos</option>
+                                                    <option value="Cereales">Cerales</option>
+                                                </select>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Tipo dieta</div>
+                                    <div class="value">
+                                        
+                                            <div class="col-9">
+                                                <select class="form-select" aria-label="Default select example" id="selectEntrada" name="tipoDieta">
+                                                    <option selected>...</option>
+                                                    <option value="Definición">Definición</option>
+                                                    <option value="Musculación">Musculación</option>
+                                                    <option value="Mantenimiento">Mantenimiento</option>
+                                                    <option value="Alto rendimientos">Alto rendimientos</option>
+                                                    <option value="Todas">Todas</option>
+                                                </select>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Comida</div>
+                                    <div class="value">
+                                        
+                                            <div class="col-9">
+                                                <select class="form-select" aria-label="Default select example" id="selectEntrada" name="tipoComida">
+                                                    <option selected>...</option>
+                                                    <option value="Desayuno">Desayuno</option>
+                                                    <option value="Almuerzo">Almuerzo</option>
+                                                    <option value="Comida">Comida</option>
+                                                    <option value="Merienda">Merienda</option>
+                                                    <option value="Cena">Cena</option>
+                                                    <option value="Cualquiera">Cualquiera</option>
+                                                </select>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn--radius-2 btn--red" type="submit">Guardar</button>
+                                </div>
+                            </form>
+                    </div>
+                
             </div>
             </div>
             </div>

@@ -104,6 +104,9 @@ class EjercicioController extends Controller
             $recurso->commentable_id = DB::table('ejercicios')->latest('created_at')->first()->id;
             $recurso->save();
 
+
+            
+
             return redirect()->route('insercionDatos');
     }
 
