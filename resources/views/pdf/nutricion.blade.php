@@ -196,26 +196,26 @@
         </ul><br><br>
         <?php  
           $alimentos = [
-            ['desayuno' => []],
-            ['almuerzo' => []],
-            ['comida' => []],
-            ['merienda' => []],
-            ['cena' => []],
+            'desayuno' => [],
+            'almuerzo' => [],
+            'comida' => [],
+            'merienda' => [],
+            'cena' => [],
           ];
-          // foreach (session()->get('alimentacion') as $val){
+          foreach (session()->get('alimentacion') as $val){
           
-          //     if($val['comida'] == 'Comida o cena'){
-          //         array_push($alimentos['comida'],$val);
-          //         array_push($alimentos['cena'],$val);
-          //     }elseif($val['comida'] == 'Desayuno'){
-          //         array_push($alimentos['desayuno'],$val);
-          //     }else{
-          //       array_push($alimentos['almuerzo'],$val);
-          //       array_push($alimentos['merienda'],$val);
-          //     };          
-          // } 
+              if($val['comida'] == 'Comida o cena'){
+                  array_push($alimentos['comida'],$val);
+                  array_push($alimentos['cena'],$val);
+              }elseif($val['comida'] == 'Desayuno'){
+                  array_push($alimentos['desayuno'],$val);
+              }else{
+                array_push($alimentos['almuerzo'],$val);
+                array_push($alimentos['merienda'],$val);
+              };          
+          } 
 
-          echo $alimentos['almuerzo']
+          var_dump($alimentos['desayuno'][0]['nombre'])
 
 
          ?>
@@ -236,13 +236,13 @@
           <tbody>
             <tr>
               <th scope="row">Desayuno</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              
+              <td>$alimentos</td>
+              <td>$alimentos</td>
+              <td>$alimentos</td>
+              <td>$alimentos</td>
+              <td>$alimentos</td>
+              <td>$alimentos</td>
             </tr>
             <tr>
               <th scope="row">Almuerzo</th>
