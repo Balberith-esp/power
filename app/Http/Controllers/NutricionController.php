@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Nutricion;
 use App\Models\Recurso;
+use App\Models\Alimento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
@@ -22,8 +23,6 @@ class NutricionController extends Controller
         //
         $dieta = new Nutricion();
         $dieta->nombre = $request->nombreIndicado;
-        $dieta->tipo = $request->nombreIndicado;
-        $dieta->clasificacion = "-";
         $dieta->user_id =session()->get('user')->id;
         $dieta->save();
 
@@ -32,6 +31,8 @@ class NutricionController extends Controller
 
         // Creacion del documento asociado
         $request->session()->put('nutricion',$vals);
+        $dataAlimentos = Alimento::whereIn('tipoDieta', ['todas',$request->objetivoIndicado])->get();
+        $request->session()->put('alimentacion',$dataAlimentos);
 
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.nutricion');

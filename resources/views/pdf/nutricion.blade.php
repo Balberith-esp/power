@@ -53,7 +53,6 @@
 
     <h4>Analisis de alimentación creado para {{session()->get('user')->nombre}}</h4>
 
-
     <h5>Datos actuales:</h5>
         <p>
             <ul>
@@ -67,20 +66,20 @@
     <h5>Objetivo buscado:
         <?php
             switch (session()->get('nutricion')["objetivoIndicado"]) {
-                case 1:
+                case 'mantenimiento':
                     echo "Mantenimiento";
                     $recomendacionObjetivo = "Mantene balance calorico estandar, cuidando el consumo de macronutrientes en los porcentajes adecuados.";
                     break;
-                case 2:
+                case 'definicion':
                     echo "Definición";
                     $recomendacionObjetivo = "Reducir el consumo de grasas y carbohidratos aumentando la ingesta de proteinas para cuidar el musculo mientras
                                                     reducimos las calorias en un pequeño porcentaje";
                     break;
-                case 3:
+                case 'perdida':
                     echo "Perdida de peso";
                     $recomendacionObjetivo = "Reducimos las calorias base y creamos un deficit entre un 10-30 %";
                     break;
-                case 4:
+                case 'volumen':
                     echo "Ganar masa muscular";
                     $recomendacionObjetivo = "Aumentamos las calorias base y creamos un superavit entre un 10-30 %";
                     break;
@@ -190,12 +189,103 @@
         ?>
         </p>
     <hr><hr>
-    <img src="https://i.pinimg.com/originals/50/7b/38/507b38d97eae87e090a07699d1487130.jpg" style="width: 650px; height:500px; margin-top:55px">
     <H4>Recomendaciones:<h4>
         <ul>
             <li><?php echo $recomendacionObjetivo ?></li>
             <li><?php echo $recomendacionActividad ?></li>
         </ul><br><br>
+        <?php  
+          $alimentos = [
+            ['desayuno' => []],
+            ['almuerzo' => []],
+            ['comida' => []],
+            ['merienda' => []],
+            ['cena' => []],
+          ];
+          // foreach (session()->get('alimentacion') as $val){
+          
+          //     if($val['comida'] == 'Comida o cena'){
+          //         array_push($alimentos['comida'],$val);
+          //         array_push($alimentos['cena'],$val);
+          //     }elseif($val['comida'] == 'Desayuno'){
+          //         array_push($alimentos['desayuno'],$val);
+          //     }else{
+          //       array_push($alimentos['almuerzo'],$val);
+          //       array_push($alimentos['merienda'],$val);
+          //     };          
+          // } 
+
+          echo $alimentos['almuerzo']
+
+
+         ?>
+        
+        <table class="table table-inverse">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Lunes</th>
+              <th>Martes</th>
+              <th>Miercoles</th>
+              <th>Jueves</th>
+              <th>Viernes</th>
+              <th>Sabado</th>
+              <th>Domingo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Desayuno</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Almuerzo</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Comida</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Merienda</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Cena</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
 
     </body>
     <footer>

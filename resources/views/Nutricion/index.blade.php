@@ -181,29 +181,16 @@
                             </div>
 
                             <div class="form-row m-b-55">
-                                <div class="name">Peso</div>
-                                <div class="value">
-                                    <div class="row row-refine">
-                                        <div class="col-9">
-                                            <div class="input-group-desc">
-                                                <input class="input--style-5" type="number" name="pesoIndicado" required min="40">
-                                                <label class="label--desc">Peso</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row m-b-55">
                                 <div class="name">Objetivo</div>
                                 <div class="value">
                                     <div class="row row-refine">
                                         <div class="col-9">
                                             <select class="form-select" aria-label="Default select example" name="objetivoIndicado" required>
                                                 <option selected value="1">Objetivo....</option>
-                                                <option value="1">Mantenimiento</option>
-                                                <option value="2">Definicion</option>
-                                                <option value="3">Perdida de peso</option>
-                                                <option value="4">Ganar masa muscular</option>
+                                                <option value="mantenimiento">Mantenimiento</option>
+                                                <option value="definicion">Definicion</option>
+                                                <option value="perdida">Perdida de peso</option>
+                                                <option value="volumen">Ganar masa muscular</option>
                                               </select>
                                         </div>
                                     </div>
