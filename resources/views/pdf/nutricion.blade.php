@@ -196,31 +196,52 @@
         </ul><br><br>
         <?php  
           $alimentos = [
-            'desayuno' => [],
-            'almuerzo' => [],
-            'comida' => [],
-            'merienda' => [],
-            'cena' => [],
+            'desayuno' => [
+              'Lacteos' =>[],
+              'Cereales' =>[],
+            ],
+            'almuerzo' => [
+              'Fruta' =>[],
+            ],
+            'comida' => [
+              'Legumbre' =>[],
+              'Pasta' =>[],
+              'Verduras' =>[],
+              'Carnes' => [],
+              'Pescados' => [],
+              'Otro' => [],
+            ],
+            'merienda' => [
+              'Fruta' =>[],
+            ],
+            'cena' => [
+              'Legumbre' =>[],
+              'Pasta' =>[],
+              'Verduras' =>[],
+              'Carnes' => [],
+              'Pescados' => [],
+              'Otro' => [],
+            ],
           ];
           foreach (session()->get('alimentacion') as $val){
-          
+              $pos = $val['tipoAlimento'];
               if($val['comida'] == 'Comida o cena'){
-                  array_push($alimentos['comida'],$val);
-                  array_push($alimentos['cena'],$val);
+                  array_push($alimentos['comida'][$pos],$val);
+                  array_push($alimentos['cena'][$pos],$val);
               }elseif($val['comida'] == 'Desayuno'){
-                  array_push($alimentos['desayuno'],$val);
+                  array_push($alimentos['desayuno'][$pos],$val);
               }else{
-                array_push($alimentos['almuerzo'],$val);
-                array_push($alimentos['merienda'],$val);
+                array_push($alimentos['almuerzo'][$pos],$val);
+                array_push($alimentos['merienda'][$pos],$val);
               };          
           } 
 
-          var_dump($alimentos['desayuno'][0]['nombre'])
+          // var_dump($alimentos['desayuno']['Lacteos'][0]['nombre'])
 
 
          ?>
         
-        <table class="table table-inverse">
+        <table class="table">
           <thead>
             <tr>
               <th></th>
@@ -237,22 +258,107 @@
             <tr>
               <th scope="row">Desayuno</th>
               
-              <td>$alimentos</td>
-              <td>$alimentos</td>
-              <td>$alimentos</td>
-              <td>$alimentos</td>
-              <td>$alimentos</td>
-              <td>$alimentos</td>
+              <td>
+                <?php 
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'lcal.</br>' ; 
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'lcal.</br>' ;
+                ?>
+              </td>
+              <td>
+                <?php 
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'lcal.</br>' ;  
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'lcal.</br>' ;
+                ?>
+              </td>
+              <td>
+                <?php 
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'lcal.</br>' ;  
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'lcal.</br>' ;
+                ?>
+              </td>
+              <td>
+                  <?php 
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'lcal.</br>' ;  
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'lcal.</br>' ;
+                ?>
+              </td>
+              <td>
+                  <?php 
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'lcal.</br>' ;  
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'lcal.</br>' ;
+                ?>
+              </td>
+              <td>
+                  <?php 
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'lcal.</br>' ;  
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'lcal.</br>' ;
+                ?>
+              </td>
+              <td>
+                  <?php 
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'lcal.</br>' ;  
+                      $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'lcal.</br>' ;
+                ?>
+              </td>
             </tr>
             <tr>
               <th scope="row">Almuerzo</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>
+                <?php 
+                      $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'lcal.</br>' ; 
+                ?>
+              </td>
+              <td>
+                <?php 
+                      $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'lcal.</br>' ;  
+                ?>
+              </td>
+              <td>
+                <?php 
+                      $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'lcal.</br>' ;  
+                ?>
+              </td>
+              <td>
+                  <?php 
+                      $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'lcal.</br>' ;  
+                ?>
+              </td>
+              <td>
+                  <?php 
+                      $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'lcal.</br>' ;  
+                ?>
+              </td>
+              <td>
+                  <?php 
+                      $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'lcal.</br>' ;  
+                ?>
+              </td>
+              <td>
+                  <?php 
+                      $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'lcal.</br>' ;  
+                ?>
+              </td>
             </tr>
             <tr>
               <th scope="row">Comida</th>

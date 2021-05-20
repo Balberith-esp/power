@@ -35,7 +35,7 @@ class NutricionController extends Controller
         $request->session()->put('alimentacion',$dataAlimentos);
 
         $pdf = App::make('dompdf.wrapper');
-        $pdf->loadView('pdf.nutricion');
+        $pdf->loadView('pdf.nutricion')->setPaper('a4', 'landscape');
         $filename = time().'.'.session()->get('user')->id.'.pdf';
 
         // Guardamos el recurso
@@ -48,6 +48,7 @@ class NutricionController extends Controller
         $recurso->save();
 
 
+        
         //Retornamos a la vista
         return $pdf->loadView('pdf.nutricion')->save(public_path('../resources/assets/pdf/'.$filename))->stream($filename);
     }
