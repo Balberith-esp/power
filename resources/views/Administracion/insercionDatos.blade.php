@@ -153,14 +153,25 @@
                         $('#ejercicio').css("display", "block");
                         $('#nutricion').css("display", "none");
                         $('#alimento').css("display", "none");
+                        $('#otroRecurso').css("display", "none");
+
                     } else if($('#selectEntrada').val() == '0'){
                         $('#ejercicio').css("display", "none");
                         $('#nutricion').css("display", "block");
                         $('#alimento').css("display", "none");
-                    }else{
+                        $('#otroRecurso').css("display", "none");
+
+                    }else if($('#selectEntrada').val() == '2'){
                         $('#ejercicio').css("display", "none");
                         $('#alimento').css("display", "block");
                         $('#nutricion').css("display", "none");
+                        $('#otroRecurso').css("display", "none");
+
+                    }else{
+                        $('#ejercicio').css("display", "none");
+                        $('#alimento').css("display", "none");
+                        $('#nutricion').css("display", "none");
+                        $('#otroRecurso').css("display", "block");
                     }
                 });
             });
@@ -181,6 +192,7 @@
                                         <option value="0">Nutrición</option>
                                         <option value="1">Ejercicio</option>
                                         <option value="2">Alimentacion</option>
+                                        <option value="3">Otro Recurso</option>
                                       </select>
                                 </div>
                             </div>
@@ -249,7 +261,7 @@
                                 </div>
                             </form>
                     </div>
-                                        <div id="alimento" style="display:none">
+                    <div id="alimento" style="display:none">
                         <h3>Alimento</h3><br>
                         <form method="POST" action="{{route('alimento.nuevo')}}" enctype="multipart/form-data">
                             @csrf
@@ -325,6 +337,58 @@
                                         
                                     </div>
                                 </div>
+
+                                <div>
+                                    <button class="btn btn--radius-2 btn--red" type="submit">Guardar</button>
+                                </div>
+                            </form>
+                    </div>
+                
+                    <div id="otroRecurso" style="display:none">
+                        <h3>Recurso</h3><br>
+                        <form method="POST" action="{{route('otroRecurso.nuevo')}}" enctype="multipart/form-data">
+                            @csrf
+                                <div class="form-row m-b-55">
+                                    <div class="name">Info</div>
+                                    <div class="value">
+                                        <div class="row row-refine">
+                                            <div class="col-3">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="titulo">
+                                                    <label class="label--desc">Titulo</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="recurso">
+                                                    <label class="label--desc">Enlace al recurso</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row m-b-55">
+                                    <div class="name">Lineas</div>
+                                    <div class="value">
+                                        <div class="row row-refine">
+                                            <div class="col-9">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="lineas" placeholder="Max 3. Separe las lineas por '/'">
+                                                    <label class="label--desc">Lineas</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Imagen</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="file" name="pathImagen">
+                                        </div>
+                                    </div>
+                                </div>
+
 
                                 <div>
                                     <button class="btn btn--radius-2 btn--red" type="submit">Guardar</button>

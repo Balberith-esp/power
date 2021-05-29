@@ -49,7 +49,7 @@ class ForoController extends Controller
         $post->contenido = $request->textoPost;
         $post->tipo = $request->tipo;
         $post->user_id =session()->get('user')->id;
-        
+        $post->usuario = session()->get('user')->nombre.' '.session()->get('user')->apellidos;
         $user = User::find(session()->get('user')->id);
         
         if($request->archivo){

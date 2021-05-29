@@ -234,9 +234,9 @@
                             </div>
                             <div>
                                 @if (session()->has('user'))
-                                    <button class="btn btn--radius-2 btn--red" type="submit">Solicitar rutina de ejercicios</button>
+                                    <button class="btn btn--radius-2 btn--red" type="submit">Solicitar dieta</button>
                                 @else
-                                    <button class="btn btn--radius-2 btn--red" type="submit" disabled>Solicitar rutina de ejercicios</button>
+                                    <button class="btn btn--radius-2 btn--red" type="submit" disabled>Solicitar dieta</button>
                                     <p>Debe estar registrado para realizar rutinas, a que esperas es totalmente gratis, <a href="{{route('Registro.index')}}" class="text-info"> Registrate</a>.</p>
                                 @endif
 

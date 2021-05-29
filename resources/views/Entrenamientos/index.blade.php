@@ -61,108 +61,39 @@
                                 <h3>Entrenamientos populares</h3>
                             </header>
 
-                            <div class="modal fade" id="modalBiceps" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-body">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>        
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Jfrjeg26Cwk"  allowscriptaccess="always" allow="autoplay"></iframe>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div> 
 
-                            <div class="modal fade" id="modalBiceps" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-body">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>        
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Jfrjeg26Cwk"  allowscriptaccess="always" allow="autoplay"></iframe>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div> 
-
-
-                            <div class="modal fade" id="modalPecho" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-body">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>        
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Jfrjeg26Cwk"  allowscriptaccess="always" allow="autoplay"></iframe>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div> 
-
-
-                            <div class="modal fade" id="modalPierna" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-body">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>        
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Jfrjeg26Cwk"  allowscriptaccess="always" allow="autoplay"></iframe>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div> 
-  
                             <div class="row gtr-50">
-                                <div class="col-4">
-                                    <a href="#" class="image fit video-btn"><img src="../resources/assets/img/biceps.png" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Biceps y triceps</h4>
-                                    <p><br>
-                                        <li>Curl de un solo brazo en banco inclinado. </li>
-                                        <li>Curl con banda de resistencia. </li>
-                                        <li>Curl con mancuernas en banco inclinado.</li>
-                                        <li>Curl de martillo de pie.</li>
-                                        <a data-toggle="modal" data-target="#modalBiceps">Ver Entrenamiento</a>
-                                    </p>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/cuadriceps.png" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Cuadriceps y femoral</h4>
-                                    <p><br>
-                                        <li>Sentadilla Asistida. </li>
-                                        <li>Sentadilla Isométrica (Wall Sit) </li>
-                                        <li>Zancadas o Estocadas.</li>
-                                        <li>Subidas al Banco (Step Up).</li>
-                                        <a data-toggle="modal" data-target="#modalPierna">Ver Entrenamiento</a>
-                                    </p>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="image fit"><img src="../resources/assets/img/pectoral.png" alt="" /></a>
-                                </div>
-                                <div class="col-8">
-                                    <h4>Pectoral</h4>
-                                    <p><br>
-                                        <li>Curl de un solo brazo en banco inclinado. </li>
-                                        <li>Curl con banda de resistencia. </li>
-                                        <li>Curl con mancuernas en banco inclinado.</li>
-                                        <li>Curl de martillo de pie.</li>
-                                        <a data-toggle="modal" data-target="#modalPecho">Ver Entrenamiento</a>
-                                    </p>
-                                </div>
+                                
+									@foreach ($ejercicios as $ejercicio)
+                                        <div class="col-4">
+                                            <a href="#" class="image fit"><img src="../resources/assets/img/{{$ejercicio->pathImagen}}" alt="" /></a>
+                                        </div>
+                                        <div class="col-8">
+                                            <h4>{{$ejercicio->titulo}}</h4>
+                                            <p><br>
+                                            @foreach (explode("/", $ejercicio->lineas) as $linea)
+                                                <li>{{$linea}}</li>
+                                            @endforeach
+                                            <a data-toggle="modal" data-target="#modal{{$ejercicio->id}}">Ver Entrenamiento</a>
+                                            </p>
+                                        </div>
+                                
+                                            <div class="modal fade" id="modal{{$ejercicio->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width:80%;">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content"     style="width: 700px;    height: auto;">
+                                                <div class="modal-body">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>        
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src={{$ejercicio->recurso}}  allowscriptaccess="always" allow="autoplay"></iframe>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+									@endforeach
+								{{ $ejercicios->links() }}
                             </div>
                         </section>
                     </div>

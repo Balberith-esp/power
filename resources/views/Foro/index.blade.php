@@ -47,6 +47,49 @@
 
 					<div class="container">
 						<p>
+							<div class="filtros" style=" position: relative;z-index: 99; float: left; margin-right:20px;">
+								<div class="dropdown">
+									<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ordenar por</button>
+									<ul class="dropdown-menu">
+										<input class="form-control" id="myInput" type="text" placeholder="Search..">
+										<li><a href="#">Fecha Asc</a></li>
+										<li><a href="#">Fecha Desc</a></li>
+										<li><a href="#">Categorias</a></li>
+									</ul>
+								</div>
+								<script>
+									$(document).ready(function(){
+									$("#myInput").on("keyup", function() {
+										var value = $(this).val().toLowerCase();
+										$(".dropdown-menu li").filter(function() {
+										$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+										});
+									});
+									});
+								</script>
+							</div>
+							<div class="filtros">
+								<div class="dropdown">
+									<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filtrar</button>
+									<ul class="dropdown-menu" id="segunda">
+										<input class="form-control" id="segundo" type="text" placeholder="Search..">
+										<li><a href="#">Nutricion</a></li>
+										<li><a href="#">Ejercicios</a></li>
+									</ul>
+								</div>
+								<script>
+									$(document).ready(function(){
+									$("#segundo").on("keyup", function() {
+										var value = $(this).val().toLowerCase();
+										$("#segunda li").filter(function() {
+										$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+										});
+									});
+									});
+								</script>
+							</div>
+							<br>
+<hr>
 							@if (session()->has('user'))
 							<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
 								Realizar post
@@ -91,7 +134,7 @@
 									<h3>{{ $p->titulo }}</h3>
 								</header>
 								@if ($p->tipo == 1 )
-									<h4 class="badge badge-success">Nutrición</h4> <h6>{{ $p->created_at}}</h6><br>
+									<h4 class="badge badge-success">Nutrición</h4><h5>{{ $p->usuario}}</h5> <h6>{{ $p->created_at}}</h6><br>
 								@else
 									<h4 class="badge badge-danger">Ejercicio</h4> <h6>{{ $p->created_at}}</h6><br>
 								@endif

@@ -19,6 +19,7 @@ class CreateForoTable extends Migration
             $table->string('contenido');
             $table->integer('tipo');
             $table->boolean('tieneRecurso');
+            $table->string('usuario');
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

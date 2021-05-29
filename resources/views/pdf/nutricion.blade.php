@@ -287,6 +287,7 @@ table.blueTable tfoot .links a{
 
 
          ?>
+         <br><br><br><br><br><br><br><br><br>
           <table class="blueTable">
           <thead>
             <tr>
@@ -302,7 +303,7 @@ table.blueTable tfoot .links a{
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Desayuno</th>
+              <th><small>Desayuno</small></th>
               
               <td>
                 <?php 
@@ -362,7 +363,7 @@ table.blueTable tfoot .links a{
               </td>
             </tr>
             <tr>
-              <th scope="row">Almuerzo</th>
+              <th><small>Almuerzo</small></th>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
@@ -407,7 +408,7 @@ table.blueTable tfoot .links a{
               </td>
             </tr>
             <tr>
-              <th scope="row">Comida</th>
+              <th><small>Comida</small></th>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['comida']['Legumbre'])-1); 
@@ -466,7 +467,7 @@ table.blueTable tfoot .links a{
               </td>
             </tr>
             <tr>
-              <th scope="row">Merienda</th>
+              <th><small>Merienda</small></th>
              <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
@@ -511,7 +512,7 @@ table.blueTable tfoot .links a{
               </td>
             </tr>
             <tr>
-              <th scope="row">Cena</th>
+              <th><small>Cena</small></th>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['cena']['Verduras'])-1); 

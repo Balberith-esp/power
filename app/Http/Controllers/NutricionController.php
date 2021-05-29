@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\DB;
 
 class NutricionController extends Controller
 {
+    public function index()
+    {
+        //
+        $data = otroRecuro::where('tipo', '=', 'nutricion')->paginate(3);
+
+        return view('Nutricion.index',['Nutricion'=>$data]);
+
+    }
 
     /**
      * Store a newly created resource in storage.

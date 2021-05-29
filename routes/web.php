@@ -9,6 +9,7 @@ use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\NutricionController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\NoticiasController;
+use App\Http\Controllers\otroRecursoController;
 use App\Http\Controllers\AlimentoController;
 use App\Http\Controllers\ForoController;
 use Illuminate\Support\Facades\Route;
@@ -25,13 +26,10 @@ Route::get('/', function () {
 })->name('home');
 
 // Rutas para los index
-Route::get('/Entrenamientos', function () {
-    return view('Entrenamientos.index');
-})->name('Entrenamientos.index');
 
-Route::get('/Nutricion', function () {
-    return view('Nutricion.index');
-})->name('Nutricion.index');
+Route::get('/Entrenamientos', [EjercicioController::class,'index'])->name('Entrenamientos.index');
+
+Route::get('/Nutricion', [NutricionController::class,'index'])->name('Nutricion.index');
 
 // Route::get('/Noticias', function () {
 //     return view('Noticias.index');
@@ -148,3 +146,5 @@ Route::post('/editar/perfil', [UsuariosController::class,'edit'])->name('perfil.
 Route::get('/ejercicio/actualizar/{item}', [EjercicioController::class,'update'])->name('ejercicio.actualizar');
 
 Route::post('/alimento/nuevo', [AlimentoController::class,'store'])->name('alimento.nuevo');
+
+Route::post('/otroRecurso/nuevo', [otroRecursoController::class,'store'])->name('otroRecurso.nuevo');

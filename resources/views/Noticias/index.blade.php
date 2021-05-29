@@ -49,8 +49,52 @@
 					</div>
 					<div class="container">
 						<article id="main" class="special">
-							
-							@if (session()->has('user') and session()->get('user')->roles[0]->nombre == 'admin')
+						
+								
+								<div class="container">
+								<div class="filtros" style=" position: relative;z-index: 99; float: left; margin-right:20px;">
+								<div class="dropdown">
+									<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ordenar por</button>
+									<ul class="dropdown-menu">
+										<input class="form-control" id="myInput" type="text" placeholder="Search..">
+										<li><a href="#">Fecha Asc</a></li>
+										<li><a href="#">Fecha Desc</a></li>
+										<li><a href="#">Categorias</a></li>
+									</ul>
+								</div>
+								<script>
+									$(document).ready(function(){
+									$("#myInput").on("keyup", function() {
+										var value = $(this).val().toLowerCase();
+										$(".dropdown-menu li").filter(function() {
+										$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+										});
+									});
+									});
+								</script>
+							</div>
+							<div class="filtros">
+								<div class="dropdown">
+									<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filtrar</button>
+									<ul class="dropdown-menu" id="segunda">
+										<input class="form-control" id="segundo" type="text" placeholder="Search..">
+										<li><a href="#">Nutricion</a></li>
+										<li><a href="#">Ejercicios</a></li>
+									</ul>
+								</div>
+								<script>
+									$(document).ready(function(){
+									$("#segundo").on("keyup", function() {
+										var value = $(this).val().toLowerCase();
+										$("#segunda li").filter(function() {
+										$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+										});
+									});
+									});
+								</script>
+							</div>
+							<br>
+														@if (session()->has('user') and session()->get('user')->roles[0]->nombre == 'admin')
 
 								<h4>Nueva noticia</h4>
 								<form method="POST" action="{{route('Noticia.nueva')}}" enctype="multipart/form-data">
@@ -68,8 +112,6 @@
 								</form>
 							
 							@endif
-								
-								<div class="container">
 									@foreach ($noticias as $noticia)
 										<section>
 											<header>

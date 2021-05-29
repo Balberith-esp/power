@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ejercicio;
 use App\Models\Recurso;
+use App\Models\otroRecurso;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -18,7 +19,14 @@ class EjercicioController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function index()
+    {
+        //
+        $data = otroRecurso::where('tipo', '=', 'ejercicio')->paginate(3);
 
+        return view('Entrenamientos.index',['ejercicios'=>$data]);
+
+    }
     public function update(Ejercicio $item){
 
         
