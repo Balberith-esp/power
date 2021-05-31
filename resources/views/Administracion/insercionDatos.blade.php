@@ -381,6 +381,19 @@
                                     </div>
                                 </div>
                                 <div class="form-row">
+                                    <div class="name">Tipo</div>
+                                    <div class="value">
+                                            <div class="col-9">
+                                                <select class="form-select" aria-label="Default select example" id="selectEntrada" name="tipoRecurso">
+                                                    <option selected>...</option>
+                                                    <option value="Nutrición">Nutrición</option>
+                                                    <option value="Ejercicio">Ejercicio</option>
+                                                </select>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-row">
                                     <div class="name">Imagen</div>
                                     <div class="value">
                                         <div class="input-group">

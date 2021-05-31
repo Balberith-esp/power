@@ -6,6 +6,9 @@ use App\Models\Ejercicio;
 use App\Models\Recurso;
 use App\Models\otroRecurso;
 use App\Models\User;
+use DateTime;
+use App\Models\Foro;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
@@ -22,7 +25,7 @@ class EjercicioController extends Controller
     public function index()
     {
         //
-        $data = otroRecurso::where('tipo', '=', 'ejercicio')->paginate(3);
+        $data = otroRecurso::where('tipo', '=', 'ejercicio')->orderByDesc('created_at')->paginate(3);
 
         return view('Entrenamientos.index',['ejercicios'=>$data]);
 
@@ -34,12 +37,18 @@ class EjercicioController extends Controller
         $item->save();
 
         $user = User::find(session()->get('user')->id);
-        $user->puntos += 10;
-        $user->save();
-
-        $user->compruebaEstado();
+        $intervalo = $user->updated_at->diff(date("Y-m-d H:i:s"));
+        $hours = $intervalo->h;
+        if ($hours>8){
+            
+            $user->puntos += 10;
+            $user->updated_at = date("Y-m-d H:i:s");
+            $user->save();
+    
+            $user->compruebaEstado();
+        }
         
-        return view('Perfil.index');
+        return redirect()->route('Perfil.show');
     }
 
 
@@ -53,8 +62,6 @@ class EjercicioController extends Controller
             $entrenamiendo = new Ejercicio();
             $entrenamiendo->nombre = $request->nombreIndicado;
             // 
- 
-// GUARDAR LOS RESURSOS WEB EN LOCAL Y CARGAR LAS IMAGENES DESDE AHI
 
             $entrenamiendo->zona = implode(" ",$request->zonaIndicado);
             $entrenamiendo->vecesRealizada = 0;
@@ -65,7 +72,7 @@ class EjercicioController extends Controller
             $user = User::find(session()->get('user')->id);
             $user->puntos += 10;
             $user->save();
-            compruebaEstado();
+            $user->compruebaEstado();
 
             $vals = $request->all();
             // Creacion del documento asociado
@@ -91,25 +98,36 @@ class EjercicioController extends Controller
 
             // return redirect()->route('Perfil.show');
     }
+
     function guardarRegistro (Request $request){
 
         // Creacion del entrenamiento
             $entrenamiendo = new Ejercicio();
             $entrenamiendo->nombre = $request->nombre;
-            $entrenamiendo->zona = $request->zona;
-            $entrenamiendo->descripcion = "-";
+            $entrenamiendo->zona = implode(" ",$request->zonaIndicado);
+            $entrenamiendo->vecesRealizada = 0;
             $entrenamiendo->user_id =session()->get('user')->id;
             $entrenamiendo->save();
 
             $fileName = time().'.'.$request->archivo->getClientOriginalExtension();
 
             $request->archivo->move(public_path('../resources/assets/pdf'), $fileName);
+            $post = new Foro();
+
+            $post->titulo = $request->nombre;
+            $post->contenido = 'Nuevo ejercicio recomendado';
+            $post->tipo = 'ejercicio';
+            $post->tieneRecurso =True;
+            $post->user_id =session()->get('user')->id;
+            $post->usuario = 'Administrador'   ;         
+        
+            $post->save();
 
             $recurso = new Recurso();
             $recurso->path = '../resources/assets/pdf/'.$fileName;
             $recurso->user_id = 1;
-            $recurso->commentable_type = 'ejercicio';
-            $recurso->commentable_id = DB::table('ejercicios')->latest('created_at')->first()->id;
+            $recurso->commentable_type = 'post';
+            $recurso->commentable_id = DB::table('post')->latest('created_at')->first()->id;
             $recurso->save();
 
 

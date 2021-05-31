@@ -24,6 +24,31 @@ class ForoController extends Controller
 
     }
 
+    public function filtrar($filtro){
+        switch ($filtro) {
+            case 'fechaAsc':
+                $data = Foro::orderByAsc('created_at')->paginate(6);
+                return view('Foro.index',['post'=>$data]);
+                break;
+            case 'fechaDesc':
+                $data = Foro::orderByDesc('created_at')->paginate(6);
+                return view('Foro.index',['post'=>$data]);
+                break;
+            case 'categorias':
+                $data = Foro::groupBy('tipo')->paginate(6);
+                return view('Foro.index',['post'=>$data]);
+                break;
+            case 'nutricion':
+                $data = Foro::where('tipo', '=', 'nutricion')->paginate(6);
+                return view('Foro.index',['post'=>$data]);
+                break;
+            case 'ejercicios':
+                $data = Foro::where('tipo', '=', 'ejercicio')->paginate(6);
+                return view('Foro.index',['post'=>$data]);
+                break;
+        };
+    }
+
     /**
      * Show the form for creating a new resource.
      *

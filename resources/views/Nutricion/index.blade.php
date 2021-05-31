@@ -105,42 +105,36 @@
                         </header>
 
                         <div class="row gtr-50">
-                            <div class="col-4">
-                                <a href="#" class="image fit"><img src="../resources/assets/img/proteina.png" alt="" /></a>
-                            </div>
-
-                            <div class="col-8">
-                                <h4>Hiperproteica</h4>
-                                <p><br>
-                                    Una dieta proteica es un método que consiste en reducir al máximo el consumo de los carbohidratos reemplazándolos
-                                    por proteínas, esto hace que el cuerpo se vea obligado a comenzar a utilizar la grasa consumida y almacenada
-                                    para obtener energía.
-                                    <a>leer mas......</a>
-                                </p>
-                            </div>
-                            <div class="col-4">
-                                <a href="#" class="image fit"><img src="../resources/assets/img/keto.jpg" alt="" /></a>
-                            </div>
-                            <div class="col-8">
-                                <h4>KETO</h4>
-                                <p><br>
-                                    La dieta keto o cetogénica se centra en la ingesta de más alimentos ricos en grasas buenas y proteínas
-                                    (pescado azul, aguacate, aceite de coco y de oliva) con una restricción de la ingesta de hidratos de carbono
-                                    <a>leer mas......</a>
-                                </p>
-                            </div>
-                            <div class="col-4">
-                                <a href="#" class="image fit"><img src="../resources/assets/img/detox.jpg" alt="" /></a>
-                            </div>
-                            <div class="col-8">
-                                <h4>Detox</h4>
-                                <p><br>
-                                    Un detox sirve para mejorar, optimizar y apoyar el proceso natural de desintoxicación del cuerpo al disminuir
-                                    la cantidad de toxinas que ingerimos, además de que provee el cuerpo de los nutrientes que necesita para
-                                    trabajar adecuadamente.
-                                    <a>leer mas......</a>
-                                </p>
-                            </div>
+                            @foreach ($nutricion as $nutri)
+                                <div class="col-4">
+                                    <a href="#" class="image fit"><img src="../resources/assets/img/{{$nutri->pathImagen}}" alt="" /></a>
+                                </div>
+                                <div class="col-8">
+                                    <h4>{{$nutri->titulo}}</h4>
+                                    <p><br>
+                                    @foreach (explode("/", $nutri->lineas) as $linea)
+                                        <li>{{$linea}}</li>
+                                    @endforeach
+                                    <a data-toggle="modal" data-target="#modal{{$nutri->id}}">Ver Entrenamiento</a>
+                                    </p>
+                                </div>
+                        
+                                    <div class="modal fade" id="modal{{$nutri->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width:80%;">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content"     style="width: 700px;    height: auto;">
+                                        <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>        
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <iframe class="embed-responsive-item" src={{$nutri->recurso}}allowscriptaccess="always" allow="autoplay"></iframe>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            @endforeach
+                            {{ $nutricion->links() }}
                         </div>
                     </section>
                 </div>

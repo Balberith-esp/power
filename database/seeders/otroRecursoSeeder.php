@@ -40,6 +40,34 @@ class otroRecursoSeeder extends Seeder
             'tipo' => 'ejercicio',
             'recurso' => 'https://www.youtube.com/embed/bek6W-7bliQ',
             'pathImagen' =>'biceps.png',
+        ),
+    		array(
+			'titulo' => 'Hiperproteica',
+			'lineas' => 'Una dieta proteica es un método que consiste en reducir al máximo el consumo de los carbohidratos/El cuerpo se vea obligado a comenzar a utilizar la grasa consumida',
+            'tipo' => 'nutricion',
+            'recurso' => 'https://www.youtube.com/embed/bek6W-7bliQ',
+            'pathImagen' =>'proteina.png',
+        ),
+        array(
+			'titulo' => 'KETO',
+			'lineas' => 'Se centra en la ingesta de más alimentos ricos en grasas buenas y proteínas/Con una restricción de la ingesta de hidratos de carbono.',
+            'tipo' => 'nutricion',
+            'recurso' => 'https://www.youtube.com/embed/bek6W-7bliQ',
+            'pathImagen' =>'keto.jpg',
+        ),
+        array(
+			'titulo' => 'Detox',
+			'lineas' => 'Un detox sirve para mejorar, optimizar y apoyar el proceso natural de desintoxicación del cuerpo/Disminuir la cantidad de toxinas que ingerimos',
+            'tipo' => 'nutricion',
+            'recurso' => 'https://www.youtube.com/embed/bek6W-7bliQ',
+            'pathImagen' =>'detox.jpg',
+        ),
+        array(
+			'titulo' => 'Detox',
+			'lineas' => 'Un detox sirve para mejorar, optimizar y apoyar el proceso natural de desintoxicación del cuerpo/Disminuir la cantidad de toxinas que ingerimos',
+            'tipo' => 'nutricion',
+            'recurso' => 'https://www.youtube.com/embed/bek6W-7bliQ',
+            'pathImagen' =>'detox.jpg',
         ),);
     public function run()
     {

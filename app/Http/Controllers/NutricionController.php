@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Nutricion;
 use App\Models\Recurso;
 use App\Models\Alimento;
+use App\Models\otroRecurso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
@@ -14,9 +15,9 @@ class NutricionController extends Controller
     public function index()
     {
         //
-        $data = otroRecuro::where('tipo', '=', 'nutricion')->paginate(3);
+        $data = otroRecurso::where('tipo', '=', 'nutricion')->orderByDesc('created_at')->paginate(3);
 
-        return view('Nutricion.index',['Nutricion'=>$data]);
+        return view('Nutricion.index',['nutricion'=>$data]);
 
     }
 
@@ -65,26 +66,31 @@ class NutricionController extends Controller
             $dieta = new Nutricion();
             $dieta->nombre = $request->nombre;
 
-//     QUITAR EL CAMPO TIPO Y CLASIFICACION DE LA TABLA
-
-// MODIFICAR EN EL PDF PARA QUE LOS RECURSOS DE EDAD, ALTURA Y SEXO LOS COJA DE LA USUARIO
-
-
-            $dieta->tipo = $request->nombre;
-            $dieta->clasificacion = "-";
             $dieta->user_id =1;
             $dieta->save();
 
             $fileName = time().'.'.$request->archivo->getClientOriginalExtension();
 
             $request->archivo->move(public_path('../resources/assets/pdf'), $fileName);
+            $post = new Foro();
+
+            $post->titulo = $request->nombre;
+            $post->contenido = 'Nueva dieta recomendada';
+            $post->tipo = 'nutricion';
+            $post->user_id =session()->get('user')->id;
+            $post->usuario = 'Administrador'   ; 
+            $post->usuario = True;         
+        
+            $post->save();
 
             $recurso = new Recurso();
             $recurso->path = '../resources/assets/pdf/'.$fileName;
             $recurso->user_id = 1;
-            $recurso->commentable_type = 'nutricion';
-            $recurso->commentable_id = DB::table('nutricion')->latest('created_at')->first()->id;
+            $recurso->commentable_type = 'post';
+            $recurso->commentable_id = DB::table('post')->latest('created_at')->first()->id;
             $recurso->save();
+
+
 
             return redirect()->route('insercionDatos');
     }

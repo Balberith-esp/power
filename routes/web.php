@@ -148,3 +148,5 @@ Route::get('/ejercicio/actualizar/{item}', [EjercicioController::class,'update']
 Route::post('/alimento/nuevo', [AlimentoController::class,'store'])->name('alimento.nuevo');
 
 Route::post('/otroRecurso/nuevo', [otroRecursoController::class,'store'])->name('otroRecurso.nuevo');
+
+Route::get('/filtrarForo/{item}', [ForoController::class,'filtrar'])->name('filtroForo');

@@ -52,9 +52,9 @@
 									<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ordenar por</button>
 									<ul class="dropdown-menu">
 										<input class="form-control" id="myInput" type="text" placeholder="Search..">
-										<li><a href="#">Fecha Asc</a></li>
-										<li><a href="#">Fecha Desc</a></li>
-										<li><a href="#">Categorias</a></li>
+										<li><a href="{{route('filtroForo', 'fechaAsc')}}">Fecha Asc</a></li>
+										<li><a href="{{route('filtroForo', 'fechaDesc')}}">Fecha Desc</a></li>
+										<li><a href="{{route('filtroForo', 'categorias')}}">Categorias</a></li>
 									</ul>
 								</div>
 								<script>
@@ -73,8 +73,8 @@
 									<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filtrar</button>
 									<ul class="dropdown-menu" id="segunda">
 										<input class="form-control" id="segundo" type="text" placeholder="Search..">
-										<li><a href="#">Nutricion</a></li>
-										<li><a href="#">Ejercicios</a></li>
+										<li><a href="{{route('filtroForo', 'nutricion')}}">Nutricion</a></li>
+										<li><a href="{{route('filtroForo', 'ejercicios')}}">Ejercicios</a></li>
 									</ul>
 								</div>
 								<script>

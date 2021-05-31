@@ -16,7 +16,7 @@ class CreateForoTable extends Migration
         Schema::create('foro', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->string('contenido');
+            $table->longText('contenido');
             $table->integer('tipo');
             $table->boolean('tieneRecurso');
             $table->string('usuario');

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\otroRecurso;
 
 use Illuminate\Http\Request;
 
@@ -35,7 +36,18 @@ class otroRecursoController extends Controller
     public function store(Request $request)
     {
         //
-        
+            $otroRecurso = new otroRecurso();
+            $otroRecurso->titulo = $request->titulo;
+            $otroRecurso->lineas = $request->lineas;
+            $otroRecurso->recurso = $request->recurso;
+            $otroRecurso->tipo = $request->tipoRecurso;
+            $fileName = time().'.'.$request->pathImagen->getClientOriginalExtension();
+
+            $request->pathImagen->move(public_path('../resources/assets/img'), $fileName);
+            $otroRecurso->pathImagen = $fileName;
+            
+            $otroRecurso->save();
+            return redirect()->route('insercionDatos');
     }
 
     /**

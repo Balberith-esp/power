@@ -78,7 +78,8 @@
                                             </p>
                                         </div>
                                 
-                                            <div class="modal fade" id="modal{{$ejercicio->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width:80%;">
+                                            <div class="modal fade" id="modal{{$ejercicio->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
+                                                aria-hidden="true" style="width:80%;">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content"     style="width: 700px;    height: auto;">
                                                 <div class="modal-body">

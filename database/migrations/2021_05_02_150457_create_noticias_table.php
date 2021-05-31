@@ -16,7 +16,7 @@ class CreateNoticiasTable extends Migration
         Schema::create('noticias', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->string('contenido');
+            $table->longText('contenido');
             $table->integer('tipo');
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
