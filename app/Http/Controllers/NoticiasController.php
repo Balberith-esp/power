@@ -20,6 +20,34 @@ class NoticiasController extends Controller
 
     }
 
+    public function filtrar($filtro){
+        switch ($filtro) {
+            case 'fechaAsc':
+                $data = Noticia::orderBy('created_at', 'asc')->paginate(6);
+                return view('Noticias.index',['noticias'=>$data]);
+                break;
+            case 'fechaDesc':
+                $data = Noticia::orderBy('created_at', 'desc')->paginate(6);
+                return view('Noticias.index',['noticias'=>$data]);
+                break;
+            case 'categorias':
+                $data = Noticia::orderBy('tipo','asc')->paginate(6);
+                return view('Noticias.index',['noticias'=>$data]);
+                break;
+            case 'nutricion':
+                $data = Noticia::where('tipo', '=', '1')->paginate(6);
+                return view('Noticias.index',['noticias'=>$data]);
+                break;
+            case 'ejercicios':
+                $data = Noticia::where('tipo', '=', '0')->paginate(6);
+                return view('Noticias.index',['noticias'=>$data]);
+                break;
+                case 'todo':
+                    $data = Noticia::paginate(6);
+                return view('Noticias.index',['noticias'=>$data]);
+                break;
+        };
+    }
     /**
      * Show the form for creating a new resource.
      *

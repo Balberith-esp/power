@@ -104,7 +104,7 @@ class EjercicioController extends Controller
         // Creacion del entrenamiento
             $entrenamiendo = new Ejercicio();
             $entrenamiendo->nombre = $request->nombre;
-            $entrenamiendo->zona = implode(" ",$request->zonaIndicado);
+            $entrenamiendo->zona = "";
             $entrenamiendo->vecesRealizada = 0;
             $entrenamiendo->user_id =session()->get('user')->id;
             $entrenamiendo->save();
@@ -115,8 +115,8 @@ class EjercicioController extends Controller
             $post = new Foro();
 
             $post->titulo = $request->nombre;
-            $post->contenido = 'Nuevo ejercicio recomendado';
-            $post->tipo = 'ejercicio';
+            $post->contenido = 'Nuevo ejercicio recomendado por el equipo de Power';
+            $post->tipo = 0;
             $post->tieneRecurso =True;
             $post->user_id =session()->get('user')->id;
             $post->usuario = 'Administrador'   ;         
@@ -127,7 +127,7 @@ class EjercicioController extends Controller
             $recurso->path = '../resources/assets/pdf/'.$fileName;
             $recurso->user_id = 1;
             $recurso->commentable_type = 'post';
-            $recurso->commentable_id = DB::table('post')->latest('created_at')->first()->id;
+            $recurso->commentable_id = DB::table('foro')->latest('created_at')->first()->id;
             $recurso->save();
 
 

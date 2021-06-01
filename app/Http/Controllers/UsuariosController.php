@@ -153,7 +153,7 @@ class UsuariosController extends Controller
         $user->save();
 
 
-        return view('home');
+        return redirect()->route('Perfil.show');
 
     }
 

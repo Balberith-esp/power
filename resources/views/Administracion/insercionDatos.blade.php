@@ -28,7 +28,7 @@
                     <ul>
                         <li><a href="{{route('home')}}">Inicio</a></li>
                         <li><a href="{{route('Foro.index')}}">Foro</a></li>
-						<li><a href="Noticias.index">Noticias</a></li>
+						<li><a href="{{route('Noticias.index')}}">Noticias</a></li>
                         <li><a href="{{route('Entrenamientos.index')}}">Entrenamientos</a></li>
                         <li><a href="{{route('Nutricion.index')}}">Nutricion</a></li>
                         @if (session()->has('user'))
@@ -73,10 +73,9 @@
                                 <tbody>
                                     @foreach ($ejercicios as $ejercicio)
                                     <tr>
-
                                         <td>{{$ejercicio->nombre}}</td>
                                         <td>{{$ejercicio->zona}}</td>
-                                        <td>{{$ejercicio->user_id}}</td>
+                                        <td>{{$usuarios[$ejercicio->user_id-1]->nombre}} {{$usuarios[$ejercicio->user_id-1]->apellidos}} </td>
                                         <td>
                                             <a href="{{route('ejercicio.descargar', $ejercicio)}}" type="button"><i class="far fa-file-pdf fa-lg"></i></a>
                                         </td>
@@ -126,7 +125,7 @@
                                     @foreach ($nutriciones as $nutricion)
                                     <tr>
                                         <td>{{$nutricion->nombre}}</td>
-                                        <td>{{$nutricion->user_id}}</td>
+                                        <td>{{$usuarios[$nutricion->user_id-1]->nombre}} {{$usuarios[$nutricion->user_id-1]->apellidos}} </td>
                                         <td>
                                             <a href="{{route('dieta.descargar', $nutricion)}}" type="button"><i class="far fa-file-pdf fa-lg"></i></a>
                                         </td>

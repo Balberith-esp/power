@@ -71,8 +71,9 @@
 							<div class="filtros">
 								<div class="dropdown">
 									<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filtrar</button>
-									<ul class="dropdown-menu" id="segunda">
+									<ul class="dropdown-menu" id="segunda" style="margin-left: 16%;">
 										<input class="form-control" id="segundo" type="text" placeholder="Search..">
+										<li><a href="{{route('filtroForo', 'todo')}}">Todos</a></li>
 										<li><a href="{{route('filtroForo', 'nutricion')}}">Nutricion</a></li>
 										<li><a href="{{route('filtroForo', 'ejercicios')}}">Ejercicios</a></li>
 									</ul>
@@ -89,7 +90,7 @@
 								</script>
 							</div>
 							<br>
-<hr>
+<br>
 							@if (session()->has('user'))
 							<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
 								Realizar post

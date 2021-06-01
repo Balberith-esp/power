@@ -27,23 +27,27 @@ class ForoController extends Controller
     public function filtrar($filtro){
         switch ($filtro) {
             case 'fechaAsc':
-                $data = Foro::orderByAsc('created_at')->paginate(6);
+                $data = Foro::orderBy('created_at', 'asc')->paginate(6);
                 return view('Foro.index',['post'=>$data]);
                 break;
             case 'fechaDesc':
-                $data = Foro::orderByDesc('created_at')->paginate(6);
+                $data = Foro::orderBy('created_at', 'desc')->paginate(6);
                 return view('Foro.index',['post'=>$data]);
                 break;
             case 'categorias':
-                $data = Foro::groupBy('tipo')->paginate(6);
+                $data = Foro::orderBy('tipo','asc')->paginate(6);
                 return view('Foro.index',['post'=>$data]);
                 break;
             case 'nutricion':
-                $data = Foro::where('tipo', '=', 'nutricion')->paginate(6);
+                $data = Foro::where('tipo', '=', '1')->paginate(6);
                 return view('Foro.index',['post'=>$data]);
                 break;
             case 'ejercicios':
-                $data = Foro::where('tipo', '=', 'ejercicio')->paginate(6);
+                $data = Foro::where('tipo', '=', '2')->paginate(6);
+                return view('Foro.index',['post'=>$data]);
+                break;
+            case 'todo':
+                $data = Foro::paginate(6);
                 return view('Foro.index',['post'=>$data]);
                 break;
         };

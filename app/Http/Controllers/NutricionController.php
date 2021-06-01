@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Nutricion;
 use App\Models\Recurso;
 use App\Models\Alimento;
+use App\Models\Foro;
 use App\Models\otroRecurso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -75,11 +76,11 @@ class NutricionController extends Controller
             $post = new Foro();
 
             $post->titulo = $request->nombre;
-            $post->contenido = 'Nueva dieta recomendada';
-            $post->tipo = 'nutricion';
+            $post->contenido = 'Nueva dieta recomendada por el equipo de Powe';
+            $post->tipo = 1;
             $post->user_id =session()->get('user')->id;
-            $post->usuario = 'Administrador'   ; 
-            $post->usuario = True;         
+            $post->usuario = 'Administrador'; 
+            $post->tieneRecurso = True;         
         
             $post->save();
 
@@ -87,7 +88,7 @@ class NutricionController extends Controller
             $recurso->path = '../resources/assets/pdf/'.$fileName;
             $recurso->user_id = 1;
             $recurso->commentable_type = 'post';
-            $recurso->commentable_id = DB::table('post')->latest('created_at')->first()->id;
+            $recurso->commentable_id = DB::table('foro')->latest('created_at')->first()->id;
             $recurso->save();
 
 

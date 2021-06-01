@@ -83,7 +83,7 @@ Route::get('/Registro', [UsuariosController::class,'index'])->name('Registro.ind
 // ->Crea registro
 Route::post('/Registro', [UsuariosController::class,'store'])->name('Registro.creaUsuario');
 
-Route::post('/modfica/usuario', [UsuariosController::class,'update'])->name('modificar.usuario');
+Route::post('/modfica/usuario', [UsuariosController::class,'update'])->name('Registro.modificaUsuario');
 
 
 // // // // // // // // // // // // // //
@@ -150,3 +150,5 @@ Route::post('/alimento/nuevo', [AlimentoController::class,'store'])->name('alime
 Route::post('/otroRecurso/nuevo', [otroRecursoController::class,'store'])->name('otroRecurso.nuevo');
 
 Route::get('/filtrarForo/{item}', [ForoController::class,'filtrar'])->name('filtroForo');
+
+Route::get('/filtrarNoticia/{item}', [NoticiasController::class,'filtrar'])->name('filtroNoticia');

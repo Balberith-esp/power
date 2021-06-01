@@ -57,9 +57,9 @@
 									<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ordenar por</button>
 									<ul class="dropdown-menu">
 										<input class="form-control" id="myInput" type="text" placeholder="Search..">
-										<li><a href="#">Fecha Asc</a></li>
-										<li><a href="#">Fecha Desc</a></li>
-										<li><a href="#">Categorias</a></li>
+										<li><a href="{{route('filtroNoticia', 'fechaAsc')}}">Fecha Asc</a></li>
+										<li><a href="{{route('filtroNoticia', 'fechaDesc')}}">Fecha Desc</a></li>
+										<li><a href="{{route('filtroNoticia', 'categorias')}}">Categorias</a></li>
 									</ul>
 								</div>
 								<script>
@@ -76,10 +76,12 @@
 							<div class="filtros">
 								<div class="dropdown">
 									<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filtrar</button>
-									<ul class="dropdown-menu" id="segunda">
+									<ul class="dropdown-menu" id="segunda" style="margin-left: 16%;"> 
 										<input class="form-control" id="segundo" type="text" placeholder="Search..">
-										<li><a href="#">Nutricion</a></li>
-										<li><a href="#">Ejercicios</a></li>
+										<li><a href="{{route('filtroNoticia', 'todo')}}">Todo</a></li>
+										<li><a href="{{route('filtroNoticia', 'nutricion')}}">Nutricion</a></li>
+										<li><a href="{{route('filtroNoticia', 'ejercicios')}}">Ejercicios</a></li>
+
 									</ul>
 								</div>
 								<script>

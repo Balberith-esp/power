@@ -11,10 +11,14 @@
   border-collapse: collapse;
 }
 table.blueTable td, table.blueTable th {
-  padding: 3px 2px;
+    padding: 3px 2px;
+    height:30;
+    color:black;
+
 }
 table.blueTable tbody td {
   font-size: 10px;
+  height:40px;
 }
 table.blueTable tr:nth-child(even) {
   background: #D0E4F5;
@@ -29,8 +33,7 @@ table.blueTable thead {
 table.blueTable thead th {
   font-size: 14px;
   font-weight: bold;
-  color: #FFFFFF;
-  text-align: left;
+  text-align: center;
   border-left: 2px solid #D0E4F5;
 }
 table.blueTable thead th:first-child {
@@ -46,7 +49,6 @@ table.blueTable tfoot .links {
 table.blueTable tfoot .links a{
   display: inline-block;
   background: #1C6EA4;
-  color: #FFFFFF;
   padding: 2px 8px;
   border-radius: 5px;
 }
@@ -66,9 +68,11 @@ table.blueTable tfoot .links a{
     }
     header h1{
       margin: 10px 0;
+      color: blue;
     }
     header h2{
       margin: 0 0 10px 0;
+
     }
     footer {
       position: fixed;
@@ -93,9 +97,10 @@ table.blueTable tfoot .links a{
   </style>
 <body>
   <header>
-    <h1>Power TEAM</h1>
+    <h1>Equipo Power</h1>
     <h2>{{session()->get('nutricion')["nombreIndicado"]}}</h2>
   </header>
+  <hr><hr>
   <body>
 
     <h4>Analisis de alimentación creado para {{session()->get('user')->nombre}}</h4>
@@ -160,7 +165,7 @@ table.blueTable tfoot .links a{
             }
 
         ?>
-    </h5><hr><hr>
+    </h5><hr><hr><br><br><br>
     <H4>Resultados para sus datos:<h4>
         <p>
             <?php
@@ -240,7 +245,7 @@ table.blueTable tfoot .links a{
         <ul>
             <li><?php echo $recomendacionObjetivo ?></li>
             <li><?php echo $recomendacionActividad ?></li>
-        </ul><br><br>
+        </ul>
         <?php  
           $alimentos = [
             'desayuno' => [
@@ -287,7 +292,7 @@ table.blueTable tfoot .links a{
 
 
          ?>
-         <br><br><br><br><br><br><br><br><br>
+         <br><br><br>
           <table class="blueTable">
           <thead>
             <tr>
@@ -308,57 +313,57 @@ table.blueTable tfoot .links a{
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
-                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.</br>' ; 
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.<br/>' ; 
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
-                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
-                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
-                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
-                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
-                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
-                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
-                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
-                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
-                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
-                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
-                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Lacteos'])-1); 
-                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['desayuno']['Lacteos'][$val]['nombre'].' - '.$alimentos['desayuno']['Lacteos'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['desayuno']['Cereales']) -1);
-                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['desayuno']['Cereales'][$val]['nombre'].' - '.$alimentos['desayuno']['Cereales'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
             </tr>
@@ -367,43 +372,43 @@ table.blueTable tfoot .links a{
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ; 
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ; 
                 ?>
               </td>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                 ?>
               </td>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                 ?>
               </td>
             </tr>
@@ -412,57 +417,57 @@ table.blueTable tfoot .links a{
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['comida']['Legumbre'])-1); 
-                      echo $alimentos['comida']['Legumbre'][$val]['nombre'].' - '.$alimentos['comida']['Legumbre'][$val]['valorNutricional'].'Kcal.</br>' ; 
+                      echo $alimentos['comida']['Legumbre'][$val]['nombre'].' - '.$alimentos['comida']['Legumbre'][$val]['valorNutricional'].'Kcal.<br/>' ; 
                       $val= rand ( 0 , sizeof($alimentos['comida']['Carnes']) -1);
-                      echo $alimentos['comida']['Carnes'][$val]['nombre'].' - '.$alimentos['comida']['Carnes'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['comida']['Carnes'][$val]['nombre'].' - '.$alimentos['comida']['Carnes'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['comida']['Verduras'])-1); 
-                      echo $alimentos['comida']['Verduras'][$val]['nombre'].' - '.$alimentos['comida']['Verduras'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['comida']['Verduras'][$val]['nombre'].' - '.$alimentos['comida']['Verduras'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['comida']['Pescados']) -1);
-                      echo $alimentos['comida']['Pescados'][$val]['nombre'].' - '.$alimentos['comida']['Pescados'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['comida']['Pescados'][$val]['nombre'].' - '.$alimentos['comida']['Pescados'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['comida']['Pasta'])-1); 
-                      echo $alimentos['comida']['Pasta'][$val]['nombre'].' - '.$alimentos['comida']['Pasta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['comida']['Pasta'][$val]['nombre'].' - '.$alimentos['comida']['Pasta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['comida']['Carnes']) -1);
-                      echo $alimentos['comida']['Carnes'][$val]['nombre'].' - '.$alimentos['comida']['Carnes'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['comida']['Carnes'][$val]['nombre'].' - '.$alimentos['comida']['Carnes'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['comida']['Legumbre'])-1); 
-                      echo $alimentos['comida']['Legumbre'][$val]['nombre'].' - '.$alimentos['comida']['Legumbre'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['comida']['Legumbre'][$val]['nombre'].' - '.$alimentos['comida']['Legumbre'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['comida']['Pescados']) -1);
-                      echo $alimentos['comida']['Pescados'][$val]['nombre'].' - '.$alimentos['comida']['Pescados'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['comida']['Pescados'][$val]['nombre'].' - '.$alimentos['comida']['Pescados'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['comida']['Verduras'])-1); 
-                      echo $alimentos['comida']['Verduras'][$val]['nombre'].' - '.$alimentos['comida']['Verduras'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['comida']['Verduras'][$val]['nombre'].' - '.$alimentos['comida']['Verduras'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['comida']['Carnes']) -1);
-                      echo $alimentos['comida']['Carnes'][$val]['nombre'].' - '.$alimentos['comida']['Carnes'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['comida']['Carnes'][$val]['nombre'].' - '.$alimentos['comida']['Carnes'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['comida']['Legumbre'])-1); 
-                      echo $alimentos['comida']['Legumbre'][$val]['nombre'].' - '.$alimentos['comida']['Legumbre'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['comida']['Legumbre'][$val]['nombre'].' - '.$alimentos['comida']['Legumbre'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['comida']['Carnes']) -1);
-                      echo $alimentos['comida']['Carnes'][$val]['nombre'].' - '.$alimentos['comida']['Carnes'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['comida']['Carnes'][$val]['nombre'].' - '.$alimentos['comida']['Carnes'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['comida']['Pasta'])-1); 
-                      echo $alimentos['comida']['Pasta'][$val]['nombre'].' - '.$alimentos['comida']['Pasta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['comida']['Pasta'][$val]['nombre'].' - '.$alimentos['comida']['Pasta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['comida']['Pescados']) -1);
-                      echo $alimentos['comida']['Pescados'][$val]['nombre'].' - '.$alimentos['comida']['Pescados'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['comida']['Pescados'][$val]['nombre'].' - '.$alimentos['comida']['Pescados'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
             </tr>
@@ -471,43 +476,43 @@ table.blueTable tfoot .links a{
              <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ; 
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ; 
                 ?>
               </td>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                 ?>
               </td>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['almuerzo']['Fruta'])-1); 
-                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['almuerzo']['Fruta'][$val]['nombre'].' - '.$alimentos['almuerzo']['Fruta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                 ?>
               </td>
             </tr>
@@ -516,57 +521,57 @@ table.blueTable tfoot .links a{
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['cena']['Verduras'])-1); 
-                      echo $alimentos['cena']['Verduras'][$val]['nombre'].' - '.$alimentos['cena']['Verduras'][$val]['valorNutricional'].'Kcal.</br>' ; 
+                      echo $alimentos['cena']['Verduras'][$val]['nombre'].' - '.$alimentos['cena']['Verduras'][$val]['valorNutricional'].'Kcal.<br/>' ; 
                       $val= rand ( 0 , sizeof($alimentos['cena']['Carnes']) -1);
-                      echo $alimentos['cena']['Pescados'][$val]['nombre'].' - '.$alimentos['cena']['Pescados'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['cena']['Pescados'][$val]['nombre'].' - '.$alimentos['cena']['Pescados'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['cena']['Verduras'])-1); 
-                      echo $alimentos['cena']['Verduras'][$val]['nombre'].' - '.$alimentos['cena']['Verduras'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['cena']['Verduras'][$val]['nombre'].' - '.$alimentos['cena']['Verduras'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['cena']['Otro']) -1);
-                      echo $alimentos['cena']['Otro'][$val]['nombre'].' - '.$alimentos['cena']['Otro'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['cena']['Otro'][$val]['nombre'].' - '.$alimentos['cena']['Otro'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                 <?php 
                       $val= rand ( 0 , sizeof($alimentos['cena']['Pasta'])-1); 
-                      echo $alimentos['cena']['Pasta'][$val]['nombre'].' - '.$alimentos['cena']['Pasta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['cena']['Pasta'][$val]['nombre'].' - '.$alimentos['cena']['Pasta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['cena']['Carnes']) -1);
-                      echo $alimentos['cena']['Carnes'][$val]['nombre'].' - '.$alimentos['cena']['Carnes'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['cena']['Carnes'][$val]['nombre'].' - '.$alimentos['cena']['Carnes'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['cena']['Verduras'])-1); 
-                      echo $alimentos['cena']['Verduras'][$val]['nombre'].' - '.$alimentos['cena']['Verduras'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['cena']['Verduras'][$val]['nombre'].' - '.$alimentos['cena']['Verduras'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['cena']['Otro']) -1);
-                      echo $alimentos['cena']['Otro'][$val]['nombre'].' - '.$alimentos['cena']['Otro'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['cena']['Otro'][$val]['nombre'].' - '.$alimentos['cena']['Otro'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['cena']['Pasta'])-1); 
-                      echo $alimentos['cena']['Pasta'][$val]['nombre'].' - '.$alimentos['cena']['Pasta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['cena']['Pasta'][$val]['nombre'].' - '.$alimentos['cena']['Pasta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['cena']['Pescados']) -1);
-                      echo $alimentos['cena']['Pescados'][$val]['nombre'].' - '.$alimentos['cena']['Pescados'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['cena']['Pescados'][$val]['nombre'].' - '.$alimentos['cena']['Pescados'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['cena']['Verduras'])-1); 
-                      echo $alimentos['cena']['Verduras'][$val]['nombre'].' - '.$alimentos['cena']['Verduras'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['cena']['Verduras'][$val]['nombre'].' - '.$alimentos['cena']['Verduras'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['cena']['Otro']) -1);
-                      echo $alimentos['cena']['Otro'][$val]['nombre'].' - '.$alimentos['cena']['Otro'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['cena']['Otro'][$val]['nombre'].' - '.$alimentos['cena']['Otro'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
               <td>
                   <?php 
                       $val= rand ( 0 , sizeof($alimentos['cena']['Pasta'])-1); 
-                      echo $alimentos['cena']['Pasta'][$val]['nombre'].' - '.$alimentos['cena']['Pasta'][$val]['valorNutricional'].'Kcal.</br>' ;  
+                      echo $alimentos['cena']['Pasta'][$val]['nombre'].' - '.$alimentos['cena']['Pasta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['cena']['Carnes']) -1);
-                      echo $alimentos['cena']['Carnes'][$val]['nombre'].' - '.$alimentos['cena']['Carnes'][$val]['valorNutricional'].'Kcal.</br>' ;
+                      echo $alimentos['cena']['Carnes'][$val]['nombre'].' - '.$alimentos['cena']['Carnes'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
               </td>
             </tr>

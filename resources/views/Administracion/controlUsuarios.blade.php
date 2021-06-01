@@ -38,7 +38,7 @@
                     <ul>
                         <li><a href="{{route('home')}}">Inicio</a></li>
                         <li><a href="{{route('Foro.index')}}">Foro</a></li>
-						<li><a href="Noticias.index">Noticias</a></li>
+						<li><a href="{{route('Noticias.index')}}">Noticias</a></li>
                         <li><a href="{{route('Entrenamientos.index')}}">Entrenamientos</a></li>
                         <li><a href="{{route('Nutricion.index')}}">Nutricion</a></li>
                         @if (session()->has('user'))
@@ -121,102 +121,141 @@
                     <a type="button" class="btn btn-warning"  data-toggle="modal" data-target="#modificarUsuario">Modificar Usuario</a>
                 </div>
                 <div class="modal fade" id="agregarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="card card-5" style="margin: 5% 10%;">
+                    <div class="card card-5" style="margin: 5% 10%; max-width:80%;">
                         <div class="card-heading">
                             <h2 class="title">Nuevo usuario</h2>
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="{{route('Registro.creaUsuario')}}" enctype="multipart/form-data">
-                                @csrf
-                                <div class="form-row m-b-55">
-                                    <div class="name">Nombre</div>
-                                    <div class="value">
-                                        <div class="row row-refine">
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="nombre">
-                                                    <label class="label--desc">Nombre</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="primerApellido">
-                                                    <label class="label--desc">1º Apellido</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="segundoApellido">
-                                                    <label class="label--desc">2º Apellido</label>
-                                                </div>
-                                            </div>
-                                        </div>
+                     <form method="POST" action="{{route('Registro.modificaUsuario')}}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-row m-b-55">
+                        <div class="name">Nombre</div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="nombre">
+                                        <label class="label--desc">Nombre</label>
                                     </div>
                                 </div>
-                                <div class="form-row m-b-55">
-                                    <div class="name">Contraseña</div>
-                                    <div class="value">
-                                        <div class="row row-refine">
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="password" name="contraseña">
-                                                    <label class="label--desc">Contraseña</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="password" name="repContraseña">
-                                                    <label class="label--desc">Repite Contraseña</label>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="primerApellido">
+                                        <label class="label--desc">1º Apellido</label>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="name">Email</div>
-                                    <div class="value">
-                                        <div class="input-group">
-                                            <input class="input--style-5" type="email" name="email">
-                                        </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="segundoApellido">
+                                        <label class="label--desc">2º Apellido</label>
                                     </div>
                                 </div>
-                                <div class="form-row m-b-55">
-                                    <div class="name">Direccion</div>
-                                    <div class="value">
-                                        <div class="row row-refine">
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="pais">
-                                                    <label class="label--desc">Pais</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="provincia">
-                                                    <label class="label--desc">Provincia</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="ciudad">
-                                                    <label class="label--desc">Ciudad</label>
-                                                </div>
-                                            </div>
-                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row m-b-55">
+                        <div class="name">Datos</div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="integer" name="Altura">
+                                        <label class="label--desc">Altura</label>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="name">Foto Usuario</div>
-                                    <div class="value">
-                                        <div class="input-group">
-                                            <input class="input--style-5" type="file" name="fotoPerfil">
-                                        </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="integer" name="peso">
+                                        <label class="label--desc">Peso</label>
                                     </div>
                                 </div>
-                                <div>
-                                    <button class="btn btn--radius-2 btn--red" type="submit">Registro</button>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="integer" name="edad">
+                                        <label class="label--desc">Edad</label>
+                                    </div>
                                 </div>
-                            </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="form-row p-t-20">
+                        <label class="label ">Sexo</label>
+                        <div class="p-t-15">
+                            <label class="radio-container m-r-55">Hombre
+                                <input type="radio" checked="checked" value="hombre" name="sexo">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio-container">Mujer
+                            <input type="radio" value="mujer" name="sexo">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row m-b-55">
+                        <div class="name">Contraseña</div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="password" name="contraseña">
+                                        <label class="label--desc">Contraseña</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="password" name="repContraseña">
+                                        <label class="label--desc">Repite Contraseña</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Email</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="email" name="email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row m-b-55">
+                        <div class="name">Direccion</div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="pais">
+                                        <label class="label--desc">Pais</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="provincia">
+                                        <label class="label--desc">Provincia</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="ciudad">
+                                        <label class="label--desc">Ciudad</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Foto Usuario</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="file" name="fotoPerfil">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn--radius-2 btn--red" type="submit">Registro</button>
+                    </div>
+                </form>
                         </div></div>
                 </div>
 
@@ -227,93 +266,132 @@
                             <h2 class="title">Editar usuario</h2>
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="{{route('modificar.usuario')}}" enctype="multipart/form-data">
-                                @csrf
-                                <div class="form-row m-b-55">
-                                    <div class="name">Nombre</div>
-                                    <div class="value">
-                                        <div class="row row-refine">
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="nombre">
-                                                    <label class="label--desc">Nombre</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="primerApellido">
-                                                    <label class="label--desc">1º Apellido</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="segundoApellido">
-                                                    <label class="label--desc">2º Apellido</label>
-                                                </div>
-                                            </div>
-                                        </div>
+                             <form method="POST" action="{{route('Registro.creaUsuario')}}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-row m-b-55">
+                        <div class="name">Nombre</div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="nombre">
+                                        <label class="label--desc">Nombre</label>
                                     </div>
                                 </div>
-                                <div class="form-row m-b-55">
-                                    <div class="name">Contraseña</div>
-                                    <div class="value">
-                                        <div class="row row-refine">
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="password" name="contraseña">
-                                                    <label class="label--desc">Contraseña</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="password" name="repContraseña">
-                                                    <label class="label--desc">Repite Contraseña</label>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="primerApellido">
+                                        <label class="label--desc">1º Apellido</label>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="name">Email</div>
-                                    <div class="value">
-                                        <div class="input-group">
-                                            <input class="input--style-5" type="email" name="email">
-                                        </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="segundoApellido">
+                                        <label class="label--desc">2º Apellido</label>
                                     </div>
                                 </div>
-                                <div class="form-row m-b-55">
-                                    <div class="name">Direccion</div>
-                                    <div class="value">
-                                        <div class="row row-refine">
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="pais">
-                                                    <label class="label--desc">Pais</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="provincia">
-                                                    <label class="label--desc">Provincia</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="ciudad">
-                                                    <label class="label--desc">Ciudad</label>
-                                                </div>
-                                            </div>
-                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row m-b-55">
+                        <div class="name">Datos</div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="integer" name="Altura">
+                                        <label class="label--desc">Altura</label>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="name">Foto Usuario</div>
-                                    <div class="value">
-                                        <div class="input-group">
-                                            <input class="input--style-5" type="file" name="fotoPerfil">
-                                        </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="integer" name="peso">
+                                        <label class="label--desc">Peso</label>
                                     </div>
                                 </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="integer" name="edad">
+                                        <label class="label--desc">Edad</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="form-row p-t-20">
+                        <label class="label ">Sexo</label>
+                        <div class="p-t-15">
+                            <label class="radio-container m-r-55">Hombre
+                                <input type="radio" checked="checked" value="hombre" name="sexo">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio-container">Mujer
+                            <input type="radio" value="mujer" name="sexo">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row m-b-55">
+                        <div class="name">Contraseña</div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="password" name="contraseña">
+                                        <label class="label--desc">Contraseña</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="password" name="repContraseña">
+                                        <label class="label--desc">Repite Contraseña</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Email</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="email" name="email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row m-b-55">
+                        <div class="name">Direccion</div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="pais">
+                                        <label class="label--desc">Pais</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="provincia">
+                                        <label class="label--desc">Provincia</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="ciudad">
+                                        <label class="label--desc">Ciudad</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Foto Usuario</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="file" name="fotoPerfil">
+                            </div>
+                        </div>
+                    </div>
 
                                 <div class="form-row p-t-20">
                                     <label class="label "><a> Usuario Activo</a></label>

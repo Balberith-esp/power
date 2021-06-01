@@ -27,7 +27,9 @@ class AdministracionController extends Controller
         $dataEjercicios = Ejercicio::all();
         $dataNutricion = Nutricion::all();
         $dataAlimentos = Alimento::all();
-        return view('Administracion.insercionDatos',['ejercicios'=>$dataEjercicios,'nutriciones'=>$dataNutricion, 'alimentos'=>$dataAlimentos]);
+        $dataUsers = User::all();
+        return view('Administracion.insercionDatos',['ejercicios'=>$dataEjercicios,'nutriciones'=>$dataNutricion,
+                                                         'alimentos'=>$dataAlimentos,'usuarios'=>$dataUsers]);
 
     }
     public function controlUsuarios()
