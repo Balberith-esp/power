@@ -77,6 +77,12 @@ class RecursoSeeder extends Seeder
             'commentable_type' => 'ejercicio',
             'user_id' => 2,
         ),
+        array(
+            'path' => '../resources/assets/pdf/1618130083.2.pdf',
+            'commentable_id' => 3,
+            'commentable_type' => 'post',
+            'user_id' => 1,
+        ),
     );
     public function run()
     {

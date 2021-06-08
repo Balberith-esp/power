@@ -39,14 +39,14 @@ class EjercicioController extends Controller
         $user = User::find(session()->get('user')->id);
         $intervalo = $user->updated_at->diff(date("Y-m-d H:i:s"));
         $hours = $intervalo->h;
-        if ($hours>8){
+        // if ($hours>8){
             
             $user->puntos += 10;
             $user->updated_at = date("Y-m-d H:i:s");
             $user->save();
     
             $user->compruebaEstado();
-        }
+        // }
         
         return redirect()->route('Perfil.show');
     }
