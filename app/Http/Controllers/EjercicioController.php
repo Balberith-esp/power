@@ -33,22 +33,25 @@ class EjercicioController extends Controller
     public function update(Ejercicio $item){
 
         
-        $item->vecesRealizada += 1;
-        $item->save();
-
         $user = User::find(session()->get('user')->id);
-        $intervalo = $user->updated_at->diff(date("Y-m-d H:i:s"));
+        $ultimaModificacion = $user->updated_at;
+        $ahora = date("Y-m-d H:i:s");
+        $intervalo = $ultimaModificacion->diff($ahora);
         $hours = $intervalo->h;
-        // if ($hours>8){
-            
+        // dd($hours);
+        if ($hours>6){
+            $item->vecesRealizada += 1;
+            $item->save();
             $user->puntos += 10;
             $user->updated_at = date("Y-m-d H:i:s");
             $user->save();
     
             $user->compruebaEstado();
-        // }
+        }else{
+            return back()->with('warning','No intentes hacer trampas! :)');
+        }
         
-        return redirect()->route('Perfil.show');
+        return redirect()->route('Perfil.show')->with('success','Entrenamiento registrado con exito!, acabas de ganar 10 pts');
     }
 
 

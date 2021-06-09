@@ -44,6 +44,12 @@
 
 
 				<div class="wrapper style1">
+					@if ($message = Session::get('success'))
+						<div class="alert alert-success alert-block">
+							<button type="button" class="close" data-dismiss="alert">×</button>	
+								<strong>{{ $message }}</strong>
+						</div>
+					@endif
 					<div class="container">
 
 					</div>
@@ -96,7 +102,7 @@
 								</script>
 							</div>
 							<br>
-														@if (session()->has('user') and session()->get('user')->roles[0]->nombre == 'admin')
+							@if (session()->has('user') and session()->get('user')->roles[0]->nombre == 'admin')
 
 								<h4>Nueva noticia</h4>
 								<form method="POST" action="{{route('Noticia.nueva')}}" enctype="multipart/form-data">
@@ -117,7 +123,7 @@
 									@foreach ($noticias as $noticia)
 										<section>
 											<header>
-												<h3>{{ $noticia->titulo }}</h3>
+												<h3 style="text-align: center;">{{ $noticia->titulo }}</h3>
 											</header>
 											@if ($noticia->tipo == 1 )
 												<h4 class="badge badge-success">Nutrición</h4> <h6>{{ $noticia->created_at}}</h6><br>

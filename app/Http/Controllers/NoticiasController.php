@@ -77,7 +77,7 @@ class NoticiasController extends Controller
 
         $data = Noticia::paginate(6);
 
-        return redirect()->route('Noticias.index',['noticias'=>$data]);
+        return redirect()->route('Noticias.index',['noticias'=>$data])->with('success','Noticia creada con exito');
 
     }
 

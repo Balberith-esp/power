@@ -107,7 +107,7 @@ class ForoController extends Controller
         $data = Foro::paginate(6);
         
         $user->compruebaEstado();
-        return redirect()->route('Foro.index',['post'=>$data]);
+        return redirect()->route('Foro.index',['post'=>$data])->with('success','Nuevo post creado!, acabas de ganar pts, sigue colaborando en la web para subir de nivel mas rapido. (^^)/');;
     }
 
     /**

@@ -44,7 +44,12 @@
 
 			<!-- Main -->
 				<div class="wrapper style1">
-
+					@if ($message = Session::get('success'))
+						<div class="alert alert-success alert-block">
+							<button type="button" class="close" data-dismiss="alert">×</button>	
+								<strong>{{ $message }}</strong>
+						</div>
+					@endif
 					<div class="container">
 						<p>
 							<div class="filtros" style=" position: relative;z-index: 99; float: left; margin-right:20px;">
