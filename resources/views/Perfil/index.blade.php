@@ -60,9 +60,29 @@
                     <div class="col-4 col-12-mobile" id="sidebar">
                         <hr class="first" />
                         <section>
+                            <style>
+                                .novato{
+                                    border-radius: 50%;width:150px;border: 8px solid brown;
+                                }
+                                .Principiante{
+                                    border-radius: 50%;width:150px;border: 8px solid silver;
+                                }
+                                .Intermedio{
+                                    border-radius: 50%;width:150px;border: 8px solid green;
+                                }
+                                .Avanzado{
+                                    border-radius: 50%;width:150px;border: 8px solid red;
+                                }
+                                .Experto{
+                                    border-radius: 50%;width:150px;border: 8px solid yellow;
+                                }
+                                .Maestro{
+                                    border-radius: 50%;width:150px;border: 8px solid gold;
+                                }
+                            </style>
                             <header>
                                 <img src= {{asset('../resources/assets/img/fotosPerfil')}}{{'/'.session()->get('user')->fotoPerfil }}
-                                        style="border-radius: 50%; width:150px">
+                                     class="{{ session()->get('user')->nivel}}" >
                             </header>
                             <article id="main">
 

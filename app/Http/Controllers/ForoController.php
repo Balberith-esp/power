@@ -19,8 +19,9 @@ class ForoController extends Controller
         //
         
         $data = Foro::paginate(6);
+        $dataUsuarios = User::all();
 
-        return view('Foro.index',['post'=>$data]);
+        return view('Foro.index',['post'=>$data,'dataUsuarios'=>$dataUsuarios]);
 
     }
 

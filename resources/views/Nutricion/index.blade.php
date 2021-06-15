@@ -115,7 +115,7 @@
                                     @foreach (explode("/", $nutri->lineas) as $linea)
                                         <li>{{$linea}}</li>
                                     @endforeach
-                                    <a data-toggle="modal" data-target="#modal{{$nutri->id}}">Ver Entrenamiento</a>
+                                    <a data-toggle="modal" data-target="#modal{{$nutri->id}}">Ver recurso</a>
                                     </p>
                                 </div>
                         

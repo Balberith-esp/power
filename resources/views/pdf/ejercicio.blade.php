@@ -171,42 +171,27 @@
     <?php
     // {{-- Entrenamiento brazo --}}
         if (in_array('brazo',session()->get('entreamiento')["zonaIndicado"])) {
-            echo '<img src="../../resources/assets/img/entramientos/brazo.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Brazo</h3><br>';
+            echo '<div style="text-align: center;"><img src="C:/xampp/htdocs/jesusCuevas/power/resources/assets/img/entrenamientos/brazo.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Brazo</h3><br></div>';
         }
     // {{-- Entrenamiento pierna --}}
     if (in_array('pierna', session()->get('entreamiento')["zonaIndicado"])) {
-            echo '<img src="https://i.pinimg.com/originals/1d/9b/aa/1d9baac826099dfda5cfd91256e15387.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pierna</h3><br>';
+            echo '<div style="text-align: center;"><img src="C:/xampp/htdocs/jesusCuevas/power/resources/assets/img/entrenamientos/pierna.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pierna</h3><br></div>';
         }
     // {{-- Entrenamiento espalda --}}
     if (in_array('espalda', session()->get('entreamiento')["zonaIndicado"])) {
-            echo '<img src="https://i.pinimg.com/originals/be/bc/89/bebc89e859bac084a046c8d54d6a00ba.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Espalda</h3><br>';
+            echo '<div style="text-align: center;"><img src="C:/xampp/htdocs/jesusCuevas/power/resources/assets/img/entrenamientos/espalda.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Espalda</h3><br></div>';
         }
     // {{-- Entrenamiento hombro --}}
     if (in_array('hombro', session()->get('entreamiento')["zonaIndicado"])) {
-            echo '<img src="https://i.pinimg.com/originals/fe/45/c0/fe45c0765fcd577ad51ca843f0526cd6.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Hombro</h3><br>';
+            echo '<div style="text-align: center;"><img src="C:/xampp/htdocs/jesusCuevas/power/resources/assets/img/entrenamientos/hombro.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Hombro</h3><br></div>';
         }
     // {{-- Entrenamiento pecho --}}
     if (in_array('pecho', session()->get('entreamiento')["zonaIndicado"])) {
-            echo '<img src="https://i.pinimg.com/originals/47/96/86/4796864e3baaf4a575a8c6059c1a414d.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pecho</h3><br>';
+            echo '<div style="text-align: center;"><img src="C:/xampp/htdocs/jesusCuevas/power/resources/assets/img/entrenamientos/pecho.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pecho</h3><br></div>';
         }
     // {{-- Entrenamiento abdo --}}
-    if (in_array('abdomen', session()->get('entreamiento')["zonaIndicado"])) {
-            echo '<img src="https://cdn.statically.io/img/interlife.es/wp-content/uploads/2020/08/rutina-abdominales-herbalife.png?quality=100&f=auto<h3>Entrenamiento Abdomen</h3><br="" style=" height:650px; width:500px"><br>';
-        }
-
-    // {{-- Entrenamiento All --}}
-    if (in_array('full', session()->get('entreamiento')["zonaIndicado"])) {
-            echo '<img src="https://i.pinimg.com/originals/d1/41/cd/d141cd12dc024d15aef469d762ebe6f6.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Brazo</h3><br>';
-            echo '<img src="https://i.pinimg.com/originals/1d/9b/aa/1d9baac826099dfda5cfd91256e15387.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pierna</h3><br>';
-            echo '<img src="https://i.pinimg.com/originals/fe/45/c0/fe45c0765fcd577ad51ca843f0526cd6.png" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Hombro</h3><br>';
-            echo '<img src="https://i.pinimg.com/originals/47/96/86/4796864e3baaf4a575a8c6059c1a414d.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Pecho</h3><br>';
-            echo '<img src="https://buscadordeportivo.files.wordpress.com/2015/11/abs.jpg?w=640" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Abdomen</h3><br<>';
-            echo '<img src="https://i.pinimg.com/originals/be/bc/89/bebc89e859bac084a046c8d54d6a00ba.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Espalda</h3><br>';
-
-
-
-
-
+    if (in_array('abdome', session()->get('entreamiento')["zonaIndicado"])) {
+            echo '<div style="text-align: center;"><img src="C:/xampp/htdocs/jesusCuevas/power/resources/assets/img/entrenamientos/abdomen.png" style=" height:650px; width:500px"><h3>Entrenamiento Abdomen</h3><br></div>';
         }
 
     ?>

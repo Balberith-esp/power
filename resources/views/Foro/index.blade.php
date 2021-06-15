@@ -132,7 +132,26 @@
 								</div>
 							</div>
 					</div>
-
+					<style>
+						.novato{
+							border-radius: 50%;width:40px;border: 3px solid brown;
+						}
+						.Principiante{
+							border-radius: 50%;width:40px;border: 3px solid silver;
+						}
+						.Intermedio{
+							border-radius: 50%;width:40px;border: 3px solid green;
+						}
+						.Avanzado{
+							border-radius: 50%;width:40px;border: 3px solid red;
+						}
+						.Experto{
+							border-radius: 50%;width:40px;border: 3px solid yellow;
+						}
+						.Maestro{
+							border-radius: 50%;width:40px;border: 3px solid gold;
+						}
+					</style>
 					<div class="container">
 						@foreach ($post as $p)
 							<section>
@@ -140,11 +159,18 @@
 									<h3>{{ $p->titulo }}</h3>
 								</header>
 								@if ($p->tipo == 1 )
-									<h4 class="badge badge-success">Nutrición</h4><h5>{{ $p->usuario}}</h5> <h6>{{ $p->created_at}}</h6><br>
+									<img src= {{asset('../resources/assets/img/fotosPerfil')}}{{'/'.$dataUsuarios[$p->user_id-1]->fotoPerfil }}
+                                     class="{{ session()->get('user')->nivel}}" >
+									<h5>{{ $p->usuario}}</h5>
+									 <h6>{{ $p->created_at}}</h6><h4 class="badge badge-success">Nutrición</h4>
 								@else
-									<h4 class="badge badge-danger">Ejercicio</h4> <h6>{{ $p->created_at}}</h6><br>
+									<img src= {{asset('../resources/assets/img/fotosPerfil')}}{{'/'.$dataUsuarios[$p->user_id-1]->fotoPerfil }}
+                                     class="{{ session()->get('user')->nivel}}" >
+									<h5>{{ $p->usuario}}</h5> <h6>{{ $p->created_at}}</h6>
+									<h4 class="badge badge-danger">Ejercicio</h4>
 								@endif
 								<p>
+								<br>
 									{{ $p->contenido }}
 									{{ $p->user_id }}
 								</p>
