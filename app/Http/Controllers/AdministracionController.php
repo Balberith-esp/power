@@ -6,6 +6,7 @@ use App\Models\Ejercicio;
 use App\Models\Alimento;
 use App\Models\Nutricion;
 use App\Models\user;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class AdministracionController extends Controller
@@ -28,15 +29,17 @@ class AdministracionController extends Controller
         $dataNutricion = Nutricion::all();
         $dataAlimentos = Alimento::all();
         $dataUsers = User::all();
+        $dataRoles = Role::all();
         return view('Administracion.insercionDatos',['ejercicios'=>$dataEjercicios,'nutriciones'=>$dataNutricion,
-                                                         'alimentos'=>$dataAlimentos,'usuarios'=>$dataUsers]);
+                                                         'alimentos'=>$dataAlimentos,'usuarios'=>$dataUsers,
+                                                         'roles'=>$dataRoles]);
 
     }
     public function controlUsuarios()
     {
-
+        $dataRoles = Role::all();
         $data = User::all();
-        return view('Administracion.controlUsuarios', ['usuarios'=>$data]);
+        return view('Administracion.controlUsuarios', ['usuarios'=>$data,'roles'=>$dataRoles]);
 
     }
 

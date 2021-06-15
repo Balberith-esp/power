@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Role;
+use App\Models\role_user;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -58,14 +59,13 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $request->validate([
             'fotoPerfil' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip',
-        ]);
-        // return $request;
-
-        if($request->contraseña == $request->repContraseña and $request->exist == "on"){
-
+            ]);
+            // return $request;
+            
+            if($request->contraseña == $request->repContraseña and $request->exist == "on" or  $request->exist == Null){
+                
             $fileName = time().'.'.$request->fotoPerfil->getClientOriginalExtension();
 
             $request->fotoPerfil->move(public_path('../resources/assets/img/fotosPerfil'), $fileName);
@@ -78,7 +78,8 @@ class UsuariosController extends Controller
             
             $nuevoUsuario->edad = $request->edad;
             $nuevoUsuario->sexo = $request->sexo;
-            $nuevoUsuario->altura = $request->altura;
+            $nuevoUsuario->altura = $request->Altura;
+            $nuevoUsuario->peso = $request->peso;
 
             $nuevoUsuario->puntos = 100;
             $nuevoUsuario->nivel = 'Novato';
@@ -89,7 +90,15 @@ class UsuariosController extends Controller
             $nuevoUsuario->fotoPerfil = $fileName;
             $nuevoUsuario->activo = 1;
             $nuevoUsuario->save();
-            $nuevoUsuario->assignRole('user');
+            if ($request->role){
+                $nuevoRoleUser = new role_user();
+                $nuevoRoleUser->role_id = $request->role;
+                $nuevoRoleUser->user_id = $nuevoUsuario->id;
+                $nuevoRoleUser->save();
+            }else{
+                $nuevoUsuario->assignRole('user');
+            }
+
             if(session()->get('user') != null){
                 return redirect('/UserControl');
             }else{
@@ -175,7 +184,7 @@ class UsuariosController extends Controller
 
         $request->fotoPerfil->move(public_path('../resources/assets/img/fotosPerfil'), $fileName);
 
-        $usuarioEditado = User::where('email', "=", $request->email);
+        $usuarioEditado = User::where('email', "=", $request->email)->first();
         if($usuarioEditado != null){
             if($request->active== "on"){
                 $activado = 1;
@@ -187,12 +196,19 @@ class UsuariosController extends Controller
                 "apellidos" => $request->primerApellido." ".$request->segundoApellido,
                 "password" => Crypt::encrypt($request->contraseña),
                 "pais" => $request->pais,
+                "peso" => $request->peso,
+                "edad" => $request->edad,
+                "altura" => $request->Altura,
                 "email" => $request->email,
                 "provincia" => $request->provincia,
                 "ciudad" => $request->ciudad,
                 "fotoPerfil" => $fileName,
                 "activo" => $activado
             ]);
+            $nuevoRoleUser = new role_user();
+            $nuevoRoleUser->role_id = $request->role;
+            $nuevoRoleUser->user_id = $usuarioEditado->id;
+            $nuevoRoleUser->save();
 
             return redirect('/UserControl');
         }else{

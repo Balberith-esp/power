@@ -171,7 +171,7 @@
     <?php
     // {{-- Entrenamiento brazo --}}
         if (in_array('brazo',session()->get('entreamiento')["zonaIndicado"])) {
-            echo '<img src="https://i.pinimg.com/originals/d1/41/cd/d141cd12dc024d15aef469d762ebe6f6.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Brazo</h3><br>';
+            echo '<img src="../../resources/assets/img/entramientos/brazo.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Brazo</h3><br>';
         }
     // {{-- Entrenamiento pierna --}}
     if (in_array('pierna', session()->get('entreamiento')["zonaIndicado"])) {

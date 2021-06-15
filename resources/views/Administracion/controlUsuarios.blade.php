@@ -126,7 +126,7 @@
                             <h2 class="title">Nuevo usuario</h2>
                         </div>
                         <div class="card-body">
-                     <form method="POST" action="{{route('Registro.modificaUsuario')}}" enctype="multipart/form-data">
+                     <form method="POST" action="{{route('Registro.creaUsuario')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-row m-b-55">
                         <div class="name">Nombre</div>
@@ -217,6 +217,20 @@
                             <div class="input-group">
                                 <input class="input--style-5" type="email" name="email">
                             </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Role</div>
+                        <div class="value">
+                                <div class="col-9">
+                                    <select class="form-select" aria-label="Default select example" id="role" name="role">
+                                        @foreach ($roles as $role)
+                                            <option value="{{$role->id}}">{{$role->nombre}}</option>
+                                        @endforeach
+                                        
+                                    </select>
+                                </div>
+                            
                         </div>
                     </div>
                     <div class="form-row m-b-55">
@@ -266,7 +280,7 @@
                             <h2 class="title">Editar usuario</h2>
                         </div>
                         <div class="card-body">
-                             <form method="POST" action="{{route('Registro.creaUsuario')}}" enctype="multipart/form-data">
+                             <form method="POST" action="{{route('Registro.modificaUsuario')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-row m-b-55">
                         <div class="name">Nombre</div>
@@ -354,9 +368,29 @@
                     <div class="form-row">
                         <div class="name">Email</div>
                         <div class="value">
-                            <div class="input-group">
-                                <input class="input--style-5" type="email" name="email">
-                            </div>
+                                <div class="col-9">
+                                    <select class="form-select" aria-label="Default select example" id="email" name="email">
+                                        @foreach ($usuarios as $usuario)
+                                            <option value="{{$usuario->email}}">{{$usuario->email}}</option>
+                                        @endforeach
+                                        
+                                    </select>
+                                </div>
+                            
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Role</div>
+                        <div class="value">
+                                <div class="col-9">
+                                    <select class="form-select" aria-label="Default select example" id="role" name="role">
+                                        @foreach ($roles as $role)
+                                            <option value="{{$role->id}}">{{$role->nombre}}</option>
+                                        @endforeach
+                                        
+                                    </select>
+                                </div>
+                            
                         </div>
                     </div>
                     <div class="form-row m-b-55">
