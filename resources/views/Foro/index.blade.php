@@ -159,13 +159,14 @@
 									<h3>{{ $p->titulo }}</h3>
 								</header>
 								@if ($p->tipo == 1 )
+									
 									<img src= {{asset('../resources/assets/img/fotosPerfil')}}{{'/'.$dataUsuarios[$p->user_id-1]->fotoPerfil }}
-                                     class="{{ session()->get('user')->nivel}}" >
+                                     class="{{ $dataUsuarios[$p->user_id-1]->nivel}}" >
 									<h5>{{ $p->usuario}}</h5>
 									 <h6>{{ $p->created_at}}</h6><h4 class="badge badge-success">Nutrición</h4>
 								@else
 									<img src= {{asset('../resources/assets/img/fotosPerfil')}}{{'/'.$dataUsuarios[$p->user_id-1]->fotoPerfil }}
-                                     class="{{ session()->get('user')->nivel}}" >
+                                     class="{{$dataUsuarios[$p->user_id-1]->nivel}}" >
 									<h5>{{ $p->usuario}}</h5> <h6>{{ $p->created_at}}</h6>
 									<h4 class="badge badge-danger">Ejercicio</h4>
 								@endif

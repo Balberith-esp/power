@@ -26,16 +26,16 @@ class ForoSeeder extends Seeder
             'contenido' => 'Post 2  sin recurso',
             'tipo' => '0',
             'tieneRecurso' => '0',
-            'user_id'=>'1',
-            'usuario' => 'Pablo cuevas',
+            'user_id'=>'2',
+            'usuario' => 'Pedro power',
         ),
         array(
             'titulo' => 'Post 3 con recurso',
             'contenido' => 'Post 3 con recurso',
             'tipo' => '1',
             'tieneRecurso' => '1',
-            'user_id'=>'1',
-            'usuario' => 'Jesus cuevas',
+            'user_id'=>'2',
+            'usuario' => 'Pedro power',
         ),
         );
     public function run()
