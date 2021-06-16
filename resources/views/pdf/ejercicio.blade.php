@@ -91,6 +91,7 @@
     </h5>
     <h5>Estado actual:
         <?php
+        // dd(session()->get('user')->nivel);
             switch (session()->get('user')->nivel) {
                 case 'novato':
                     echo "Novato";
@@ -104,7 +105,7 @@
                     echo "Intermedio";
                     $recomendacionEstado = "Entrenamiento 5-6 dias por semana, busque nuevas marcas paulatinamente";
                     break;
-                case 'avanzado':
+                case 'Avanzado':
                     echo "Avanzado";
                     $recomendacionEstado = "Entrenamiento de resistencia con fuerza alternando rutinas y pesos";
                     break;
@@ -170,7 +171,7 @@
 
     <?php
     // {{-- Entrenamiento brazo --}}
-        if (in_array('brazo',session()->get('entreamiento')["zonaIndicado"])) {
+    if (in_array('brazo',session()->get('entreamiento')["zonaIndicado"])) {
             echo '<div style="text-align: center;"><img src="C:/xampp/htdocs/jesusCuevas/power/resources/assets/img/entrenamientos/brazo.jpg" alt="" style=" height:650px; width:500px"><h3>Entrenamiento Brazo</h3><br></div>';
         }
     // {{-- Entrenamiento pierna --}}

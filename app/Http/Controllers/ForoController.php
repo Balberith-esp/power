@@ -18,7 +18,7 @@ class ForoController extends Controller
     {
         //
         
-        $data = Foro::paginate(6);
+        $data = Foro::orderBy('id', 'desc')->paginate(5);
         $dataUsuarios = User::all();
 
         return view('Foro.index',['post'=>$data,'dataUsuarios'=>$dataUsuarios]);
@@ -26,30 +26,33 @@ class ForoController extends Controller
     }
 
     public function filtrar($filtro){
+
+        $dataUsuarios = User::all();
+
         switch ($filtro) {
             case 'fechaAsc':
                 $data = Foro::orderBy('created_at', 'asc')->paginate(6);
-                return view('Foro.index',['post'=>$data]);
+                return view('Foro.index',['post'=>$data, 'dataUsuarios'=>$dataUsuarios]);
                 break;
             case 'fechaDesc':
                 $data = Foro::orderBy('created_at', 'desc')->paginate(6);
-                return view('Foro.index',['post'=>$data]);
+                return view('Foro.index',['post'=>$data, 'dataUsuarios'=>$dataUsuarios]);
                 break;
             case 'categorias':
                 $data = Foro::orderBy('tipo','asc')->paginate(6);
-                return view('Foro.index',['post'=>$data]);
+                return view('Foro.index',['post'=>$data, 'dataUsuarios'=>$dataUsuarios]);
                 break;
             case 'nutricion':
                 $data = Foro::where('tipo', '=', '1')->paginate(6);
-                return view('Foro.index',['post'=>$data]);
+                return view('Foro.index',['post'=>$data, 'dataUsuarios'=>$dataUsuarios]);
                 break;
             case 'ejercicios':
-                $data = Foro::where('tipo', '=', '2')->paginate(6);
-                return view('Foro.index',['post'=>$data]);
+                $data = Foro::where('tipo', '=', '0')->paginate(6);
+                return view('Foro.index',['post'=>$data, 'dataUsuarios'=>$dataUsuarios]);
                 break;
             case 'todo':
                 $data = Foro::paginate(6);
-                return view('Foro.index',['post'=>$data]);
+                return view('Foro.index',['post'=>$data, 'dataUsuarios'=>$dataUsuarios]);
                 break;
         };
     }
@@ -74,7 +77,7 @@ class ForoController extends Controller
     {
         //
         $post = new Foro();
-
+        $dataUsuarios = User::all();
         $post->titulo = $request->tituloPost;
         $post->contenido = $request->textoPost;
         $post->tipo = $request->tipo;
@@ -108,7 +111,7 @@ class ForoController extends Controller
         $data = Foro::paginate(6);
         
         $user->compruebaEstado();
-        return redirect()->route('Foro.index',['post'=>$data])->with('success','Nuevo post creado!, acabas de ganar pts, sigue colaborando en la web para subir de nivel mas rapido. (^^)/');;
+        return redirect()->route('Foro.index',['post'=>$data, 'dataUsuarios'=>$dataUsuarios])->with('success','Nuevo post creado!, acabas de ganar pts, sigue colaborando en la web para subir de nivel mas rapido. (^^)/');;
     }
 
     /**

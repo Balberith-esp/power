@@ -25,12 +25,7 @@ class EjercicioSeeder extends Seeder
 			'vecesRealizada' => '0',
 			'user_id' => '1',
         ),
-        array(
-			'nombre' => 'Entrenamiento full ',
-			'zona' => 'Espalda/Pecho/Pierna',
-			'vecesRealizada' => '0',
-			'user_id' => '1',
-        ),
+
         array(
 			'nombre' => 'Entrenamiento Brazo/hombro',
 			'zona' => 'Brazo/hombro',
@@ -39,7 +34,7 @@ class EjercicioSeeder extends Seeder
         ),
 
         array(
-			'nombre' => 'Entrenamiento full body',
+			'nombre' => 'Entrenamiento grupos principales',
 			'zona' => 'Espalda/Pecho/Pierna',
 			'vecesRealizada' => '0',
 			'user_id' => '2',

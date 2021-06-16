@@ -116,7 +116,7 @@
 										<select class="form-select"  name="tipo" required>
 											<option selected value="1">Categoria del post....</option>
 											<option value="1">Nutricion</option>
-											<option value="2">Entrenamiento</option>
+											<option value="0">Entrenamiento</option>
 										</select><br>
 										<div class="form-row">
 											<div class="name">Archivo</div>
@@ -173,7 +173,7 @@
 								<p>
 								<br>
 									{{ $p->contenido }}
-									{{ $p->user_id }}
+									<!-- {{ $p->user_id }} -->
 								</p>
 								@if ($p->tieneRecurso)
 									<p>

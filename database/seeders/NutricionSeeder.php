@@ -15,32 +15,23 @@ class NutricionSeeder extends Seeder
     private $nutricion = array(
 		array(
             'nombre' => 'Dieta volumen',
-			// 'tipo' => 'hiperproteica',
-			// 'clasificacion' => '8',
 			'user_id' => '1',
         ),
         array(
             'nombre' => 'Dieta definicion',
-			// 'tipo' => 'KETO',
-			// 'clasificacion' => '4',
 			'user_id' => '1',
         ),
+        
         array(
             'nombre' => 'Dieta semanal',
-			// 'tipo' => 'Estandar',
-			// 'clasificacion' => '8',
 			'user_id' => '2',
         ),
         array(
             'nombre' => 'Dieta verano',
-			// 'tipo' => 'Temporada',
-			// 'clasificacion' => '4',
 			'user_id' => '2',
         ),
         array(
             'nombre' => 'Dieta alto rendimiento',
-			// 'tipo' => 'Deportiva',
-			// 'clasificacion' => '8',
 			'user_id' => '2',
         ),
     );
@@ -50,8 +41,6 @@ class NutricionSeeder extends Seeder
         foreach ($this->nutricion as $nut){
             $nutricion = new Nutricion();
             $nutricion->nombre = $nut['nombre'];
-            // $nutricion->tipo = $nut['tipo'];
-            // $nutricion->clasificacion = $nut['clasificacion'];
             $nutricion->user_id =$nut['user_id'];
 
             $nutricion->save();

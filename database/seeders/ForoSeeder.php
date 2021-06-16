@@ -14,24 +14,84 @@ class ForoSeeder extends Seeder
     private $posts = array(
         // Nutricion primer usuario
 		array(
-            'titulo' => 'Post 1 sin recurso',
-            'contenido' => 'Post 1 sin recurso',
+            'titulo' => 'Mi primera semana de entrenamiento',
+            'contenido' => 'Esta es la experiencia de mi primera semana entrenando con la rutina que me hice con el objetivo de
+                            mantiniento de cara al verano....
+                            Adjunto el entrenamiento por si le quereis seguir',
             'tipo' => '0',
-            'tieneRecurso' => '0',
+            'tieneRecurso' => '1',
             'user_id'=>'1',
             'usuario' => 'Jesus Cuevas Gonzalez',
         ),
         array(
-            'titulo' => 'Post 2 sin recurso',
-            'contenido' => 'Post 2  sin recurso',
+            'titulo' => 'Segundo mes con una rutina para mantener ',
+            'contenido' => 'Queria comentar la rutina de ejercicios que llevo realizando con el objetivo de 
+                mantener la forma fisica durante los ultimos meses, llevo utilizando esta web durante el ultimo año
+                y puedo decir que estoy bastante satisfecho los resultado conseguidos...',
             'tipo' => '0',
             'tieneRecurso' => '0',
             'user_id'=>'2',
             'usuario' => 'Pedro power',
         ),
         array(
-            'titulo' => 'Post 3 con recurso',
-            'contenido' => 'Post 3 con recurso',
+            'titulo' => 'Dieta nueva creada para compensar los helados del verano :P',
+            'contenido' => 'Os paso la nueva dieta que he creado un saludo amigos (^^)/',
+            'tipo' => '1',
+            'tieneRecurso' => '1',
+            'user_id'=>'2',
+            'usuario' => 'Pedro power',
+        ),
+        array(
+            'titulo' => 'Mi primera semana de entrenamiento',
+            'contenido' => 'Esta es la experiencia de mi primera semana entrenando con la rutina que me hice con el objetivo de
+                            mantiniento de cara al verano....
+                            Adjunto el entrenamiento por si le quereis seguir',
+            'tipo' => '0',
+            'tieneRecurso' => '1',
+            'user_id'=>'1',
+            'usuario' => 'Jesus Cuevas Gonzalez',
+        ),
+        array(
+            'titulo' => 'Segundo mes con una rutina para mantener ',
+            'contenido' => 'Queria comentar la rutina de ejercicios que llevo realizando con el objetivo de 
+                mantener la forma fisica durante los ultimos meses, llevo utilizando esta web durante el ultimo año
+                y puedo decir que estoy bastante satisfecho los resultado conseguidos...',
+            'tipo' => '0',
+            'tieneRecurso' => '0',
+            'user_id'=>'2',
+            'usuario' => 'Pedro power',
+        ),
+        array(
+            'titulo' => 'Dieta nueva creada para compensar los helados del verano :P',
+            'contenido' => 'Os paso la nueva dieta que he creado un saludo amigos (^^)/',
+            'tipo' => '1',
+            'tieneRecurso' => '1',
+            'user_id'=>'2',
+            'usuario' => 'Pedro power',
+        ),
+        array(
+            'titulo' => 'Mi primera semana de entrenamiento',
+            'contenido' => 'Esta es la experiencia de mi primera semana entrenando con la rutina que me hice con el objetivo de
+                            mantiniento de cara al verano....
+                            Adjunto el entrenamiento por si le quereis seguir',
+            'tipo' => '0',
+            'tieneRecurso' => '1',
+            'user_id'=>'1',
+            'usuario' => 'Jesus Cuevas Gonzalez',
+        ),
+        array(
+            'titulo' => 'Segundo mes con una rutina para mantener ',
+            'contenido' => 'Queria comentar la rutina de ejercicios que llevo realizando con el objetivo de 
+                mantener la forma fisica durante los ultimos meses, llevo utilizando esta web durante el ultimo año
+                y puedo decir que estoy bastante satisfecho los resultado conseguidos...',
+            'tipo' => '0',
+            'tieneRecurso' => '0',
+            'user_id'=>'2',
+            'usuario' => 'Pedro power',
+        ),
+        array(
+            'titulo' => 'Dieta nueva creada para compensar los helados del verano :P',
+            'contenido' => 'Os paso la nueva dieta que he creado un saludo amigos (^^)/',
             'tipo' => '1',
             'tieneRecurso' => '1',
             'user_id'=>'2',

@@ -536,8 +536,8 @@ table.blueTable tfoot .links a{
               </td>
               <td>
                 <?php 
-                      $val= rand ( 0 , sizeof($alimentos['cena']['Pasta'])-1); 
-                      echo $alimentos['cena']['Pasta'][$val]['nombre'].' - '.$alimentos['cena']['Pasta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
+                      $val= rand ( 0 , sizeof($alimentos['cena']['Legumbre'])-1); 
+                      echo $alimentos['cena']['Legumbre'][$val]['nombre'].' - '.$alimentos['cena']['Legumbre'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['cena']['Carnes']) -1);
                       echo $alimentos['cena']['Carnes'][$val]['nombre'].' - '.$alimentos['cena']['Carnes'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
@@ -568,8 +568,8 @@ table.blueTable tfoot .links a{
               </td>
               <td>
                   <?php 
-                      $val= rand ( 0 , sizeof($alimentos['cena']['Pasta'])-1); 
-                      echo $alimentos['cena']['Pasta'][$val]['nombre'].' - '.$alimentos['cena']['Pasta'][$val]['valorNutricional'].'Kcal.<br/>' ;  
+                      $val= rand ( 0 , sizeof($alimentos['cena']['Legumbre'])-1); 
+                      echo $alimentos['cena']['Legumbre'][$val]['nombre'].' - '.$alimentos['cena']['Legumbre'][$val]['valorNutricional'].'Kcal.<br/>' ;  
                       $val= rand ( 0 , sizeof($alimentos['cena']['Carnes']) -1);
                       echo $alimentos['cena']['Carnes'][$val]['nombre'].' - '.$alimentos['cena']['Carnes'][$val]['valorNutricional'].'Kcal.<br/>' ;
                 ?>
